@@ -1,0 +1,1900 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 6 - PHP | Web Technologies</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .unit-content {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .unit-heading {
+            background: #edf3f8;
+            padding: 30px;
+            border-left: 5px solid #315b7d;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .unit-heading h2 {
+            color: #234765;
+            margin-bottom: 10px;
+        }
+
+        .unit-heading p {
+            color: #526575;
+            line-height: 1.7;
+        }
+
+        .topic-list {
+            background: #f7f9fb;
+            border: 1px solid #dce4eb;
+            border-radius: 8px;
+            padding: 22px;
+            margin-bottom: 30px;
+        }
+
+        .topic-list h3 {
+            color: #234765;
+            margin-bottom: 15px;
+        }
+
+        .topic-list ol {
+            padding-left: 22px;
+        }
+
+        .topic-list li {
+            padding: 6px 0;
+            line-height: 1.5;
+        }
+
+        .topic-list a {
+            color: #315b7d;
+            text-decoration: none;
+        }
+
+        .topic-list a:hover {
+            text-decoration: underline;
+        }
+
+        .content-section {
+            padding: 22px;
+            margin-bottom: 25px;
+            border: 1px solid #e0e6eb;
+            border-radius: 8px;
+            background: #ffffff;
+        }
+
+        .content-section h3 {
+            color: #234765;
+            border-bottom: 2px solid #e5edf3;
+            padding-bottom: 10px;
+            margin-bottom: 16px;
+        }
+
+        .content-section h4 {
+            color: #315b7d;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .content-section p,
+        .content-section li {
+            color: #3e4b55;
+            line-height: 1.8;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            padding-left: 25px;
+        }
+
+        .example {
+            background: #f3f5f7;
+            border-left: 4px solid #315b7d;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .example pre {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #263746;
+        }
+
+        .note {
+            background: #fff8e8;
+            border-left: 4px solid #d6a23b;
+            padding: 14px;
+            margin: 15px 0;
+            line-height: 1.7;
+            color: #594a2c;
+        }
+
+        .comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison th,
+        .comparison td {
+            border: 1px solid #dce3e9;
+            padding: 12px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .comparison th {
+            background: #edf3f8;
+            color: #234765;
+        }
+
+        .comparison tr:nth-child(even) {
+            background: #f8fafb;
+        }
+
+        .unit-footer {
+            background: #edf3f8;
+            padding: 22px;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        .unit-footer h3 {
+            color: #234765;
+            margin-bottom: 12px;
+        }
+
+        .unit-footer li {
+            line-height: 1.8;
+        }
+
+        .back-top {
+            display: inline-block;
+            margin-top: 15px;
+            color: #315b7d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .unit-content {
+                padding: 12px;
+                margin: 15px auto;
+            }
+
+            .content-section {
+                padding: 15px;
+            }
+
+            .comparison {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Web Technologies</h1>
+    <p>Complete Study Material</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="unit1.html">Unit 1</a>
+    <a href="unit2.html">Unit 2</a>
+    <a href="unit3.html">Unit 3</a>
+    <a href="unit4.html">Unit 4</a>
+    <a href="unit5.html">Unit 5</a>
+    <a href="unit6.html">Unit 6</a>
+</nav>
+
+<main class="unit-content">
+
+    <div class="unit-heading">
+        <h2>Unit 6: PHP - Server-Side Web Development</h2>
+        <p>
+            Learn how PHP works on web servers to create dynamic websites.
+            This unit covers server-side scripting, PHP syntax, variables,
+            arrays, functions, form handling, string processing, regular
+            expressions and PHP frameworks.
+        </p>
+    </div>
+
+    <!-- TOPICS -->
+
+    <div class="topic-list" id="top">
+        <h3>Topics Covered in This Unit</h3>
+
+        <ol>
+            <li><a href="#topic1">Introduction to Server-Side Scripting</a></li>
+            <li><a href="#topic2">PHP and Its Features</a></li>
+            <li><a href="#topic3">Basic Syntax of PHP</a></li>
+            <li><a href="#topic4">PHP Variables and Data Types</a></li>
+            <li><a href="#topic5">PHP Operators and Strings</a></li>
+            <li><a href="#topic6">PHP Arrays</a></li>
+            <li><a href="#topic7">Conditions, Loops and Functions</a></li>
+            <li><a href="#topic8">PHP Forms and Form Handling</a></li>
+            <li><a href="#topic9">Input Validation and Output Escaping</a></li>
+            <li><a href="#topic10">String Processing Functions</a></li>
+            <li><a href="#topic11">Regular Expressions in PHP</a></li>
+            <li><a href="#topic12">Introduction to Web Development Frameworks</a></li>
+            <li><a href="#topic13">MVC Architecture</a></li>
+            <li><a href="#topic14">Common PHP Frameworks</a></li>
+            <li><a href="#topic15">Laravel Framework Example</a></li>
+            <li><a href="#topic16">Running PHP Programs</a></li>
+            <li><a href="#topic17">Security and Best Practices</a></li>
+        </ol>
+    </div>
+
+
+    <!-- TOPIC 1 -->
+
+    <section class="content-section" id="topic1">
+        <h3>1. Introduction to Server-Side Scripting</h3>
+
+        <p>
+            Server-side scripting is a technique in which programs are
+            executed on a web server instead of the user's browser.
+            It is used to create dynamic web pages and process user requests.
+        </p>
+
+        <p>
+            When a user visits a website or submits a form, the browser
+            sends a request to the server. The server processes the request
+            and sends a response back to the browser.
+        </p>
+
+        <h4>How Server-Side Scripting Works</h4>
+
+        <ol>
+            <li>The user opens a website or submits a form.</li>
+            <li>The browser sends an HTTP request to the web server.</li>
+            <li>The web server passes the request to the server-side program.</li>
+            <li>The program processes the request and may communicate with a database.</li>
+            <li>The server generates a response, usually HTML or JSON.</li>
+            <li>The browser receives and displays the response.</li>
+        </ol>
+
+        <h4>Client-Side vs Server-Side Scripting</h4>
+
+        <table class="comparison">
+            <tr>
+                <th>Client-Side Scripting</th>
+                <th>Server-Side Scripting</th>
+            </tr>
+            <tr>
+                <td>Runs in the user's browser.</td>
+                <td>Runs on the web server.</td>
+            </tr>
+            <tr>
+                <td>Used for interactive user interfaces.</td>
+                <td>Used for processing data and application logic.</td>
+            </tr>
+            <tr>
+                <td>JavaScript is commonly used.</td>
+                <td>PHP, Python, Java and other languages are used.</td>
+            </tr>
+            <tr>
+                <td>Code can generally be viewed in the browser.</td>
+                <td>Server-side source code is not sent to the browser.</td>
+            </tr>
+        </table>
+
+        <h4>Uses of Server-Side Scripting</h4>
+        <ul>
+            <li>User registration and login systems.</li>
+            <li>Processing online forms.</li>
+            <li>Storing and retrieving database information.</li>
+            <li>Creating shopping carts and payment systems.</li>
+            <li>Displaying personalized content.</li>
+        </ul>
+
+        <div class="note">
+            <strong>Remember:</strong> PHP code runs on the server.
+            The browser receives the generated output, not the original
+            PHP source code.
+        </div>
+    </section>
+
+
+    <!-- TOPIC 2 -->
+
+    <section class="content-section" id="topic2">
+        <h3>2. PHP and Its Features</h3>
+
+        <p>
+            PHP stands for <strong>PHP: Hypertext Preprocessor</strong>.
+            It is an open-source, server-side scripting language mainly
+            used for web development.
+        </p>
+
+        <p>
+            PHP can be embedded directly into HTML. It allows developers
+            to create dynamic web pages, process forms, manage sessions
+            and communicate with databases.
+        </p>
+
+        <h4>Features of PHP</h4>
+
+        <ul>
+            <li><strong>Open Source:</strong> PHP is freely available to use.</li>
+            <li><strong>Server-Side Language:</strong> PHP executes on the web server.</li>
+            <li><strong>Easy to Learn:</strong> Its syntax is relatively simple for beginners.</li>
+            <li><strong>HTML Integration:</strong> PHP code can be written inside HTML documents.</li>
+            <li><strong>Database Support:</strong> PHP can connect to databases such as MySQL.</li>
+            <li><strong>Cross-Platform:</strong> PHP works on different operating systems.</li>
+            <li><strong>Framework Support:</strong> Frameworks such as Laravel and Symfony support PHP development.</li>
+        </ul>
+
+        <h4>Example of PHP Embedded in HTML</h4>
+
+        <div class="example">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+
+&lt;?php
+echo "This message is generated by PHP.";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        </div>
+    </section>
+
+
+    <!-- TOPIC 3 -->
+
+    <section class="content-section" id="topic3">
+        <h3>3. Basic Syntax of PHP</h3>
+
+        <p>
+            PHP code is written between special PHP tags.
+            These tags tell the server where PHP code begins and ends.
+        </p>
+
+        <h4>PHP Opening and Closing Tags</h4>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+echo "Hello World!";
+
+?&gt;
+</pre>
+        </div>
+
+        <ul>
+            <li><strong>&lt;?php</strong> starts PHP code.</li>
+            <li><strong>?&gt;</strong> ends the PHP code section.</li>
+            <li><strong>echo</strong> displays output.</li>
+        </ul>
+
+        <h4>Semicolon</h4>
+
+        <p>
+            Most PHP statements end with a semicolon (;).
+            It indicates the end of a statement.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+echo "Welcome";
+echo "PHP Programming";
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>Comments in PHP</h4>
+
+        <p>
+            Comments are notes written inside a program.
+            They are ignored during execution and help explain the code.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+// This is a single-line comment
+
+# This is also a single-line comment
+
+/*
+This is a
+multi-line comment
+*/
+
+echo "Learning PHP";
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>PHP Case Sensitivity</h4>
+
+        <p>
+            Variable names in PHP are case-sensitive.
+            For example, $name and $Name are different variables.
+            PHP keywords and function names are generally case-insensitive,
+            but using a consistent lowercase style is recommended.
+        </p>
+    </section>
+
+
+    <!-- TOPIC 4 -->
+
+    <section class="content-section" id="topic4">
+        <h3>4. PHP Variables and Data Types</h3>
+
+        <p>
+            A variable is a named storage location used to hold data.
+            In PHP, every variable begins with the dollar sign ($).
+        </p>
+
+        <h4>Rules for PHP Variables</h4>
+
+        <ul>
+            <li>A variable must start with the $ symbol.</li>
+            <li>The variable name must begin with a letter or underscore.</li>
+            <li>A variable name cannot start with a number.</li>
+            <li>Variable names are case-sensitive.</li>
+            <li>Spaces are not allowed in variable names.</li>
+        </ul>
+
+        <h4>Example</h4>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$name = "Rahul";
+$age = 18;
+$marks = 85.5;
+
+echo $name;
+echo $age;
+echo $marks;
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>Data Types in PHP</h4>
+
+        <p>
+            A data type specifies the kind of value stored in a variable.
+            Common PHP data types include:
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Data Type</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>String</td>
+                <td>Stores text.</td>
+                <td>"Hello"</td>
+            </tr>
+            <tr>
+                <td>Integer</td>
+                <td>Stores whole numbers.</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Float</td>
+                <td>Stores decimal numbers.</td>
+                <td>15.75</td>
+            </tr>
+            <tr>
+                <td>Boolean</td>
+                <td>Stores true or false.</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>Array</td>
+                <td>Stores multiple values.</td>
+                <td>[10, 20, 30]</td>
+            </tr>
+            <tr>
+                <td>NULL</td>
+                <td>Represents a variable with no value.</td>
+                <td>NULL</td>
+            </tr>
+            <tr>
+                <td>Object</td>
+                <td>Stores an instance of a class.</td>
+                <td>new Student()</td>
+            </tr>
+        </table>
+
+        <h4>Checking Data Types</h4>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$name = "Amit";
+$age = 20;
+$marks = 90.5;
+
+var_dump($name);
+var_dump($age);
+var_dump($marks);
+
+?&gt;
+</pre>
+        </div>
+
+        <p>
+            The <strong>var_dump()</strong> function displays information
+            about a variable, including its data type and value.
+        </p>
+    </section>
+
+
+    <!-- TOPIC 5 -->
+
+    <section class="content-section" id="topic5">
+        <h3>5. PHP Operators and Strings</h3>
+
+        <h4>PHP Operators</h4>
+
+        <p>
+            Operators are symbols used to perform operations on variables
+            and values.
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Operator Type</th>
+                <th>Operators</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>Arithmetic</td>
+                <td>+, -, *, /, %</td>
+                <td>Perform mathematical operations.</td>
+            </tr>
+            <tr>
+                <td>Assignment</td>
+                <td>=, +=, -=, *=</td>
+                <td>Assign values to variables.</td>
+            </tr>
+            <tr>
+                <td>Comparison</td>
+                <td>==, ===, !=, &gt;, &lt;</td>
+                <td>Compare two values.</td>
+            </tr>
+            <tr>
+                <td>Logical</td>
+                <td>&amp;&amp;, ||, !</td>
+                <td>Combine conditions.</td>
+            </tr>
+            <tr>
+                <td>Increment / Decrement</td>
+                <td>++, --</td>
+                <td>Increase or decrease a value.</td>
+            </tr>
+        </table>
+
+        <h4>Arithmetic Operator Example</h4>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$a = 20;
+$b = 10;
+
+echo $a + $b;
+echo "&lt;br&gt;";
+echo $a - $b;
+echo "&lt;br&gt;";
+echo $a * $b;
+echo "&lt;br&gt;";
+echo $a / $b;
+echo "&lt;br&gt;";
+echo $a % $b;
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>PHP Strings</h4>
+
+        <p>
+            A string is a sequence of characters used to store text.
+            PHP supports single-quoted and double-quoted strings.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$name = "Amit";
+
+echo 'Welcome to PHP';
+echo "&lt;br&gt;";
+echo "Hello $name";
+
+?&gt;
+</pre>
+        </div>
+
+        <p>
+            Single-quoted strings mostly display their content literally.
+            Double-quoted strings can insert variable values directly
+            into the text.
+        </p>
+
+        <h4>String Concatenation</h4>
+
+        <p>
+            The dot (.) operator joins two or more strings together.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$first = "Hello";
+$second = "World";
+
+$result = $first . " " . $second;
+
+echo $result;
+
+?&gt;
+</pre>
+        </div>
+    </section>
+
+
+    <!-- TOPIC 6 -->
+
+    <section class="content-section" id="topic6">
+        <h3>6. PHP Arrays</h3>
+
+        <p>
+            An array is a variable that can store multiple values
+            under a single name. PHP supports indexed arrays,
+            associative arrays and multidimensional arrays.
+        </p>
+
+        <h4>A. Indexed Array</h4>
+
+        <p>
+            An indexed array stores values using numeric indexes.
+            The first index is normally 0.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$fruits = array("Apple", "Mango", "Banana");
+
+echo $fruits[0];
+echo "&lt;br&gt;";
+echo $fruits[1];
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>B. Associative Array</h4>
+
+        <p>
+            An associative array stores values using named keys
+            instead of numeric indexes.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$student = array(
+    "name" => "Rahul",
+    "age" => 18,
+    "marks" => 85
+);
+
+echo $student["name"];
+echo "&lt;br&gt;";
+echo $student["marks"];
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>C. Multidimensional Array</h4>
+
+        <p>
+            A multidimensional array contains one or more arrays
+            inside another array.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$students = array(
+    array("Rahul", 85),
+    array("Amit", 90),
+    array("Priya", 95)
+);
+
+echo $students[0][0];
+echo "&lt;br&gt;";
+echo $students[1][1];
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>Using foreach with Arrays</h4>
+
+        <p>
+            The foreach loop is used to access each element
+            of an array.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$colors = array("Red", "Green", "Blue");
+
+foreach ($colors as $color) {
+    echo $color;
+    echo "&lt;br&gt;";
+}
+
+?&gt;
+</pre>
+        </div>
+    </section>
+
+
+    <!-- TOPIC 7 -->
+
+    <section class="content-section" id="topic7">
+        <h3>7. Conditions, Loops and Functions</h3>
+
+        <h4>A. Conditional Statements</h4>
+
+        <p>
+            Conditional statements allow a program to make decisions
+            based on whether a condition is true or false.
+        </p>
+
+        <strong>if Statement</strong>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$age = 18;
+
+if ($age >= 18) {
+    echo "You are eligible to vote.";
+}
+
+?&gt;
+</pre>
+        </div>
+
+        <strong>if-else Statement</strong>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$marks = 35;
+
+if ($marks >= 40) {
+    echo "Pass";
+} else {
+    echo "Fail";
+}
+
+?&gt;
+</pre>
+        </div>
+
+        <strong>if-elseif-else Statement</strong>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$marks = 85;
+
+if ($marks >= 90) {
+    echo "Grade A";
+} elseif ($marks >= 75) {
+    echo "Grade B";
+} else {
+    echo "Needs Improvement";
+}
+
+?&gt;
+</pre>
+        </div>
+
+        <strong>switch Statement</strong>
+
+        <p>
+            A switch statement is used when one expression needs
+            to be compared with several possible values.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$day = 2;
+
+switch ($day) {
+    case 1:
+        echo "Monday";
+        break;
+
+    case 2:
+        echo "Tuesday";
+        break;
+
+    case 3:
+        echo "Wednesday";
+        break;
+
+    default:
+        echo "Invalid Day";
+}
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>B. Loops in PHP</h4>
+
+        <p>
+            Loops are used to execute a block of code repeatedly
+            while a condition is satisfied or for each item in a collection.
+        </p>
+
+        <strong>for Loop</strong>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+for ($i = 1; $i <= 5; $i++) {
+    echo $i;
+    echo "&lt;br&gt;";
+}
+
+?&gt;
+</pre>
+        </div>
+
+        <strong>while Loop</strong>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$i = 1;
+
+while ($i <= 5) {
+    echo $i;
+    echo "&lt;br&gt;";
+    $i++;
+}
+
+?&gt;
+</pre>
+        </div>
+
+        <strong>do-while Loop</strong>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$i = 1;
+
+do {
+    echo $i;
+    echo "&lt;br&gt;";
+    $i++;
+} while ($i <= 5);
+
+?&gt;
+</pre>
+        </div>
+
+        <strong>foreach Loop</strong>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$subjects = array("HTML", "CSS", "PHP");
+
+foreach ($subjects as $subject) {
+    echo $subject;
+    echo "&lt;br&gt;";
+}
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>C. Functions in PHP</h4>
+
+        <p>
+            A function is a reusable block of code designed to perform
+            a particular task. Functions help reduce repetition and
+            make programs easier to maintain.
+        </p>
+
+        <strong>Creating and Calling a Function</strong>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+function greet() {
+    echo "Welcome to PHP";
+}
+
+greet();
+
+?&gt;
+</pre>
+        </div>
+
+        <strong>Function with Parameters</strong>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+function add($a, $b) {
+    return $a + $b;
+}
+
+echo add(10, 20);
+
+?&gt;
+</pre>
+        </div>
+
+        <p>
+            Parameters receive values, and the return statement sends
+            a result back to the place where the function was called.
+        </p>
+    </section>
+
+
+    <!-- TOPIC 8 -->
+
+    <section class="content-section" id="topic8">
+        <h3>8. PHP Forms and Form Handling</h3>
+
+        <p>
+            HTML forms collect information from users.
+            PHP can receive and process the submitted information
+            on the server.
+        </p>
+
+        <h4>Important Form Methods</h4>
+
+        <table class="comparison">
+            <tr>
+                <th>GET Method</th>
+                <th>POST Method</th>
+            </tr>
+            <tr>
+                <td>Data is generally included in the URL.</td>
+                <td>Data is sent in the request body.</td>
+            </tr>
+            <tr>
+                <td>Suitable for searches and retrieving information.</td>
+                <td>Commonly used for form submissions that change or send data.</td>
+            </tr>
+            <tr>
+                <td>Data may be visible in browser history and URLs.</td>
+                <td>Data is not normally displayed in the URL.</td>
+            </tr>
+        </table>
+
+        <h4>HTML Form Example</h4>
+
+        <div class="example">
+<pre>
+&lt;form method="post" action="welcome.php"&gt;
+
+    Name:
+    &lt;input type="text" name="username"&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+        </div>
+
+        <h4>PHP Form Processing</h4>
+
+        <p>
+            The following PHP code receives the submitted name
+            using the POST method.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$name = $_POST['username'] ?? '';
+
+echo "Welcome " . htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>Important PHP Superglobal Variables</h4>
+
+        <ul>
+            <li><strong>$_GET:</strong> Receives data submitted through the GET method.</li>
+            <li><strong>$_POST:</strong> Receives data submitted through the POST method.</li>
+            <li><strong>$_REQUEST:</strong> Can contain request data from GET, POST and COOKIE sources, depending on configuration.</li>
+            <li><strong>$_SERVER:</strong> Contains information about the server and current request.</li>
+        </ul>
+
+        <div class="note">
+            <strong>Important:</strong> Form data should never be trusted
+            automatically. Always validate submitted values on the server.
+        </div>
+    </section>
+
+
+    <!-- TOPIC 9 -->
+
+    <section class="content-section" id="topic9">
+        <h3>9. Input Validation and Output Escaping</h3>
+
+        <p>
+            Input validation checks whether the information entered by
+            a user follows the rules required by an application.
+        </p>
+
+        <p>
+            Output escaping converts special characters into a safe form
+            before displaying user-provided content in HTML.
+        </p>
+
+        <h4>Input Validation</h4>
+
+        <ul>
+            <li>Check whether required fields are empty.</li>
+            <li>Check the length of entered text.</li>
+            <li>Check whether values are in the correct format.</li>
+            <li>Reject values that do not follow application rules.</li>
+        </ul>
+
+        <h4>Example of Validation</h4>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$name = trim($_POST['name'] ?? '');
+
+if ($name == "") {
+    echo "Please enter your name.";
+} else {
+    echo "Name accepted.";
+}
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>Output Escaping with htmlspecialchars()</h4>
+
+        <p>
+            The htmlspecialchars() function converts special HTML
+            characters into their safe HTML representations.
+            It helps prevent user input from being interpreted as HTML.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$name = "&lt;script&gt;alert('Hello')&lt;/script&gt;";
+
+echo htmlspecialchars(
+    $name,
+    ENT_QUOTES,
+    'UTF-8'
+);
+
+?&gt;
+</pre>
+        </div>
+
+        <p>
+            Instead of treating the submitted text as HTML code,
+            the browser displays it as text.
+        </p>
+
+        <div class="note">
+            Validation and output escaping solve different problems.
+            Validation checks whether input is acceptable, while escaping
+            protects the context where data is displayed.
+        </div>
+    </section>
+
+
+    <!-- TOPIC 10 -->
+
+    <section class="content-section" id="topic10">
+        <h3>10. String Processing Functions</h3>
+
+        <p>
+            PHP provides many built-in functions for working with strings.
+            These functions can be used to search, replace, count,
+            remove spaces and modify text.
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Function</th>
+                <th>Purpose</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>strlen()</td>
+                <td>Returns the byte length of a string.</td>
+                <td>strlen("Hello")</td>
+            </tr>
+            <tr>
+                <td>trim()</td>
+                <td>Removes whitespace from both ends.</td>
+                <td>trim(" PHP ")</td>
+            </tr>
+            <tr>
+                <td>str_replace()</td>
+                <td>Replaces specified text.</td>
+                <td>str_replace("Hi", "Hello", $text)</td>
+            </tr>
+            <tr>
+                <td>strtolower()</td>
+                <td>Converts text to lowercase.</td>
+                <td>strtolower("HELLO")</td>
+            </tr>
+            <tr>
+                <td>strtoupper()</td>
+                <td>Converts text to uppercase.</td>
+                <td>strtoupper("hello")</td>
+            </tr>
+            <tr>
+                <td>str_word_count()</td>
+                <td>Counts words in a string.</td>
+                <td>str_word_count("Hello World")</td>
+            </tr>
+            <tr>
+                <td>strpos()</td>
+                <td>Finds the position of text.</td>
+                <td>strpos("Hello", "e")</td>
+            </tr>
+            <tr>
+                <td>substr()</td>
+                <td>Extracts part of a string.</td>
+                <td>substr("Hello", 0, 3)</td>
+            </tr>
+        </table>
+
+        <h4>Example of String Functions</h4>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$text = "  Welcome to PHP  ";
+
+echo trim($text);
+echo "&lt;br&gt;";
+
+echo strlen(trim($text));
+echo "&lt;br&gt;";
+
+echo strtoupper($text);
+echo "&lt;br&gt;";
+
+echo str_replace("PHP", "Web Technology", $text);
+
+?&gt;
+</pre>
+        </div>
+
+        <div class="note">
+            <strong>Unicode note:</strong> strlen() counts bytes, not
+            necessarily visible characters. For Unicode text, mb_strlen()
+            can be used when the PHP mbstring extension is enabled.
+        </div>
+    </section>
+
+
+    <!-- TOPIC 11 -->
+
+    <section class="content-section" id="topic11">
+        <h3>11. Regular Expressions in PHP</h3>
+
+        <p>
+            A regular expression, also called regex, is a pattern
+            used to search, match or replace text.
+            PHP uses PCRE (Perl Compatible Regular Expressions)
+            through its preg_* functions.
+        </p>
+
+        <h4>Uses of Regular Expressions</h4>
+
+        <ul>
+            <li>Checking whether text follows a particular pattern.</li>
+            <li>Finding specific words or characters.</li>
+            <li>Validating common input formats.</li>
+            <li>Extracting information from text.</li>
+            <li>Replacing matching parts of a string.</li>
+        </ul>
+
+        <h4>Important Regex Symbols</h4>
+
+        <table class="comparison">
+            <tr>
+                <th>Symbol</th>
+                <th>Meaning</th>
+            </tr>
+            <tr>
+                <td>^</td>
+                <td>Matches the beginning of a string.</td>
+            </tr>
+            <tr>
+                <td>$</td>
+                <td>Matches the end of a string.</td>
+            </tr>
+            <tr>
+                <td>.</td>
+                <td>Matches almost any single character.</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Matches zero or more occurrences.</td>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Matches one or more occurrences.</td>
+            </tr>
+            <tr>
+                <td>?</td>
+                <td>Makes the preceding item optional.</td>
+            </tr>
+            <tr>
+                <td>[abc]</td>
+                <td>Matches any one character from the set.</td>
+            </tr>
+            <tr>
+                <td>\d</td>
+                <td>Matches a digit.</td>
+            </tr>
+            <tr>
+                <td>\D</td>
+                <td>Matches a non-digit character.</td>
+            </tr>
+            <tr>
+                <td>\s</td>
+                <td>Matches whitespace.</td>
+            </tr>
+        </table>
+
+        <h4>Important PHP Regex Functions</h4>
+
+        <ul>
+            <li><strong>preg_match():</strong> Checks whether a pattern matches a string.</li>
+            <li><strong>preg_replace():</strong> Replaces text that matches a pattern.</li>
+            <li><strong>preg_match_all():</strong> Finds all matches of a pattern.</li>
+        </ul>
+
+        <h4>Example: Using preg_match()</h4>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$email = "student@example.com";
+
+$pattern = '/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i';
+
+if (preg_match($pattern, $email) === 1) {
+    echo "Email format is valid.";
+} else {
+    echo "Invalid email format.";
+}
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>Example: Using preg_replace()</h4>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$phone = "(555) 123-4567";
+
+$result = preg_replace('/\D+/', '', $phone);
+
+echo $result;
+
+?&gt;
+</pre>
+        </div>
+
+        <p>
+            The pattern \D+ matches one or more non-digit characters.
+            The preg_replace() function removes those characters
+            by replacing them with an empty string.
+        </p>
+
+        <div class="note">
+            Regex can check whether text follows a pattern, but it cannot
+            prove that an email address exists. For email format checking,
+            PHP also provides filter_var() with FILTER_VALIDATE_EMAIL.
+        </div>
+    </section>
+
+
+    <!-- TOPIC 12 -->
+
+    <section class="content-section" id="topic12">
+        <h3>12. Introduction to Web Development Frameworks</h3>
+
+        <p>
+            A web development framework is a collection of reusable
+            tools, libraries and components that help developers
+            build web applications more efficiently.
+        </p>
+
+        <p>
+            A PHP framework provides a structured way to develop
+            applications without writing every feature from the beginning.
+        </p>
+
+        <h4>Why Are Frameworks Used?</h4>
+
+        <ul>
+            <li>They reduce repeated coding.</li>
+            <li>They provide organized project structures.</li>
+            <li>They simplify URL routing.</li>
+            <li>They provide tools for database operations.</li>
+            <li>They support form validation and authentication.</li>
+            <li>They make applications easier to maintain and test.</li>
+        </ul>
+
+        <h4>Common Features of PHP Frameworks</h4>
+
+        <ul>
+            <li><strong>Routing:</strong> Connects website URLs to application code.</li>
+            <li><strong>Templating:</strong> Helps generate dynamic HTML pages.</li>
+            <li><strong>Database Tools:</strong> Simplifies database access.</li>
+            <li><strong>Validation:</strong> Helps check user-submitted data.</li>
+            <li><strong>Security:</strong> Provides tools for common security tasks.</li>
+            <li><strong>Testing:</strong> Helps developers check application behavior.</li>
+        </ul>
+    </section>
+
+
+    <!-- TOPIC 13 -->
+
+    <section class="content-section" id="topic13">
+        <h3>13. MVC Architecture</h3>
+
+        <p>
+            MVC stands for Model-View-Controller.
+            It is a software design pattern used to organize
+            an application into three main components.
+        </p>
+
+        <h4>1. Model</h4>
+
+        <p>
+            The Model represents the application's data and
+            business rules. It commonly interacts with the database.
+        </p>
+
+        <strong>Example:</strong>
+        A Student Model may manage student names, marks and records.
+        
+        <h4>2. View</h4>
+
+        <p>
+            The View is responsible for displaying information
+            to the user. It generally contains the user interface,
+            such as HTML templates.
+        </p>
+
+        <strong>Example:</strong>
+        A student details page displaying the student's name and marks.
+
+        <h4>3. Controller</h4>
+
+        <p>
+            The Controller receives a request, coordinates the
+            required operations and decides which response should
+            be returned.
+        </p>
+
+        <strong>Example:</strong>
+        A controller receives a request to display student details,
+        gets the information from the Model and passes it to the View.
+
+        <h4>Advantages of MVC</h4>
+
+        <ul>
+            <li>Separates different responsibilities.</li>
+            <li>Makes code easier to understand.</li>
+            <li>Improves application maintenance.</li>
+            <li>Supports testing and teamwork.</li>
+            <li>Allows changes to one component with less effect on others.</li>
+        </ul>
+
+        <div class="note">
+            MVC is a common organizational pattern. Different frameworks
+            may implement it in different ways.
+        </div>
+    </section>
+
+
+    <!-- TOPIC 14 -->
+
+    <section class="content-section" id="topic14">
+        <h3>14. Common PHP Frameworks</h3>
+
+        <p>
+            There are several PHP frameworks available.
+            Each framework offers different features and is suitable
+            for different types of projects.
+        </p>
+
+        <h4>A. Laravel</h4>
+
+        <p>
+            Laravel is a popular PHP framework used for developing
+            modern web applications. It provides routing, Blade templates,
+            database tools, migrations and a large ecosystem.
+        </p>
+
+        <strong>Features:</strong>
+        <ul>
+            <li>Easy-to-understand routing.</li>
+            <li>Blade template engine.</li>
+            <li>Database management through Eloquent ORM.</li>
+            <li>Authentication and validation tools.</li>
+        </ul>
+
+        <h4>B. Symfony</h4>
+
+        <p>
+            Symfony is a flexible PHP framework that provides
+            reusable components and tools for building large
+            and complex applications.
+        </p>
+
+        <strong>Features:</strong>
+        <ul>
+            <li>Reusable components.</li>
+            <li>Flexible configuration.</li>
+            <li>Strong project structure.</li>
+            <li>Useful for complex applications.</li>
+        </ul>
+
+        <h4>C. CodeIgniter</h4>
+
+        <p>
+            CodeIgniter is a lightweight PHP framework known
+            for its relatively small footprint and straightforward setup.
+        </p>
+
+        <strong>Features:</strong>
+        <ul>
+            <li>Lightweight structure.</li>
+            <li>Simple configuration.</li>
+            <li>Fast application development.</li>
+            <li>Suitable for projects that need fewer built-in components.</li>
+        </ul>
+
+        <h4>Comparison of PHP Frameworks</h4>
+
+        <table class="comparison">
+            <tr>
+                <th>Framework</th>
+                <th>Main Characteristics</th>
+                <th>Common Use</th>
+            </tr>
+            <tr>
+                <td>Laravel</td>
+                <td>Full-featured and expressive.</td>
+                <td>Modern web applications.</td>
+            </tr>
+            <tr>
+                <td>Symfony</td>
+                <td>Modular and flexible.</td>
+                <td>Large and complex applications.</td>
+            </tr>
+            <tr>
+                <td>CodeIgniter</td>
+                <td>Lightweight and simple.</td>
+                <td>Smaller applications and projects.</td>
+            </tr>
+        </table>
+    </section>
+
+
+    <!-- TOPIC 15 -->
+
+    <section class="content-section" id="topic15">
+        <h3>15. Laravel Framework Example</h3>
+
+        <p>
+            Laravel is a PHP framework that helps developers create
+            web applications using organized routes, controllers,
+            views and reusable components.
+        </p>
+
+        <h4>Step 1: Create a Laravel Project</h4>
+
+        <p>
+            Laravel requires a supported PHP installation and Composer,
+            which is PHP's dependency manager.
+        </p>
+
+        <div class="example">
+<pre>
+composer create-project laravel/laravel php-framework-demo
+
+cd php-framework-demo
+
+php artisan serve
+</pre>
+        </div>
+
+        <h4>Step 2: Create a Route</h4>
+
+        <p>
+            Open the routes/web.php file and add the following code.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/hello/{name}', function (string $name) {
+    return view('hello', ['name' => $name]);
+});
+</pre>
+        </div>
+
+        <h4>Step 3: Create a View</h4>
+
+        <p>
+            Create a file named hello.blade.php inside the
+            resources/views folder.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Laravel Example&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello, {{ $name }}!&lt;/h1&gt;
+
+    &lt;p&gt;Welcome to Laravel.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        </div>
+
+        <h4>Step 4: Open the Website</h4>
+
+        <p>
+            Start the Laravel development server using:
+        </p>
+
+        <div class="example">
+<pre>
+php artisan serve
+</pre>
+        </div>
+
+        <p>
+            Open the URL shown in the terminal and visit:
+        </p>
+
+        <div class="example">
+<pre>
+http://127.0.0.1:8000/hello/Rahul
+</pre>
+        </div>
+
+        <p>
+            The page displays: <strong>Hello, Rahul!</strong>
+        </p>
+
+        <div class="note">
+            This is a Laravel project example. It requires PHP,
+            Composer and the Laravel dependencies to be installed.
+            It cannot run simply by opening this study-guide HTML file.
+        </div>
+    </section>
+
+
+    <!-- TOPIC 16 -->
+
+    <section class="content-section" id="topic16">
+        <h3>16. Running PHP Programs</h3>
+
+        <p>
+            A PHP program must be executed using a PHP interpreter.
+            Opening a PHP file directly in a browser using a file://
+            address does not execute the PHP code.
+        </p>
+
+        <h4>Method 1: Using PHP Command Line</h4>
+
+        <ol>
+            <li>Install PHP on your computer.</li>
+            <li>Create a file named hello.php.</li>
+            <li>Write your PHP program and save it.</li>
+            <li>Open the terminal in the file's folder.</li>
+            <li>Run the following command.</li>
+        </ol>
+
+        <div class="example">
+<pre>
+php hello.php
+</pre>
+        </div>
+
+        <h4>Method 2: Using PHP Development Server</h4>
+
+        <ol>
+            <li>Create a PHP file named hello.php.</li>
+            <li>Open the terminal in the same folder.</li>
+            <li>Start the development server.</li>
+        </ol>
+
+        <div class="example">
+<pre>
+php -S localhost:8000
+</pre>
+        </div>
+
+        <p>
+            Now open the following address in your browser:
+        </p>
+
+        <div class="example">
+<pre>
+http://localhost:8000/hello.php
+</pre>
+        </div>
+
+        <p>
+            The PHP development server processes the file and sends
+            the generated response to the browser.
+        </p>
+    </section>
+
+
+    <!-- TOPIC 17 -->
+
+    <section class="content-section" id="topic17">
+        <h3>17. Security and Best Practices</h3>
+
+        <p>
+            Security is an important part of server-side web development.
+            PHP applications should be designed to protect user information
+            and prevent unauthorized access.
+        </p>
+
+        <h4>Important Security Practices</h4>
+
+        <ul>
+            <li><strong>Validate Input:</strong> Check all data submitted by users.</li>
+            <li><strong>Escape Output:</strong> Use htmlspecialchars() when displaying untrusted text in HTML.</li>
+            <li><strong>Protect Database Queries:</strong> Use prepared statements instead of joining user input directly into SQL queries.</li>
+            <li><strong>Protect Passwords:</strong> Use password_hash() to store passwords and password_verify() to check them.</li>
+            <li><strong>Protect Private Information:</strong> Never expose database passwords or private source code in public directories.</li>
+            <li><strong>Update Dependencies:</strong> Keep PHP, frameworks and libraries updated.</li>
+            <li><strong>Use HTTPS:</strong> Protect information transmitted between browsers and servers.</li>
+        </ul>
+
+        <h4>Example: Password Hashing</h4>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$password = "mypassword123";
+
+$hashedPassword = password_hash(
+    $password,
+    PASSWORD_DEFAULT
+);
+
+echo $hashedPassword;
+
+?&gt;
+</pre>
+        </div>
+
+        <h4>Verifying a Password</h4>
+
+        <div class="example">
+<pre>
+&lt;?php
+
+$password = "mypassword123";
+
+$hashedPassword = password_hash(
+    $password,
+    PASSWORD_DEFAULT
+);
+
+if (password_verify($password, $hashedPassword)) {
+    echo "Password matched.";
+} else {
+    echo "Incorrect password.";
+}
+
+?&gt;
+</pre>
+        </div>
+
+        <div class="note">
+            Never store passwords as plain text. Store secure password
+            hashes and verify submitted passwords using password_verify().
+        </div>
+    </section>
+
+
+    <!-- SUMMARY -->
+
+    <div class="unit-footer">
+        <h3>Unit 6: Quick Revision</h3>
+
+        <ul>
+            <li>PHP stands for PHP: Hypertext Preprocessor.</li>
+            <li>PHP is an open-source server-side scripting language.</li>
+            <li>PHP code is written between PHP tags.</li>
+            <li>Variables begin with the dollar ($) symbol.</li>
+            <li>PHP supports strings, integers, floats, booleans, arrays, objects and NULL.</li>
+            <li>PHP arrays can be indexed, associative or multidimensional.</li>
+            <li>Conditions and loops control program execution.</li>
+            <li>Functions are reusable blocks of code.</li>
+            <li>GET and POST are commonly used HTTP form methods.</li>
+            <li>String functions help process and modify text.</li>
+            <li>Regular expressions are used for pattern matching.</li>
+            <li>MVC stands for Model, View and Controller.</li>
+            <li>Laravel, Symfony and CodeIgniter are PHP frameworks.</li>
+            <li>PHP programs can be run through the command line or a web server.</li>
+        </ul>
+    </div>
+
+
+    <!-- PRACTICE QUESTIONS -->
+
+    <div class="unit-footer">
+        <h3>Practice Questions</h3>
+
+        <h4>Short Answer Questions</h4>
+
+        <ol>
+            <li>What is PHP? Explain its main features.</li>
+            <li>What is server-side scripting?</li>
+            <li>Differentiate between client-side and server-side scripting.</li>
+            <li>Explain PHP variables and data types.</li>
+            <li>What are indexed and associative arrays?</li>
+            <li>Explain the use of if-else statements in PHP.</li>
+            <li>What is the difference between GET and POST?</li>
+            <li>What is string processing?</li>
+            <li>What is a regular expression?</li>
+            <li>Explain MVC architecture.</li>
+            <li>What is a PHP framework?</li>
+            <li>Name three popular PHP frameworks.</li>
+        </ol>
+
+        <h4>Long Answer Questions</h4>
+
+        <ol>
+            <li>Explain the working of server-side scripting with its request and response flow.</li>
+            <li>Explain PHP syntax with suitable examples.</li>
+            <li>Explain different types of arrays in PHP with examples.</li>
+            <li>Explain conditional statements and loops in PHP.</li>
+            <li>Explain PHP functions with examples.</li>
+            <li>Explain form handling and input validation in PHP.</li>
+            <li>Explain important string functions and regular expressions.</li>
+            <li>Explain MVC architecture and its components.</li>
+            <li>Compare Laravel, Symfony and CodeIgniter.</li>
+        </ol>
+
+        <h4>Programming Questions</h4>
+
+        <ol>
+            <li>Write a PHP program to display Hello World.</li>
+            <li>Write a PHP program to add two numbers.</li>
+            <li>Write a PHP program to check whether a number is even or odd.</li>
+            <li>Write a PHP program to find the largest of two numbers.</li>
+            <li>Write a PHP program to print numbers from 1 to 10 using a loop.</li>
+            <li>Write a PHP program to store and display student details using an associative array.</li>
+            <li>Write a PHP function to calculate the sum of two numbers.</li>
+            <li>Write a PHP program to process a simple HTML form.</li>
+            <li>Write a PHP program to replace a word in a string.</li>
+            <li>Write a PHP program to check a text pattern using preg_match().</li>
+        </ol>
+
+        <a href="#top" class="back-top">Back to Topics ↑</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>Web Technologies | Complete Study Material</p>
+</footer>
+
+<footer>
+    <p>Created by <strong>Shrey Savargaonkar</strong></p>
+    <p>Web Technologies Study Material</p>
+</footer>
+
+</body>
+</html>

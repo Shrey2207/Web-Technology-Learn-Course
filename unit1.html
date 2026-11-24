@@ -1,0 +1,1721 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1 - Introduction to WWW</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .unit-content {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .unit-heading {
+            background: #17365d;
+            color: white;
+            padding: 35px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .unit-heading h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .unit-heading p {
+            color: #e4eaf2;
+            line-height: 1.7;
+        }
+
+        .topic-list {
+            background: #f1f5f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .topic-list h2 {
+            color: #17365d;
+            margin-bottom: 15px;
+        }
+
+        .topic-list ol {
+            padding-left: 22px;
+            line-height: 1.9;
+        }
+
+        .topic-list a {
+            color: #245b91;
+            text-decoration: none;
+        }
+
+        .topic-list a:hover {
+            text-decoration: underline;
+        }
+
+        .content-section {
+            background: white;
+            border: 1px solid #e1e5eb;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 22px;
+        }
+
+        .content-section h2 {
+            color: #17365d;
+            border-bottom: 2px solid #dce5ef;
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+        }
+
+        .content-section h3 {
+            color: #245b91;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .content-section p,
+        .content-section li {
+            line-height: 1.8;
+            color: #394554;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            padding-left: 25px;
+        }
+
+        .example {
+            background: #f1f5f9;
+            border-left: 4px solid #245b91;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .example pre {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .note {
+            background: #edf4fb;
+            border-left: 4px solid #3577ad;
+            padding: 14px;
+            margin: 15px 0;
+            border-radius: 5px;
+            line-height: 1.7;
+        }
+
+        .comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison th,
+        .comparison td {
+            border: 1px solid #d7dee7;
+            padding: 12px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .comparison th {
+            background: #eaf0f7;
+            color: #17365d;
+        }
+
+        .comparison tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .unit-footer {
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+        }
+
+        @media(max-width: 650px) {
+            .unit-heading h1 {
+                font-size: 25px;
+            }
+
+            .content-section {
+                padding: 18px;
+            }
+
+            .comparison {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Web Technologies</h1>
+    <p>Complete Study Material</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="unit1.html">Unit 1</a>
+    <a href="unit2.html">Unit 2</a>
+    <a href="unit3.html">Unit 3</a>
+    <a href="unit4.html">Unit 4</a>
+    <a href="unit5.html">Unit 5</a>
+    <a href="unit6.html">Unit 6</a>
+</nav>
+
+<main class="unit-content">
+
+    <div class="unit-heading">
+        <h1>Unit 1: Introduction to World Wide Web</h1>
+        <p>
+            Learn about the architecture of the World Wide Web,
+            Internet protocols, IP addressing, web servers,
+            modern web technologies and web design principles.
+        </p>
+    </div>
+
+    <!-- TOPIC LIST -->
+
+    <div class="topic-list">
+        <h2>Topics Covered in This Unit</h2>
+        <ol>
+            <li><a href="#www">Introduction and History of WWW</a></li>
+            <li><a href="#architecture">Internet and WWW Architecture</a></li>
+            <li><a href="#http">HTTP Protocol and Communication</a></li>
+            <li><a href="#url">URL, URI and Domain Names</a></li>
+            <li><a href="#browser">Browser and Server Architecture</a></li>
+            <li><a href="#ip">IP Addressing</a></li>
+            <li><a href="#web2">Web 2.0 and Modern Technologies</a></li>
+            <li><a href="#ddns">Dynamic IP and Dynamic DNS</a></li>
+            <li><a href="#design">Web Design Fundamentals</a></li>
+            <li><a href="#linux">Linux Web Server Setup</a></li>
+            <li><a href="#summary">Summary and Practice Questions</a></li>
+        </ol>
+    </div>
+
+    <!-- SECTION 1 -->
+
+    <section class="content-section" id="www">
+        <h2>1. Introduction to World Wide Web (WWW)</h2>
+
+        <h3>What is the World Wide Web?</h3>
+        <p>
+            The World Wide Web (WWW), commonly known as the Web,
+            is a collection of interconnected web pages and
+            resources that can be accessed through the Internet.
+            It allows users to find, view and share information
+            using hyperlinks.
+        </p>
+
+        <p>
+            Web pages may contain text, images, audio, videos,
+            animations and other multimedia content. Users
+            access these resources through web browsers.
+        </p>
+
+        <h3>Key Characteristics of WWW</h3>
+        <ul>
+            <li><b>Global Connectivity:</b> Connects users and information from different parts of the world.</li>
+            <li><b>Hyperlink Navigation:</b> Links connect one web page to another.</li>
+            <li><b>Multimedia Support:</b> Supports text, images, audio, video and animations.</li>
+            <li><b>Information Sharing:</b> Allows users to publish and access information.</li>
+            <li><b>Easy Accessibility:</b> Web resources can be accessed using devices connected to the Internet.</li>
+            <li><b>Interactivity:</b> Users can interact with websites through forms, buttons and other elements.</li>
+        </ul>
+
+        <h3>History of WWW</h3>
+        <p>
+            The World Wide Web was invented by
+            <b>Tim Berners-Lee</b> in 1989 while working at
+            CERN (European Organization for Nuclear Research).
+            Its original purpose was to help researchers share
+            information easily.
+        </p>
+
+        <p>
+            The first website was hosted at CERN and explained
+            information about the World Wide Web project.
+        </p>
+
+        <div class="note">
+            <b>Important:</b> The World Wide Web Consortium
+            (W3C) was established to develop common standards
+            and guidelines for the Web.
+        </div>
+
+        <h3>Evolution of the Web</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Web Version</th>
+                <th>Description</th>
+                <th>Main Features</th>
+            </tr>
+            <tr>
+                <td>Web 1.0</td>
+                <td>Read-only Web</td>
+                <td>Static pages and one-way information sharing.</td>
+            </tr>
+            <tr>
+                <td>Web 2.0</td>
+                <td>Read and Write Web</td>
+                <td>Social media, blogs, comments and user-generated content.</td>
+            </tr>
+            <tr>
+                <td>Web 3.0</td>
+                <td>Semantic Web</td>
+                <td>Machine-understandable data and more personalised services.</td>
+            </tr>
+            <tr>
+                <td>Web 4.0</td>
+                <td>Intelligent Web</td>
+                <td>Emerging ideas involving AI, connected systems and intelligent services.</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- SECTION 2 -->
+
+    <section class="content-section" id="architecture">
+        <h2>2. Internet and WWW Architecture</h2>
+
+        <h3>What is a Web Browser?</h3>
+        <p>
+            A web browser is software used to access and display
+            web pages. It sends requests to web servers, receives
+            resources and displays them in a readable format.
+        </p>
+
+        <p><b>Examples:</b> Google Chrome, Mozilla Firefox,
+        Microsoft Edge, Safari and Opera.</p>
+
+        <h3>Functions of a Web Browser</h3>
+        <ul>
+            <li>Opens and displays websites.</li>
+            <li>Interprets HTML and CSS.</li>
+            <li>Executes JavaScript code.</li>
+            <li>Supports images, audio and video.</li>
+            <li>Stores cookies and cached resources.</li>
+            <li>Provides navigation through links and browser history.</li>
+        </ul>
+
+        <h3>Client-Server Architecture</h3>
+        <p>
+            The Web works mainly on a client-server architecture.
+            The client is usually a web browser that sends a request.
+            The server receives the request, processes it and sends
+            a response.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <p>
+                When a user opens a website, the browser requests
+                the website's files from the server. The server
+                returns HTML, CSS, JavaScript and other resources.
+                The browser then displays the website.
+            </p>
+        </div>
+
+        <h3>Internet vs. World Wide Web</h3>
+        <table class="comparison">
+            <tr>
+                <th>Internet</th>
+                <th>World Wide Web</th>
+            </tr>
+            <tr>
+                <td>A global network of interconnected computers and devices.</td>
+                <td>A collection of linked information and web resources.</td>
+            </tr>
+            <tr>
+                <td>Provides the network infrastructure.</td>
+                <td>Uses the Internet to provide access to websites.</td>
+            </tr>
+            <tr>
+                <td>Uses TCP/IP and other networking technologies.</td>
+                <td>Uses technologies such as HTTP, HTML and URLs.</td>
+            </tr>
+            <tr>
+                <td>Supports email, file transfer and the Web.</td>
+                <td>Provides web pages, websites and web applications.</td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <b>Remember:</b> The Internet is the infrastructure,
+            while the World Wide Web is a service that operates
+            on that infrastructure.
+        </div>
+
+        <h3>Web Browser vs. Web Server</h3>
+        <table class="comparison">
+            <tr>
+                <th>Web Browser</th>
+                <th>Web Server</th>
+            </tr>
+            <tr>
+                <td>Runs on the user's device.</td>
+                <td>Runs on a server computer.</td>
+            </tr>
+            <tr>
+                <td>Sends requests for web resources.</td>
+                <td>Receives and processes requests.</td>
+            </tr>
+            <tr>
+                <td>Displays web pages.</td>
+                <td>Delivers web pages and other resources.</td>
+            </tr>
+            <tr>
+                <td>Examples: Chrome and Firefox.</td>
+                <td>Examples: Apache and Nginx.</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- SECTION 3 -->
+
+    <section class="content-section" id="http">
+        <h2>3. HTTP Protocol and Communication</h2>
+
+        <h3>What is HTTP?</h3>
+        <p>
+            HTTP stands for Hypertext Transfer Protocol.
+            It is an application-layer protocol used for
+            communication between web browsers and web servers.
+        </p>
+
+        <p>
+            HTTP defines how requests are sent by clients and
+            how responses are returned by servers.
+        </p>
+
+        <h3>HTTP Request Structure</h3>
+        <p>An HTTP request generally contains three main parts:</p>
+        <ol>
+            <li><b>Request Line:</b> Contains the method, requested path and HTTP version.</li>
+            <li><b>Headers:</b> Provide additional information about the request.</li>
+            <li><b>Body:</b> Contains data sent to the server, such as form data or JSON.</li>
+        </ol>
+
+        <div class="example">
+            <b>Example of an HTTP Request:</b>
+            <pre>
+GET /index.html HTTP/1.1
+Host: www.example.com
+User-Agent: Chrome
+Accept: text/html
+            </pre>
+        </div>
+
+        <h3>HTTP Request Methods</h3>
+        <table class="comparison">
+            <tr>
+                <th>Method</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>Retrieves information from a server.</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>Sends data to a server.</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>Creates or replaces a resource.</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>Deletes a specified resource.</td>
+            </tr>
+        </table>
+
+        <h3>HTTP Request Headers</h3>
+        <ul>
+            <li><b>Host:</b> Identifies the requested server.</li>
+            <li><b>User-Agent:</b> Provides information about the browser or client.</li>
+            <li><b>Accept:</b> Specifies the content types the client can accept.</li>
+            <li><b>Content-Type:</b> Describes the type of data being sent.</li>
+            <li><b>Authorization:</b> Carries authentication information when required.</li>
+        </ul>
+
+        <h3>HTTP Response Structure</h3>
+        <p>An HTTP response contains:</p>
+        <ol>
+            <li><b>Status Line:</b> Contains HTTP version, status code and status message.</li>
+            <li><b>Response Headers:</b> Provide information about the response.</li>
+            <li><b>Response Body:</b> Contains the requested content or result.</li>
+        </ol>
+
+        <div class="example">
+            <b>Example of an HTTP Response:</b>
+            <pre>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Cache-Control: max-age=3600
+
+<html>
+<body>
+<h1>Welcome</h1>
+</body>
+</html>
+            </pre>
+        </div>
+
+        <h3>HTTP Status Codes</h3>
+        <table class="comparison">
+            <tr>
+                <th>Code</th>
+                <th>Meaning</th>
+            </tr>
+            <tr>
+                <td>200</td>
+                <td>OK – Request completed successfully.</td>
+            </tr>
+            <tr>
+                <td>301</td>
+                <td>Moved Permanently – Resource has a new location.</td>
+            </tr>
+            <tr>
+                <td>400</td>
+                <td>Bad Request – The request is invalid.</td>
+            </tr>
+            <tr>
+                <td>401</td>
+                <td>Unauthorized – Authentication is required or has failed.</td>
+            </tr>
+            <tr>
+                <td>403</td>
+                <td>Forbidden – Access is not allowed.</td>
+            </tr>
+            <tr>
+                <td>404</td>
+                <td>Not Found – Requested resource does not exist.</td>
+            </tr>
+            <tr>
+                <td>500</td>
+                <td>Internal Server Error.</td>
+            </tr>
+            <tr>
+                <td>503</td>
+                <td>Service Unavailable.</td>
+            </tr>
+        </table>
+
+        <h3>HTTP Request-Response Lifecycle</h3>
+        <ol>
+            <li><b>DNS Resolution:</b> The browser finds the IP address associated with the domain name.</li>
+            <li><b>TCP Connection:</b> A connection is established between the client and server when TCP is used.</li>
+            <li><b>HTTP Request:</b> The browser sends an HTTP request to the server.</li>
+            <li><b>Server Processing:</b> The server processes the request and prepares the response.</li>
+            <li><b>HTTP Response:</b> The server sends the result back to the browser.</li>
+            <li><b>Connection Management:</b> The connection may close or remain available for further requests.</li>
+        </ol>
+
+        <h3>TCP Three-Way Handshake</h3>
+        <p>
+            TCP uses a three-way handshake to establish a reliable
+            connection between two devices.
+        </p>
+        <ol>
+            <li><b>SYN:</b> The client requests to start a connection.</li>
+            <li><b>SYN-ACK:</b> The server acknowledges the request and responds.</li>
+            <li><b>ACK:</b> The client acknowledges the server's response.</li>
+        </ol>
+
+        <h3>HTTP vs. HTTPS</h3>
+        <table class="comparison">
+            <tr>
+                <th>HTTP</th>
+                <th>HTTPS</th>
+            </tr>
+            <tr>
+                <td>Hypertext Transfer Protocol.</td>
+                <td>Hypertext Transfer Protocol Secure.</td>
+            </tr>
+            <tr>
+                <td>Does not itself provide encryption.</td>
+                <td>Uses TLS to protect communication.</td>
+            </tr>
+            <tr>
+                <td>Commonly uses port 80.</td>
+                <td>Commonly uses port 443.</td>
+            </tr>
+            <tr>
+                <td>Less suitable for sensitive information.</td>
+                <td>Protects data from interception and tampering in transit.</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- SECTION 4 -->
+
+    <section class="content-section" id="url">
+        <h2>4. URL, URI and Domain Names</h2>
+
+        <h3>What is a URL?</h3>
+        <p>
+            URL stands for Uniform Resource Locator.
+            It is the address used to locate a resource on
+            the Internet.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>https://www.example.com/about.html</pre>
+        </div>
+
+        <h3>Components of a URL</h3>
+        <ul>
+            <li><b>Scheme:</b> Defines the protocol, such as HTTP or HTTPS.</li>
+            <li><b>Subdomain:</b> A subdivision of the main domain, such as www.</li>
+            <li><b>Domain Name:</b> The main name of the website.</li>
+            <li><b>Top-Level Domain:</b> The ending such as .com, .org or .in.</li>
+            <li><b>Path:</b> Identifies a particular page or resource.</li>
+        </ul>
+
+        <h3>URI, URL and URN</h3>
+        <p>
+            URI stands for Uniform Resource Identifier.
+            It is a general term used to identify a resource.
+            A URL is a type of URI that also provides its location.
+            A URN identifies a resource using a unique name.
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>URI</th>
+                <th>URL</th>
+                <th>URN</th>
+            </tr>
+            <tr>
+                <td>Identifies a resource.</td>
+                <td>Identifies and locates a resource.</td>
+                <td>Identifies a resource by name.</td>
+            </tr>
+            <tr>
+                <td>General category.</td>
+                <td>Type of URI.</td>
+                <td>Type of URI.</td>
+            </tr>
+            <tr>
+                <td>May or may not specify a location.</td>
+                <td>Provides a location and access method.</td>
+                <td>Does not need to specify a location.</td>
+            </tr>
+        </table>
+
+        <div class="example">
+            <b>Examples:</b>
+            <pre>
+URL: https://www.example.com
+URN: urn:isbn:978-0-395-36341-6
+            </pre>
+        </div>
+
+        <h3>IP Address vs. Domain Name</h3>
+        <p>
+            An IP address is a numerical address used to identify
+            a device on a network. A domain name is a human-readable
+            name associated with an IP address through DNS.
+        </p>
+
+        <h3>Domain Name Structure</h3>
+        <p>
+            A domain name is made up of labels separated by dots.
+            For example, in www.example.com, the labels are
+            www, example and com.
+        </p>
+
+        <h3>Top-Level Domains (TLDs)</h3>
+        <ul>
+            <li><b>.com:</b> Commonly used for commercial websites.</li>
+            <li><b>.org:</b> Commonly used by organisations.</li>
+            <li><b>.net:</b> Originally associated with network services.</li>
+            <li><b>.edu:</b> Used for eligible educational institutions, especially in the United States.</li>
+            <li><b>.gov:</b> Used for government entities in designated domains.</li>
+            <li><b>.in:</b> Country-code top-level domain for India.</li>
+        </ul>
+
+        <h3>Labels and Subdomains</h3>
+        <p>
+            A label is an individual part of a domain name.
+            Subdomains are created under a main domain to organise
+            different sections or services.
+        </p>
+
+        <div class="example">
+            <b>Examples:</b>
+            <pre>
+www.example.com
+support.example.com
+blog.example.com
+developer.example.com
+            </pre>
+        </div>
+
+        <h3>Domain Registration</h3>
+        <p>
+            Domain names are registered through domain registrars.
+            A user pays for the right to use a domain for a specified
+            period and can renew the registration.
+        </p>
+
+        <div class="note">
+            <b>Note:</b> Domain registration is generally a renewable
+            right to use a name, not permanent ownership of it.
+            ICANN coordinates the global domain name system and
+            policies with registries and registrars.
+        </div>
+    </section>
+
+    <!-- SECTION 5 -->
+
+    <section class="content-section" id="browser">
+        <h2>5. Browser and Server Architecture</h2>
+
+        <h3>How a Browser Works</h3>
+        <p>
+            A browser receives website resources from a server,
+            interprets the code and displays the final page to
+            the user.
+        </p>
+
+        <h3>Browser Rendering Process</h3>
+        <ol>
+            <li>The browser downloads the HTML document.</li>
+            <li>HTML is parsed to create the DOM tree.</li>
+            <li>CSS is parsed to create the CSSOM tree.</li>
+            <li>The browser combines layout information.</li>
+            <li>Elements are painted and displayed on the screen.</li>
+            <li>JavaScript can update the page and change its content.</li>
+        </ol>
+
+        <h3>DOM and CSSOM</h3>
+        <p>
+            <b>DOM (Document Object Model):</b> A tree-like
+            representation of the HTML document. JavaScript
+            can use it to access and change page elements.
+        </p>
+        <p>
+            <b>CSSOM (CSS Object Model):</b> A representation
+            of the CSS rules applied to a web page.
+        </p>
+
+        <h3>Browser Engines</h3>
+        <ul>
+            <li><b>Blink:</b> Used by Chrome and several Chromium-based browsers.</li>
+            <li><b>Gecko:</b> Used by Mozilla Firefox.</li>
+            <li><b>WebKit:</b> Used by Safari.</li>
+        </ul>
+
+        <h3>JavaScript Engines</h3>
+        <ul>
+            <li><b>V8:</b> Used by Chrome and other Chromium-based environments.</li>
+            <li><b>SpiderMonkey:</b> Used by Firefox.</li>
+        </ul>
+
+        <h3>Browser Storage and Caching</h3>
+        <ul>
+            <li><b>Cache:</b> Stores copies of resources to help pages load faster.</li>
+            <li><b>Cookies:</b> Small pieces of data used for sessions and preferences.</li>
+            <li><b>LocalStorage:</b> Stores key-value data in the browser for later use.</li>
+        </ul>
+
+        <h3>Web Server Architecture</h3>
+        <p>
+            A web server listens for incoming requests, processes
+            them and returns web resources. It may serve static
+            files directly or forward requests to an application.
+        </p>
+
+        <h3>Common Web Servers</h3>
+        <table class="comparison">
+            <tr>
+                <th>Apache</th>
+                <th>Nginx</th>
+            </tr>
+            <tr>
+                <td>Popular open-source web server.</td>
+                <td>Popular high-performance web server and reverse proxy.</td>
+            </tr>
+            <tr>
+                <td>Supports different process and thread models.</td>
+                <td>Uses an event-driven, asynchronous architecture.</td>
+            </tr>
+            <tr>
+                <td>Can serve websites and handle application requests.</td>
+                <td>Can serve static files, proxy requests and manage many connections efficiently.</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- SECTION 6 -->
+
+    <section class="content-section" id="ip">
+        <h2>6. IP Addressing</h2>
+
+        <h3>What is an IP Address?</h3>
+        <p>
+            IP stands for Internet Protocol. An IP address is a
+            numerical identifier assigned to a network interface.
+            It helps devices send and receive data across networks.
+        </p>
+
+        <h3>How Does an IP Address Work?</h3>
+        <ol>
+            <li>It identifies a network interface.</li>
+            <li>It helps determine where data should be sent.</li>
+            <li>Routers examine IP information to forward packets.</li>
+            <li>The destination device receives the data.</li>
+        </ol>
+
+        <h3>IPv4 Address</h3>
+        <p>
+            IPv4 is the fourth version of the Internet Protocol.
+            It uses a 32-bit address divided into four groups
+            separated by dots.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>192.168.1.10</pre>
+        </div>
+
+        <p>
+            Each group is called an octet and has a decimal
+            value from 0 to 255. IPv4 supports approximately
+            4.3 billion possible addresses.
+        </p>
+
+        <h3>IPv6 Address</h3>
+        <p>
+            IPv6 is the newer version of the Internet Protocol.
+            It uses 128-bit addresses written in hexadecimal
+            groups separated by colons.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>2001:db8:8b73::8a2e:370:1337</pre>
+        </div>
+
+        <p>
+            IPv6 provides a vastly larger address space and
+            supports the continued growth of connected devices.
+        </p>
+
+        <h3>IPv4 vs. IPv6</h3>
+        <table class="comparison">
+            <tr>
+                <th>Feature</th>
+                <th>IPv4</th>
+                <th>IPv6</th>
+            </tr>
+            <tr>
+                <td>Address Size</td>
+                <td>32 bits</td>
+                <td>128 bits</td>
+            </tr>
+            <tr>
+                <td>Format</td>
+                <td>Decimal numbers separated by dots.</td>
+                <td>Hexadecimal groups separated by colons.</td>
+            </tr>
+            <tr>
+                <td>Address Space</td>
+                <td>About 4.3 billion addresses.</td>
+                <td>Approximately 3.4 × 10³⁸ addresses.</td>
+            </tr>
+            <tr>
+                <td>Configuration</td>
+                <td>Manual configuration or DHCP.</td>
+                <td>Manual configuration, SLAAC or DHCPv6.</td>
+            </tr>
+            <tr>
+                <td>Broadcast</td>
+                <td>Supports broadcast.</td>
+                <td>Uses multicast and anycast instead.</td>
+            </tr>
+            <tr>
+                <td>Header</td>
+                <td>Variable length.</td>
+                <td>Fixed 40-byte base header.</td>
+            </tr>
+        </table>
+
+        <h3>Drawbacks of IPv4</h3>
+        <ul>
+            <li>Limited address space.</li>
+            <li>Increasing demand from connected devices.</li>
+            <li>Use of NAT in many networks to share public IPv4 addresses.</li>
+            <li>Broadcast traffic can create unnecessary network load.</li>
+            <li>Security and traffic-management features require appropriate configuration and supporting protocols.</li>
+        </ul>
+
+        <h3>Benefits of IPv6</h3>
+        <ul>
+            <li>Very large address space.</li>
+            <li>Simplified base header.</li>
+            <li>Support for automatic address configuration.</li>
+            <li>Uses multicast and anycast instead of broadcast.</li>
+            <li>Designed to support modern network growth.</li>
+        </ul>
+
+        <h3>IPv4 and IPv6 Transition</h3>
+        <ul>
+            <li><b>Dual Stack:</b> A device runs IPv4 and IPv6 together.</li>
+            <li><b>Tunneling:</b> One IP version is carried inside packets of another version.</li>
+            <li><b>Translation:</b> Gateway technologies translate between IPv4 and IPv6 where needed.</li>
+        </ul>
+
+        <h3>Types of IP Addresses</h3>
+        <table class="comparison">
+            <tr>
+                <th>Type</th>
+                <th>Meaning</th>
+            </tr>
+            <tr>
+                <td>Public IP</td>
+                <td>An address used for communication across the public Internet.</td>
+            </tr>
+            <tr>
+                <td>Private IP</td>
+                <td>An address used within a private network.</td>
+            </tr>
+            <tr>
+                <td>Static IP</td>
+                <td>An address configured to remain unchanged unless manually or administratively changed.</td>
+            </tr>
+            <tr>
+                <td>Dynamic IP</td>
+                <td>An address assigned automatically, commonly through DHCP, and may change over time.</td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <b>Important:</b> Public/private describes where an address
+            is used. Static/dynamic describes how its assignment is
+            managed. These are two separate classifications.
+        </div>
+
+        <h3>Public IP Address</h3>
+        <p>
+            A public IP address is used for communication over
+            the public Internet. An Internet Service Provider
+            commonly assigns one to a home or business router.
+        </p>
+
+        <h3>Private IP Address</h3>
+        <p>
+            A private IP address is used inside a local network.
+            It allows devices such as laptops, phones and printers
+            to communicate with each other.
+        </p>
+
+        <p><b>Private IPv4 ranges:</b></p>
+        <ul>
+            <li>10.0.0.0 to 10.255.255.255</li>
+            <li>172.16.0.0 to 172.31.255.255</li>
+            <li>192.168.0.0 to 192.168.255.255</li>
+        </ul>
+
+        <h3>Static IP Address</h3>
+        <p>
+            A static IP address is configured to remain constant.
+            It is useful for servers and network services that
+            need a predictable address.
+        </p>
+
+        <h3>Dynamic IP Address</h3>
+        <p>
+            A dynamic IP address is assigned automatically,
+            usually by a DHCP server. It may change when a
+            lease expires or a network reconnects.
+        </p>
+
+        <h3>DHCP (Dynamic Host Configuration Protocol)</h3>
+        <p>
+            DHCP automatically provides network configuration
+            information to devices. This can include an IP
+            address, subnet mask, default gateway and DNS servers.
+        </p>
+
+        <h3>Reserved IPv4 Addresses</h3>
+        <table class="comparison">
+            <tr>
+                <th>Address or Range</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>0.0.0.0</td>
+                <td>Unspecified address; meaning depends on context.</td>
+            </tr>
+            <tr>
+                <td>127.0.0.1</td>
+                <td>Loopback address used by a device to communicate with itself.</td>
+            </tr>
+            <tr>
+                <td>169.254.0.0/16</td>
+                <td>Link-local address range, often used when DHCP configuration fails.</td>
+            </tr>
+            <tr>
+                <td>255.255.255.255</td>
+                <td>Limited broadcast address.</td>
+            </tr>
+        </table>
+
+        <h3>IP Address Classes</h3>
+        <p>
+            Traditional classful addressing divided IPv4 addresses
+            into classes. Modern networks generally use CIDR
+            (Classless Inter-Domain Routing) and prefix lengths.
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Class</th>
+                <th>Range</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>1.0.0.0 – 126.255.255.255</td>
+                <td>Historically used for very large networks.</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>128.0.0.0 – 191.255.255.255</td>
+                <td>Historically used for medium-sized networks.</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>192.0.0.0 – 223.255.255.255</td>
+                <td>Historically used for smaller networks.</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>224.0.0.0 – 239.255.255.255</td>
+                <td>Multicast.</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>240.0.0.0 – 255.255.255.255</td>
+                <td>Reserved and experimental uses, with special-purpose exceptions.</td>
+            </tr>
+        </table>
+
+        <h3>Subnetting</h3>
+        <p>
+            Subnetting divides a large network into smaller
+            networks called subnets. A subnet mask or prefix
+            identifies which part of an IP address represents
+            the network and which part represents the host.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>
+IP Address: 192.168.1.10
+Subnet Mask: 255.255.255.0
+CIDR Prefix: /24
+            </pre>
+            <p>
+                In this example, the first 24 bits identify
+                the network portion.
+            </p>
+        </div>
+
+        <h3>IP Address vs. MAC Address</h3>
+        <table class="comparison">
+            <tr>
+                <th>IP Address</th>
+                <th>MAC Address</th>
+            </tr>
+            <tr>
+                <td>Identifies a network interface at the IP layer.</td>
+                <td>Identifies a network interface at the link layer.</td>
+            </tr>
+            <tr>
+                <td>Used for routing packets between networks.</td>
+                <td>Used for communication on a local network link.</td>
+            </tr>
+            <tr>
+                <td>Can change when network configuration changes.</td>
+                <td>Usually assigned to the network interface by its manufacturer, though it can be changed or randomised by software.</td>
+            </tr>
+            <tr>
+                <td>IPv4 or IPv6 format.</td>
+                <td>Commonly represented as hexadecimal pairs.</td>
+            </tr>
+        </table>
+
+        <h3>How to Find Your IP Address</h3>
+
+        <h3>On Windows</h3>
+        <ol>
+            <li>Open the Start menu.</li>
+            <li>Search for Command Prompt or type cmd.</li>
+            <li>Enter the command <b>ipconfig</b>.</li>
+            <li>Check the IPv4 Address under your active network adapter.</li>
+        </ol>
+
+        <div class="example">
+            <pre>ipconfig</pre>
+        </div>
+
+        <h3>On macOS</h3>
+        <p>
+            Open System Settings, select Network and choose
+            your active connection to view its IP information.
+        </p>
+
+        <h3>On Mobile Devices</h3>
+        <p>
+            Open Settings, select Wi-Fi or Network, choose
+            the connected network and view its details.
+        </p>
+
+        <h3>Security Threats Related to IP Addresses</h3>
+        <ul>
+            <li><b>Location Exposure:</b> An IP address may reveal an approximate location.</li>
+            <li><b>DDoS Attacks:</b> Attackers may flood a network or service with traffic.</li>
+            <li><b>Online Tracking:</b> IP addresses can be used as one signal for tracking activity.</li>
+            <li><b>Impersonation and Abuse:</b> Attackers may misuse an exposed network address or attempt to exploit services running on it.</li>
+        </ul>
+
+        <h3>Ways to Protect Your IP Address</h3>
+        <ul>
+            <li>Use a trusted VPN when appropriate.</li>
+            <li>Keep router firmware and devices updated.</li>
+            <li>Use a firewall to restrict unwanted connections.</li>
+            <li>Secure Wi-Fi with a strong password and modern encryption.</li>
+            <li>Disable services and ports that are not required.</li>
+            <li>Use NAT for appropriate private-network connectivity, while remembering that NAT is not a replacement for a firewall.</li>
+        </ul>
+    </section>
+
+    <!-- SECTION 7 -->
+
+    <section class="content-section" id="web2">
+        <h2>7. Web 2.0 and Modern Web Technologies</h2>
+
+        <h3>What is Web 2.0?</h3>
+        <p>
+            Web 2.0 describes the development of interactive
+            websites and applications where users can create,
+            share and collaborate on content.
+        </p>
+
+        <p>
+            Unlike the mostly read-only websites of Web 1.0,
+            Web 2.0 encourages participation and communication.
+        </p>
+
+        <h3>Features of Web 2.0</h3>
+        <ul>
+            <li>User-generated content.</li>
+            <li>Social networking and online communities.</li>
+            <li>Comments, reviews and ratings.</li>
+            <li>Interactive web applications.</li>
+            <li>Sharing and collaboration.</li>
+        </ul>
+
+        <h3>AJAX (Asynchronous JavaScript and XML)</h3>
+        <p>
+            AJAX is a technique that allows a web page to
+            communicate with a server in the background
+            without reloading the entire page.
+        </p>
+
+        <p>
+            Despite its name, AJAX can exchange JSON and other
+            data formats, not only XML.
+        </p>
+
+        <h3>Advantages of AJAX</h3>
+        <ul>
+            <li>Updates parts of a page without a full reload.</li>
+            <li>Can improve the user experience.</li>
+            <li>Allows background data requests.</li>
+            <li>Helps build interactive web applications.</li>
+        </ul>
+
+        <div class="example">
+            <b>Example using Fetch API:</b>
+            <pre>
+fetch("https://example.com/data")
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+});
+            </pre>
+        </div>
+
+        <h3>User-Generated Content</h3>
+        <p>
+            User-generated content is information created and
+            shared by users rather than only by website owners.
+        </p>
+        <p>
+            Examples include social media posts, blog comments,
+            product reviews, videos and discussion forums.
+        </p>
+
+        <h3>RESTful APIs</h3>
+        <p>
+            REST stands for Representational State Transfer.
+            It is an architectural style used to design web APIs.
+            REST APIs commonly use HTTP methods to work with
+            resources.
+        </p>
+
+        <ul>
+            <li>GET – Retrieve data.</li>
+            <li>POST – Create or submit data.</li>
+            <li>PUT – Replace or update a resource.</li>
+            <li>DELETE – Remove a resource.</li>
+        </ul>
+
+        <h3>JSON</h3>
+        <p>
+            JSON stands for JavaScript Object Notation.
+            It is a lightweight format used to exchange
+            structured data between applications.
+        </p>
+
+        <div class="example">
+            <b>Example of JSON:</b>
+            <pre>
+{
+    "name": "Shrey",
+    "course": "B.Tech CSE",
+    "year": 1
+}
+            </pre>
+        </div>
+
+        <h3>Software as a Service (SaaS)</h3>
+        <p>
+            SaaS is a software delivery model in which
+            applications are hosted by a service provider
+            and accessed over the Internet, often through
+            a web browser.
+        </p>
+
+        <p><b>Examples:</b> Google Docs, Microsoft 365
+        and Figma.</p>
+    </section>
+
+    <!-- SECTION 8 -->
+
+    <section class="content-section" id="ddns">
+        <h2>8. Dynamic IP and Dynamic DNS (DDNS)</h2>
+
+        <h3>Static IP vs. Dynamic IP</h3>
+        <p>
+            A static IP address remains the same unless it is
+            changed manually or administratively. A dynamic IP
+            address is assigned automatically and may change
+            over time.
+        </p>
+
+        <h3>DHCP and Dynamic IP</h3>
+        <p>
+            DHCP stands for Dynamic Host Configuration Protocol.
+            It automatically assigns IP addresses and other
+            network settings to devices.
+        </p>
+
+        <h3>What is Dynamic DNS?</h3>
+        <p>
+            DDNS stands for Dynamic Domain Name System.
+            It is a service that updates DNS records when
+            a device's public IP address changes.
+        </p>
+
+        <h3>Why is DDNS Required?</h3>
+        <p>
+            A normal DNS record often points a domain name
+            to a known IP address. If a home or small business
+            server uses a dynamic public IP, that address
+            may change. The old DNS record may then point
+            to the wrong address.
+        </p>
+
+        <p>
+            DDNS solves this problem by updating the DNS
+            record when the public IP changes.
+        </p>
+
+        <h3>How DDNS Works</h3>
+        <ol>
+            <li>A device or router receives a public IP address.</li>
+            <li>A DDNS client monitors the current public IP.</li>
+            <li>If the IP changes, the client contacts the DDNS provider.</li>
+            <li>The provider updates the domain's DNS record.</li>
+            <li>Users can continue using the same domain name.</li>
+        </ol>
+
+        <div class="note">
+            <b>Example:</b> A person hosts a small website at home.
+            Their ISP changes the public IP address. A DDNS service
+            updates the domain record so visitors can still use
+            the same domain name.
+        </div>
+
+        <h3>Advantages of DDNS</h3>
+        <ul>
+            <li>Provides a consistent domain name for a changing IP.</li>
+            <li>Useful for home servers and remote access.</li>
+            <li>Reduces the need for manual DNS updates.</li>
+            <li>Can be configured on compatible routers or servers.</li>
+        </ul>
+
+        <div class="note">
+            <b>Remember:</b> DDNS updates DNS records. It does not
+            make a dynamic IP static and does not automatically
+            configure firewall rules or make a server secure.
+        </div>
+    </section>
+
+    <!-- SECTION 9 -->
+
+    <section class="content-section" id="design">
+        <h2>9. Web Design Fundamentals</h2>
+
+        <h3>What is Web Design?</h3>
+        <p>
+            Web design is the process of planning and creating
+            the layout, appearance and user experience of a
+            website. It includes visual design, navigation,
+            accessibility and usability.
+        </p>
+
+        <h3>UI and UX</h3>
+        <p>
+            <b>UI (User Interface):</b> The visual and interactive
+            parts of a website, such as buttons, menus, colours
+            and forms.
+        </p>
+        <p>
+            <b>UX (User Experience):</b> The overall experience
+            a person has while using a website or application.
+        </p>
+
+        <h3>Core Principles of UI/UX</h3>
+        <ul>
+            <li><b>User-Centricity:</b> Design should focus on the needs of users.</li>
+            <li><b>Consistency:</b> Similar elements should behave and look alike.</li>
+            <li><b>Simplicity:</b> Avoid unnecessary complexity.</li>
+            <li><b>Accessibility:</b> Make the website usable by people with different abilities.</li>
+            <li><b>Feedback:</b> Show clear responses when users interact with controls.</li>
+        </ul>
+
+        <h3>Visual Hierarchy</h3>
+        <p>
+            Visual hierarchy is the arrangement of elements
+            to guide the user's attention toward the most
+            important information first.
+        </p>
+
+        <p>It can be created using:</p>
+        <ul>
+            <li>Different font sizes.</li>
+            <li>Bold and regular text.</li>
+            <li>Colour and contrast.</li>
+            <li>Spacing and alignment.</li>
+            <li>Position and grouping of elements.</li>
+        </ul>
+
+        <h3>F-Pattern and Z-Pattern</h3>
+        <p>
+            Users often scan web pages instead of reading every
+            word. The F-pattern describes a common scanning
+            behaviour where attention is concentrated near the
+            top and left side of a page.
+        </p>
+        <p>
+            The Z-pattern describes a possible scanning path
+            across visually simple landing pages, moving from
+            the top-left to top-right, diagonally down and
+            then across the bottom.
+        </p>
+
+        <h3>Navigation and Website Structure</h3>
+        <p>
+            Navigation helps users find information and move
+            between different pages.
+        </p>
+        <ul>
+            <li>Use clear navigation menus.</li>
+            <li>Organise content into meaningful sections.</li>
+            <li>Use descriptive links.</li>
+            <li>Provide breadcrumbs on larger websites where useful.</li>
+            <li>Keep navigation consistent across pages.</li>
+        </ul>
+
+        <h3>Responsive Web Design (RWD)</h3>
+        <p>
+            Responsive Web Design is an approach in which a
+            website adjusts its layout and content to fit
+            different screen sizes and devices.
+        </p>
+
+        <h3>Techniques Used in RWD</h3>
+        <ul>
+            <li>Flexible layouts and fluid grids.</li>
+            <li>CSS media queries.</li>
+            <li>Flexible images and content.</li>
+            <li>Flexbox and CSS Grid.</li>
+            <li>Mobile-first design.</li>
+        </ul>
+
+        <div class="example">
+            <b>Example of a Media Query:</b>
+            <pre>
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 100%;
+    }
+}
+            </pre>
+        </div>
+
+        <h3>Accessibility and WCAG</h3>
+        <p>
+            Web accessibility means designing websites so
+            that people with disabilities can use them.
+            WCAG stands for Web Content Accessibility Guidelines.
+        </p>
+
+        <ul>
+            <li>Provide alternative text for meaningful images.</li>
+            <li>Use sufficient colour contrast.</li>
+            <li>Make links and buttons usable with a keyboard.</li>
+            <li>Use clear headings and labels.</li>
+            <li>Provide captions for important video content.</li>
+            <li>Use semantic HTML elements.</li>
+        </ul>
+
+        <h3>Cross-Browser Compatibility</h3>
+        <p>
+            Cross-browser compatibility means ensuring that
+            a website works correctly across different browsers.
+        </p>
+
+        <p>
+            Browsers may use different rendering engines and
+            support features differently. Developers should
+            test their websites in multiple browsers and use
+            standard web technologies.
+        </p>
+
+        <h3>Website Performance and Speed</h3>
+        <p>
+            Website performance refers to how quickly and
+            smoothly a website loads and responds to user
+            actions.
+        </p>
+
+        <h3>Ways to Improve Performance</h3>
+        <ul>
+            <li>Compress and optimise images.</li>
+            <li>Minify CSS and JavaScript files.</li>
+            <li>Use browser caching.</li>
+            <li>Reduce unnecessary requests.</li>
+            <li>Use a Content Delivery Network (CDN) where appropriate.</li>
+            <li>Load non-critical resources efficiently.</li>
+        </ul>
+
+        <h3>Core Web Vitals</h3>
+        <ul>
+            <li><b>LCP (Largest Contentful Paint):</b> Measures loading performance.</li>
+            <li><b>INP (Interaction to Next Paint):</b> Measures responsiveness to interactions.</li>
+            <li><b>CLS (Cumulative Layout Shift):</b> Measures unexpected layout movement.</li>
+        </ul>
+
+        <h3>Common Web Design Issues</h3>
+        <ul>
+            <li><b>Slow Loading:</b> Large files and unnecessary code make pages slow.</li>
+            <li><b>Mobile Unresponsiveness:</b> Pages may not fit smaller screens.</li>
+            <li><b>Cluttered Layout:</b> Too many elements make content difficult to understand.</li>
+            <li><b>Poor Accessibility:</b> Low contrast and missing labels can prevent users from accessing information.</li>
+            <li><b>Broken Links:</b> Links may lead to missing pages.</li>
+            <li><b>Technical Errors:</b> Outdated code and server problems can affect usability.</li>
+            <li><b>Security Problems:</b> Poorly protected websites can expose users and data to attacks.</li>
+        </ul>
+
+        <h3>Security Considerations in Web Design</h3>
+        <ul>
+            <li>Protect user input against Cross-Site Scripting (XSS).</li>
+            <li>Use HTTPS for secure communication.</li>
+            <li>Apply appropriate Content Security Policy (CSP) headers.</li>
+            <li>Use secure authentication and session management.</li>
+            <li>Protect sensitive pages against clickjacking.</li>
+        </ul>
+
+        <h3>Web Design Best Practices</h3>
+        <ol>
+            <li>Start with a mobile-friendly layout.</li>
+            <li>Keep the design clean and consistent.</li>
+            <li>Use readable fonts and suitable colours.</li>
+            <li>Provide clear navigation.</li>
+            <li>Optimise images and other resources.</li>
+            <li>Follow accessibility guidelines.</li>
+            <li>Test the website on different devices and browsers.</li>
+            <li>Keep the website secure and updated.</li>
+        </ol>
+    </section>
+
+    <!-- SECTION 10 -->
+
+    <section class="content-section" id="linux">
+        <h2>10. Linux Web Server Setup</h2>
+
+        <h3>What is a Linux Web Server?</h3>
+        <p>
+            A Linux web server is a computer or virtual machine
+            running Linux and web server software. It receives
+            HTTP or HTTPS requests and delivers website content
+            to users.
+        </p>
+
+        <h3>Apache and Nginx</h3>
+        <p>
+            Apache and Nginx are widely used web server
+            applications. Both can serve static website files
+            and support configurations for hosting websites.
+        </p>
+
+        <h3>Step 1: Update the Package Manager</h3>
+        <p>
+            On Debian or Ubuntu, update the package information
+            before installing software.
+        </p>
+
+        <div class="example">
+            <pre>
+sudo apt update
+            </pre>
+        </div>
+
+        <h3>Step 2: Install Apache</h3>
+        <div class="example">
+            <pre>
+sudo apt install apache2
+            </pre>
+        </div>
+
+        <p>
+            To start Apache and enable it at system startup:
+        </p>
+
+        <div class="example">
+            <pre>
+sudo systemctl start apache2
+sudo systemctl enable apache2
+            </pre>
+        </div>
+
+        <h3>Alternative: Install Nginx</h3>
+        <div class="example">
+            <pre>
+sudo apt install nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+            </pre>
+        </div>
+
+        <div class="note">
+            <b>Note:</b> Apache and Nginx are alternatives for
+            many basic deployments. You normally do not need
+            to install both for a simple website.
+        </div>
+
+        <h3>Step 3: Document Root and Permissions</h3>
+        <p>
+            The document root is the directory from which
+            the web server serves website files.
+            A common default location on Ubuntu is:
+        </p>
+
+        <div class="example">
+            <pre>/var/www/html</pre>
+        </div>
+
+        <p>
+            Permissions must be configured so that the web
+            server can read the website files safely.
+        </p>
+
+        <div class="example">
+            <pre>
+sudo chown -R www-data:www-data /var/www/html
+            </pre>
+        </div>
+
+        <h3>Step 4: Virtual Host Configuration</h3>
+        <p>
+            Virtual hosts allow a single web server to host
+            multiple websites using different domain names.
+        </p>
+
+        <p>
+            Apache site configuration files are commonly
+            stored in:
+        </p>
+
+        <div class="example">
+            <pre>/etc/apache2/sites-available/</pre>
+        </div>
+
+        <p>
+            A site can be enabled with the following commands:
+        </p>
+
+        <div class="example">
+            <pre>
+sudo a2ensite example.conf
+sudo systemctl reload apache2
+            </pre>
+        </div>
+
+        <h3>Step 5: Firewall Configuration</h3>
+        <p>
+            A firewall controls which network connections
+            are allowed to reach a server.
+        </p>
+
+        <div class="example">
+            <pre>
+sudo ufw allow OpenSSH
+sudo ufw allow 'Apache Full'
+sudo ufw enable
+            </pre>
+        </div>
+
+        <p>
+            For Nginx, use the suitable Nginx firewall profile
+            instead of the Apache profile.
+        </p>
+
+        <h3>Step 6: SSL and HTTPS Setup</h3>
+        <p>
+            SSL is the older name commonly used when discussing
+            secure web certificates. Modern HTTPS uses TLS.
+            Certificates help authenticate a website and
+            enable encrypted connections.
+        </p>
+
+        <p>
+            Let's Encrypt provides free TLS certificates.
+            Certbot can help obtain and configure certificates.
+        </p>
+
+        <div class="example">
+            <pre>
+sudo apt install certbot python3-certbot-apache
+sudo certbot --apache
+            </pre>
+        </div>
+
+        <div class="note">
+            <b>Important:</b> Use the Nginx Certbot integration
+            when configuring Nginx. Before enabling HTTPS,
+            ensure the domain points to the server and the
+            required ports are reachable.
+        </div>
+    </section>
+
+    <!-- SECTION 11 -->
+
+    <section class="content-section" id="summary">
+        <h2>11. Unit Summary</h2>
+
+        <p>
+            In this unit, we studied the basic architecture
+            and working of the World Wide Web. We learned
+            about Internet communication, HTTP requests and
+            responses, URLs, domain names, browser and server
+            architecture, IP addressing, Web 2.0, DDNS,
+            web design principles and Linux web server setup.
+        </p>
+
+        <h3>Important Points to Remember</h3>
+        <ul>
+            <li>WWW is a collection of interconnected web resources.</li>
+            <li>The Internet provides the infrastructure for the Web.</li>
+            <li>HTTP is used for communication between clients and servers.</li>
+            <li>DNS converts domain names into IP addresses.</li>
+            <li>A URL locates a resource on the Internet.</li>
+            <li>IPv4 uses 32-bit addresses, while IPv6 uses 128-bit addresses.</li>
+            <li>DHCP automatically assigns network configuration.</li>
+            <li>DDNS updates DNS records when a dynamic IP changes.</li>
+            <li>Responsive design helps websites work on different devices.</li>
+            <li>Apache and Nginx are commonly used web servers.</li>
+        </ul>
+
+        <h3>Practice Questions</h3>
+        <ol>
+            <li>Define the World Wide Web and explain its main characteristics.</li>
+            <li>Explain the history and evolution of the Web.</li>
+            <li>Differentiate between the Internet and WWW.</li>
+            <li>Explain client-server architecture with an example.</li>
+            <li>Describe the structure of an HTTP request and response.</li>
+            <li>Explain the HTTP request-response lifecycle.</li>
+            <li>Differentiate between URI, URL and URN.</li>
+            <li>Explain the working of a web browser and web server.</li>
+            <li>Differentiate between IPv4 and IPv6.</li>
+            <li>Explain public, private, static and dynamic IP addresses.</li>
+            <li>What is DHCP? Explain its role in IP address assignment.</li>
+            <li>Explain IP address classes and subnetting.</li>
+            <li>Differentiate between an IP address and a MAC address.</li>
+            <li>What is Web 2.0? Explain AJAX and REST APIs.</li>
+            <li>Explain Dynamic DNS and its advantages.</li>
+            <li>Describe the principles of effective web design.</li>
+            <li>What is Responsive Web Design?</li>
+            <li>Explain the steps involved in setting up a Linux web server.</li>
+        </ol>
+
+        <div class="note">
+            <b>Next Unit:</b> Unit 2 – HTML Fundamentals,
+            Document Structure, Formatting Tags, Forms,
+            HTML5 Media and Semantic Elements.
+        </div>
+    </section>
+
+    <div class="unit-footer">
+        <p>Web Technologies | Unit 1 – Introduction to WWW</p>
+    </div>
+
+</main>
+
+<footer>
+    <p>Web Technologies Study Material</p>
+</footer>
+
+<footer>
+    <p>Created by <strong>Shrey Savargaonkar</strong></p>
+    <p>Web Technologies Study Material</p>
+</footer>
+
+</body>
+</html>

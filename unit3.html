@@ -1,0 +1,2382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3 - CSS</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .unit-content {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .unit-heading {
+            background: #17365d;
+            color: white;
+            padding: 35px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .unit-heading h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .unit-heading p {
+            color: #e4eaf2;
+            line-height: 1.7;
+        }
+
+        .topic-list {
+            background: #f1f5f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .topic-list h2 {
+            color: #17365d;
+            margin-bottom: 15px;
+        }
+
+        .topic-list ol {
+            padding-left: 22px;
+            line-height: 1.9;
+        }
+
+        .topic-list a {
+            color: #245b91;
+            text-decoration: none;
+        }
+
+        .topic-list a:hover {
+            text-decoration: underline;
+        }
+
+        .content-section {
+            background: white;
+            border: 1px solid #e1e5eb;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 22px;
+        }
+
+        .content-section h2 {
+            color: #17365d;
+            border-bottom: 2px solid #dce5ef;
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+        }
+
+        .content-section h3 {
+            color: #245b91;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .content-section p,
+        .content-section li {
+            line-height: 1.8;
+            color: #394554;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            padding-left: 25px;
+        }
+
+        .example {
+            background: #f1f5f9;
+            border-left: 4px solid #245b91;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .example pre {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .note {
+            background: #edf4fb;
+            border-left: 4px solid #3577ad;
+            padding: 14px;
+            margin: 15px 0;
+            border-radius: 5px;
+            line-height: 1.7;
+        }
+
+        .comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison th,
+        .comparison td {
+            border: 1px solid #d7dee7;
+            padding: 12px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .comparison th {
+            background: #eaf0f7;
+            color: #17365d;
+        }
+
+        .comparison tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .unit-footer {
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+        }
+
+        @media(max-width: 650px) {
+            .unit-heading h1 {
+                font-size: 25px;
+            }
+
+            .content-section {
+                padding: 18px;
+            }
+
+            .comparison {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Web Technologies</h1>
+    <p>Complete Study Material</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="unit1.html">Unit 1</a>
+    <a href="unit2.html">Unit 2</a>
+    <a href="unit3.html">Unit 3</a>
+    <a href="unit4.html">Unit 4</a>
+    <a href="unit5.html">Unit 5</a>
+    <a href="unit6.html">Unit 6</a>
+</nav>
+
+<main class="unit-content">
+
+    <div class="unit-heading">
+        <h1>Unit 3: Cascading Style Sheets (CSS)</h1>
+        <p>
+            Learn how CSS styles web pages using selectors,
+            colours, backgrounds, typography, borders,
+            the box model, positioning and modern layout features.
+        </p>
+    </div>
+
+    <!-- TOPIC LIST -->
+
+    <div class="topic-list">
+        <h2>Topics Covered in This Unit</h2>
+        <ol>
+            <li><a href="#introduction">Introduction to CSS</a></li>
+            <li><a href="#types">Types of CSS</a></li>
+            <li><a href="#selectors">CSS Syntax and Selectors</a></li>
+            <li><a href="#values">CSS Values, Units and Custom Properties</a></li>
+            <li><a href="#cascade">CSS Cascade and Inheritance</a></li>
+            <li><a href="#backgrounds">CSS Colours and Backgrounds</a></li>
+            <li><a href="#text">Text and Font Properties</a></li>
+            <li><a href="#boxmodel">CSS Borders and Box Model</a></li>
+            <li><a href="#positioning">CSS Positioning</a></li>
+            <li><a href="#modern">CSS3 and Modern CSS Features</a></li>
+            <li><a href="#summary">Summary and Practice Questions</a></li>
+        </ol>
+    </div>
+
+    <!-- SECTION 1 -->
+
+    <section class="content-section" id="introduction">
+        <h2>1. Introduction to CSS</h2>
+
+        <h3>What is CSS?</h3>
+
+        <p>
+            CSS stands for Cascading Style Sheets. It is a
+            stylesheet language used to control the appearance
+            and presentation of HTML documents.
+        </p>
+
+        <p>
+            HTML provides the structure and content of a webpage,
+            while CSS controls how that content looks. It is used
+            to apply colours, fonts, spacing, borders, backgrounds
+            and layouts to web pages.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <p>
+                HTML creates a heading, paragraph and button.
+                CSS can change their colours, sizes, spacing
+                and appearance.
+            </p>
+        </div>
+
+        <h3>Why is CSS Needed?</h3>
+
+        <p>
+            Without CSS, web pages mainly display content using
+            the browser's default styles. CSS makes websites
+            attractive, organised and easier to use.
+        </p>
+
+        <ul>
+            <li><b>Better Appearance:</b> Adds colours, fonts, backgrounds and borders.</li>
+            <li><b>Separation of Content and Design:</b> Keeps HTML structure separate from presentation.</li>
+            <li><b>Consistency:</b> One stylesheet can give multiple pages the same design.</li>
+            <li><b>Responsive Design:</b> Helps websites adjust to different screen sizes.</li>
+            <li><b>Less Repetition:</b> Reusable CSS rules reduce repeated styling code.</li>
+            <li><b>Easy Maintenance:</b> Changes can be made in one stylesheet instead of many HTML elements.</li>
+        </ul>
+
+        <h3>Separation of Content and Design</h3>
+
+        <p>
+            In a well-organised website, HTML is used for
+            meaningful content and structure, while CSS is
+            used for visual presentation.
+        </p>
+
+        <div class="example">
+            <b>HTML:</b>
+            <pre>
+<h1>Welcome to My Website</h1>
+<p>This is my first webpage.</p>
+            </pre>
+
+            <b>CSS:</b>
+            <pre>
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+            </pre>
+        </div>
+
+        <h3>Same Content, Different Presentation</h3>
+
+        <p>
+            The same HTML content can be displayed in different
+            ways by applying different CSS rules. The content
+            remains unchanged, but its appearance can be modified.
+        </p>
+
+        <div class="note">
+            <b>Remember:</b> HTML defines what appears on a page.
+            CSS defines how that content is presented.
+        </div>
+    </section>
+
+    <!-- SECTION 2 -->
+
+    <section class="content-section" id="types">
+        <h2>2. Types of CSS</h2>
+
+        <p>
+            CSS can be added to an HTML document in three main ways:
+            Inline CSS, Internal CSS and External CSS.
+        </p>
+
+        <h3>1. Inline CSS</h3>
+
+        <p>
+            Inline CSS is written directly inside an HTML
+            element using the style attribute. It applies
+            styling to only that particular element.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>
+<h1 style="color: red;">Welcome</h1>
+
+<p style="font-size: 18px;">
+    This is an inline CSS example.
+</p>
+            </pre>
+        </div>
+
+        <p><b>Advantages:</b></p>
+        <ul>
+            <li>Easy to apply to one element.</li>
+            <li>Useful for quick demonstrations.</li>
+        </ul>
+
+        <p><b>Disadvantages:</b></p>
+        <ul>
+            <li>Not suitable for styling many elements.</li>
+            <li>Makes HTML code difficult to maintain.</li>
+            <li>Can cause repeated styling.</li>
+        </ul>
+
+        <h3>2. Internal CSS</h3>
+
+        <p>
+            Internal CSS is written inside a style element
+            in the head section of an HTML document.
+            It is generally used when styling a single page.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internal CSS</title>
+
+    <style>
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <p>This is internal CSS.</p>
+</body>
+</html>
+            </pre>
+        </div>
+
+        <p><b>Advantages:</b></p>
+        <ul>
+            <li>Styles are kept inside one HTML file.</li>
+            <li>Useful for a single-page website.</li>
+        </ul>
+
+        <p><b>Disadvantages:</b></p>
+        <ul>
+            <li>Cannot be reused automatically across different HTML pages.</li>
+            <li>Can make the HTML document longer.</li>
+        </ul>
+
+        <h3>3. External CSS</h3>
+
+        <p>
+            External CSS is written in a separate file with
+            the .css extension. The stylesheet is connected
+            to an HTML document using the link element.
+        </p>
+
+        <div class="example">
+            <b>HTML file:</b>
+            <pre>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>External CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <p>This is external CSS.</p>
+</body>
+</html>
+            </pre>
+
+            <b>style.css file:</b>
+            <pre>
+h1 {
+    color: green;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+            </pre>
+        </div>
+
+        <p><b>Advantages:</b></p>
+        <ul>
+            <li>One stylesheet can be used by multiple pages.</li>
+            <li>Keeps HTML code clean.</li>
+            <li>Makes website maintenance easier.</li>
+            <li>Browsers can cache external stylesheets.</li>
+        </ul>
+
+        <h3>Difference Between Types of CSS</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Inline CSS</th>
+                <th>Internal CSS</th>
+                <th>External CSS</th>
+            </tr>
+            <tr>
+                <td>Written inside an HTML element.</td>
+                <td>Written inside a style element.</td>
+                <td>Written in a separate .css file.</td>
+            </tr>
+            <tr>
+                <td>Styles one element.</td>
+                <td>Styles one HTML document.</td>
+                <td>Can style multiple pages.</td>
+            </tr>
+            <tr>
+                <td>Uses the style attribute.</td>
+                <td>Uses the style element.</td>
+                <td>Uses the link element.</td>
+            </tr>
+            <tr>
+                <td>Less reusable.</td>
+                <td>Reusable within the same page.</td>
+                <td>Highly reusable.</td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <b>Important:</b> External CSS is generally preferred
+            for multi-page websites because it keeps the design
+            consistent and makes maintenance easier.
+        </div>
+    </section>
+
+    <!-- SECTION 3 -->
+
+    <section class="content-section" id="selectors">
+        <h2>3. CSS Syntax and Selectors</h2>
+
+        <h3>CSS Syntax</h3>
+
+        <p>
+            CSS syntax describes how styling rules are written.
+            A CSS rule contains a selector and a declaration block.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>
+p {
+    color: blue;
+    font-size: 18px;
+}
+            </pre>
+        </div>
+
+        <ul>
+            <li><b>Selector:</b> Selects the HTML element to style.</li>
+            <li><b>Property:</b> Specifies what feature to change.</li>
+            <li><b>Value:</b> Specifies how the property should appear.</li>
+            <li><b>Declaration:</b> A property and its value together.</li>
+        </ul>
+
+        <p>
+            In the example, p is the selector, color and
+            font-size are properties, and blue and 18px
+            are their values.
+        </p>
+
+        <h3>1. Element Selector</h3>
+
+        <p>
+            An element selector selects all HTML elements
+            of a particular type.
+        </p>
+
+        <div class="example">
+            <pre>
+p {
+    color: red;
+}
+            </pre>
+            <p>This rule applies to every paragraph.</p>
+        </div>
+
+        <h3>2. Class Selector</h3>
+
+        <p>
+            A class selector selects elements that have
+            a particular class attribute. It starts with
+            a dot (.) in CSS.
+        </p>
+
+        <div class="example">
+            <pre>
+.note {
+    background-color: yellow;
+    padding: 10px;
+}
+            </pre>
+
+            <b>HTML:</b>
+            <pre>
+<p class="note">This is a note.</p>
+            </pre>
+        </div>
+
+        <h3>3. ID Selector</h3>
+
+        <p>
+            An ID selector selects an element with a particular
+            ID. It starts with a hash (#) symbol.
+        </p>
+
+        <div class="example">
+            <pre>
+#heading {
+    color: blue;
+    text-align: center;
+}
+            </pre>
+
+            <b>HTML:</b>
+            <pre>
+<h1 id="heading">My Website</h1>
+            </pre>
+        </div>
+
+        <h3>4. Universal Selector</h3>
+
+        <p>
+            The universal selector uses an asterisk (*).
+            It selects all elements on the page.
+        </p>
+
+        <div class="example">
+            <pre>
+* {
+    box-sizing: border-box;
+}
+            </pre>
+        </div>
+
+        <h3>5. Grouping Selector</h3>
+
+        <p>
+            A grouping selector applies the same CSS rules
+            to multiple selectors by separating them with commas.
+        </p>
+
+        <div class="example">
+            <pre>
+h1, h2, p {
+    color: green;
+}
+            </pre>
+        </div>
+
+        <h3>6. Descendant Selector</h3>
+
+        <p>
+            A descendant selector selects elements located
+            anywhere inside another specified element.
+        </p>
+
+        <div class="example">
+            <pre>
+nav a {
+    text-decoration: none;
+}
+            </pre>
+            <p>
+                This selects all links inside a navigation
+                element, including links inside nested elements.
+            </p>
+        </div>
+
+        <h3>7. Child Selector</h3>
+
+        <p>
+            A child selector selects only the direct children
+            of a specified element. It uses the greater-than
+            symbol (&gt;).
+        </p>
+
+        <div class="example">
+            <pre>
+ul > li {
+    color: blue;
+}
+            </pre>
+        </div>
+
+        <h3>8. Attribute Selector</h3>
+
+        <p>
+            An attribute selector selects HTML elements
+            based on their attributes or attribute values.
+        </p>
+
+        <div class="example">
+            <pre>
+input[type="email"] {
+    border: 2px solid blue;
+}
+            </pre>
+        </div>
+
+        <h3>9. Pseudo-class Selector</h3>
+
+        <p>
+            A pseudo-class selects an element when it is in
+            a particular state or condition.
+        </p>
+
+        <div class="example">
+            <pre>
+a:hover {
+    color: red;
+}
+
+button:active {
+    background-color: green;
+}
+            </pre>
+        </div>
+
+        <p>Common pseudo-classes include:</p>
+
+        <ul>
+            <li>:hover – When the mouse pointer is over an element.</li>
+            <li>:active – While an element is being activated.</li>
+            <li>:focus – When an element receives keyboard or other focus.</li>
+            <li>:first-child – Selects an element that is the first child of its parent.</li>
+            <li>:last-child – Selects an element that is the last child of its parent.</li>
+        </ul>
+
+        <h3>10. Pseudo-element Selector</h3>
+
+        <p>
+            A pseudo-element styles a specific part of an
+            element rather than selecting the whole element.
+        </p>
+
+        <div class="example">
+            <pre>
+p::first-line {
+    font-weight: bold;
+}
+
+p::first-letter {
+    color: red;
+    font-size: 25px;
+}
+            </pre>
+        </div>
+
+        <h3>Difference Between Pseudo-class and Pseudo-element</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Pseudo-class</th>
+                <th>Pseudo-element</th>
+            </tr>
+            <tr>
+                <td>Selects an element based on its state or condition.</td>
+                <td>Styles a specific part of an element.</td>
+            </tr>
+            <tr>
+                <td>Commonly uses one colon.</td>
+                <td>Commonly uses two colons.</td>
+            </tr>
+            <tr>
+                <td>Example: :hover</td>
+                <td>Example: ::first-line</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- SECTION 4 -->
+
+    <section class="content-section" id="values">
+        <h2>4. CSS Values, Units and Custom Properties</h2>
+
+        <h3>CSS Values</h3>
+
+        <p>
+            A CSS property needs a valid value to work.
+            Values can be colours, numbers, lengths,
+            percentages, keywords or functions.
+        </p>
+
+        <div class="example">
+            <pre>
+h1 {
+    color: blue;
+    font-size: 25px;
+    width: 80%;
+}
+            </pre>
+        </div>
+
+        <h3>CSS Units</h3>
+
+        <p>
+            CSS units are used to specify the size of text,
+            width, height, spacing and other measurements.
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Unit</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>px</td>
+                <td>CSS pixel; a fixed reference unit.</td>
+                <td>font-size: 16px;</td>
+            </tr>
+            <tr>
+                <td>em</td>
+                <td>Relative to the computed font size of the element; for font-size, relative to its parent.</td>
+                <td>padding: 2em;</td>
+            </tr>
+            <tr>
+                <td>rem</td>
+                <td>Relative to the root element's font size.</td>
+                <td>font-size: 1.5rem;</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Relative to a reference determined by the property.</td>
+                <td>width: 80%;</td>
+            </tr>
+            <tr>
+                <td>vw</td>
+                <td>One percent of viewport width.</td>
+                <td>width: 50vw;</td>
+            </tr>
+            <tr>
+                <td>vh</td>
+                <td>One percent of viewport height.</td>
+                <td>height: 50vh;</td>
+            </tr>
+        </table>
+
+        <h3>Fixed and Relative Units</h3>
+
+        <p>
+            Fixed units such as px use a specific CSS measurement.
+            Relative units such as %, em, rem, vw and vh depend
+            on a reference size or the viewport.
+        </p>
+
+        <div class="note">
+            <b>Remember:</b> Relative units are useful when creating
+            flexible layouts and text that adapts to different
+            screen sizes.
+        </div>
+
+        <h3>CSS Custom Properties (CSS Variables)</h3>
+
+        <p>
+            CSS custom properties are reusable values stored
+            in variables. Their names begin with two hyphens
+            and they are accessed using the var() function.
+        </p>
+
+        <p>
+            They help developers reuse colours, spacing,
+            font sizes and other values throughout a website.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>
+:root {
+    --main-color: blue;
+    --space: 20px;
+}
+
+h1 {
+    color: var(--main-color);
+}
+
+p {
+    padding: var(--space);
+}
+            </pre>
+        </div>
+
+        <h3>Advantages of CSS Variables</h3>
+
+        <ul>
+            <li>Reduce repeated values.</li>
+            <li>Make stylesheets easier to maintain.</li>
+            <li>Allow common colours and spacing to be changed in one place.</li>
+            <li>Help maintain a consistent design.</li>
+        </ul>
+    </section>
+
+    <!-- SECTION 5 -->
+
+    <section class="content-section" id="cascade">
+        <h2>5. CSS Cascade and Inheritance</h2>
+
+        <h3>What is the CSS Cascade?</h3>
+
+        <p>
+            The cascade is the process used by browsers to
+            decide which CSS rule should apply when multiple
+            rules target the same element and property.
+        </p>
+
+        <p>
+            The browser considers the origin and importance
+            of rules, selector specificity and source order
+            to determine the final style.
+        </p>
+
+        <h3>CSS Specificity</h3>
+
+        <p>
+            Specificity is the priority given to a selector
+            based on the types of selectors it contains.
+            A more specific selector generally overrides
+            a less specific selector when other cascade
+            conditions are equal.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>
+p {
+    color: black;
+}
+
+.note {
+    color: blue;
+}
+
+#warning {
+    color: red;
+}
+            </pre>
+
+            <p>
+                The ID selector is more specific than the
+                class selector, which is more specific
+                than the element selector.
+            </p>
+        </div>
+
+        <h3>Specificity Order</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Selector Type</th>
+                <th>Example</th>
+                <th>Priority</th>
+            </tr>
+            <tr>
+                <td>Element selector</td>
+                <td>p</td>
+                <td>Lower</td>
+            </tr>
+            <tr>
+                <td>Class selector</td>
+                <td>.note</td>
+                <td>Higher than element</td>
+            </tr>
+            <tr>
+                <td>ID selector</td>
+                <td>#warning</td>
+                <td>Higher than class</td>
+            </tr>
+            <tr>
+                <td>Inline style</td>
+                <td>style="color: red"</td>
+                <td>Usually higher than normal author stylesheet rules</td>
+            </tr>
+        </table>
+
+        <p>
+            The !important declaration can change the normal
+            cascade priority, but it should be used carefully.
+        </p>
+
+        <div class="example">
+            <pre>
+p {
+    color: red !important;
+}
+            </pre>
+        </div>
+
+        <h3>Source Order</h3>
+
+        <p>
+            When two rules have the same cascade priority
+            and specificity, the rule that appears later
+            in the stylesheet usually wins.
+        </p>
+
+        <div class="example">
+            <pre>
+p {
+    color: red;
+}
+
+p {
+    color: blue;
+}
+            </pre>
+            <p>
+                In this example, the paragraph will normally
+                appear blue because the second rule comes later.
+            </p>
+        </div>
+
+        <h3>CSS Inheritance</h3>
+
+        <p>
+            Inheritance means that some CSS properties applied
+            to a parent element can be passed down to its
+            child elements when they do not have their own value.
+        </p>
+
+        <div class="example">
+            <pre>
+body {
+    color: blue;
+    font-family: Arial, sans-serif;
+}
+            </pre>
+            <p>
+                Paragraphs and other text elements can inherit
+                the colour and font family from the body.
+            </p>
+        </div>
+
+        <h3>Inherited and Non-Inherited Properties</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Inherited Properties</th>
+                <th>Usually Non-Inherited Properties</th>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>margin</td>
+            </tr>
+            <tr>
+                <td>font-family</td>
+                <td>padding</td>
+            </tr>
+            <tr>
+                <td>font-size</td>
+                <td>border</td>
+            </tr>
+            <tr>
+                <td>line-height</td>
+                <td>width</td>
+            </tr>
+        </table>
+
+        <h3>Debugging CSS Errors</h3>
+
+        <p>
+            Sometimes CSS rules do not work as expected.
+            Developers can use browser developer tools
+            to inspect elements and find styling problems.
+        </p>
+
+        <ul>
+            <li>Check spelling of property names.</li>
+            <li>Check whether the value is valid.</li>
+            <li>Check opening and closing braces.</li>
+            <li>Check semicolons between declarations.</li>
+            <li>Check whether the correct stylesheet is linked.</li>
+            <li>Check whether another rule overrides the style.</li>
+        </ul>
+
+        <div class="note">
+            <b>Tip:</b> Browsers generally ignore an invalid
+            declaration and continue processing other valid
+            declarations.
+        </div>
+    </section>
+
+    <!-- SECTION 6 -->
+
+    <section class="content-section" id="backgrounds">
+        <h2>6. CSS Colours and Backgrounds</h2>
+
+        <h3>CSS Colours</h3>
+
+        <p>
+            CSS colours are used to change the appearance
+            of text, backgrounds, borders and other elements.
+            CSS supports different colour formats.
+        </p>
+
+        <h3>1. Named Colours</h3>
+
+        <p>
+            CSS provides predefined colour names that can
+            be used directly.
+        </p>
+
+        <div class="example">
+            <pre>
+h1 {
+    color: red;
+}
+
+p {
+    color: blue;
+}
+
+body {
+    background-color: lightyellow;
+}
+            </pre>
+        </div>
+
+        <h3>2. HEX Colours</h3>
+
+        <p>
+            HEX stands for hexadecimal. It represents colours
+            using a hash symbol followed by hexadecimal digits.
+        </p>
+
+        <div class="example">
+            <pre>
+h1 {
+    color: #FF0000;
+}
+
+p {
+    color: #0000FF;
+}
+
+body {
+    background-color: #F0F0F0;
+}
+            </pre>
+        </div>
+
+        <h3>3. RGB Colours</h3>
+
+        <p>
+            RGB stands for Red, Green and Blue. It combines
+            these three colour components to create a colour.
+            Each component normally ranges from 0 to 255.
+        </p>
+
+        <div class="example">
+            <pre>
+h1 {
+    color: rgb(255, 0, 0);
+}
+
+p {
+    color: rgb(0, 0, 255);
+}
+            </pre>
+        </div>
+
+        <h3>4. RGBA Colours</h3>
+
+        <p>
+            RGBA stands for Red, Green, Blue and Alpha.
+            The alpha value controls the transparency
+            of the colour itself.
+        </p>
+
+        <div class="example">
+            <pre>
+div {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+            </pre>
+            <p>
+                An alpha value of 0 is fully transparent,
+                while 1 is fully opaque.
+            </p>
+        </div>
+
+        <h3>5. HSL Colours</h3>
+
+        <p>
+            HSL stands for Hue, Saturation and Lightness.
+            Hue represents the colour angle, saturation
+            represents colour intensity, and lightness
+            represents how light or dark the colour is.
+        </p>
+
+        <div class="example">
+            <pre>
+h1 {
+    color: hsl(0, 100%, 50%);
+}
+            </pre>
+        </div>
+
+        <h3>CSS Colour Formats</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Format</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Named Colour</td>
+                <td>red</td>
+            </tr>
+            <tr>
+                <td>HEX</td>
+                <td>#FF0000</td>
+            </tr>
+            <tr>
+                <td>RGB</td>
+                <td>rgb(255, 0, 0)</td>
+            </tr>
+            <tr>
+                <td>RGBA</td>
+                <td>rgba(255, 0, 0, 0.5)</td>
+            </tr>
+            <tr>
+                <td>HSL</td>
+                <td>hsl(0, 100%, 50%)</td>
+            </tr>
+        </table>
+
+        <h3>Background Properties</h3>
+
+        <p>
+            Background properties control the appearance
+            of the area behind an element's content.
+        </p>
+
+        <h3>1. Background Colour</h3>
+
+        <p>
+            The background-color property sets a solid
+            background colour for an element.
+        </p>
+
+        <div class="example">
+            <pre>
+body {
+    background-color: lightblue;
+}
+            </pre>
+        </div>
+
+        <h3>2. Background Image</h3>
+
+        <p>
+            The background-image property places an image
+            or gradient behind an element's content.
+        </p>
+
+        <div class="example">
+            <pre>
+body {
+    background-image: url("background.jpg");
+}
+            </pre>
+        </div>
+
+        <h3>3. Background Repeat</h3>
+
+        <p>
+            The background-repeat property controls whether
+            a background image repeats.
+        </p>
+
+        <ul>
+            <li>repeat – Repeats in both directions.</li>
+            <li>repeat-x – Repeats horizontally.</li>
+            <li>repeat-y – Repeats vertically.</li>
+            <li>no-repeat – Does not repeat.</li>
+        </ul>
+
+        <div class="example">
+            <pre>
+body {
+    background-image: url("pattern.png");
+    background-repeat: no-repeat;
+}
+            </pre>
+        </div>
+
+        <h3>4. Background Position</h3>
+
+        <p>
+            The background-position property controls
+            where the background image is placed.
+        </p>
+
+        <div class="example">
+            <pre>
+body {
+    background-position: center;
+}
+            </pre>
+        </div>
+
+        <p>Other possible values include:</p>
+        <ul>
+            <li>left top</li>
+            <li>right top</li>
+            <li>center center</li>
+            <li>left bottom</li>
+            <li>right bottom</li>
+        </ul>
+
+        <h3>5. Background Size</h3>
+
+        <p>
+            The background-size property controls the
+            dimensions of a background image.
+        </p>
+
+        <ul>
+            <li><b>cover:</b> Scales the image to cover the entire area, possibly cropping it.</li>
+            <li><b>contain:</b> Scales the image so the whole image fits inside the area.</li>
+            <li><b>auto:</b> Uses the image's natural size or a size based on other dimensions.</li>
+        </ul>
+
+        <div class="example">
+            <pre>
+.banner {
+    background-image: url("banner.jpg");
+    background-size: cover;
+    background-position: center;
+}
+            </pre>
+        </div>
+
+        <h3>6. Background Attachment</h3>
+
+        <p>
+            The background-attachment property controls
+            how a background image behaves while scrolling.
+        </p>
+
+        <ul>
+            <li>scroll – Background scrolls with the element.</li>
+            <li>fixed – Background is fixed relative to the viewport.</li>
+            <li>local – Background scrolls with the element's content.</li>
+        </ul>
+
+        <div class="example">
+            <pre>
+body {
+    background-image: url("background.jpg");
+    background-attachment: fixed;
+}
+            </pre>
+        </div>
+
+        <h3>7. CSS Gradients</h3>
+
+        <p>
+            A gradient creates a smooth transition between
+            two or more colours. Gradients are treated as
+            CSS-generated background images.
+        </p>
+
+        <h3>Linear Gradient</h3>
+
+        <p>
+            A linear gradient changes colours along a straight
+            line in a specified direction.
+        </p>
+
+        <div class="example">
+            <pre>
+.banner {
+    background-image: linear-gradient(
+        to right,
+        blue,
+        green
+    );
+}
+            </pre>
+        </div>
+
+        <h3>Radial Gradient</h3>
+
+        <p>
+            A radial gradient spreads colours outward
+            from a central point.
+        </p>
+
+        <div class="example">
+            <pre>
+.box {
+    background-image: radial-gradient(
+        red,
+        yellow,
+        green
+    );
+}
+            </pre>
+        </div>
+
+        <div class="note">
+            <b>Good Practice:</b> Always choose background
+            and text colours with sufficient contrast so
+            that website content remains readable.
+        </div>
+    </section>
+
+    <!-- SECTION 7 -->
+
+    <section class="content-section" id="text">
+        <h2>7. Text and Font Properties</h2>
+
+        <h3>Introduction</h3>
+
+        <p>
+            CSS text and font properties control how text
+            appears on a webpage. They are used to improve
+            readability and organise information.
+        </p>
+
+        <h3>1. Font Family</h3>
+
+        <p>
+            The font-family property specifies the typeface
+            used for text. It is good practice to provide
+            fallback fonts.
+        </p>
+
+        <div class="example">
+            <pre>
+p {
+    font-family: Arial, sans-serif;
+}
+            </pre>
+        </div>
+
+        <h3>2. Font Size</h3>
+
+        <p>
+            The font-size property controls the size
+            of the text.
+        </p>
+
+        <div class="example">
+            <pre>
+h1 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
+}
+            </pre>
+        </div>
+
+        <h3>3. Font Weight</h3>
+
+        <p>
+            The font-weight property controls how thick
+            or bold the text appears.
+        </p>
+
+        <div class="example">
+            <pre>
+h1 {
+    font-weight: bold;
+}
+
+p {
+    font-weight: normal;
+}
+            </pre>
+        </div>
+
+        <p>
+            Numeric values such as 400 and 700 can also
+            be used when supported by the selected font.
+        </p>
+
+        <h3>4. Text Alignment</h3>
+
+        <p>
+            The text-align property controls the horizontal
+            alignment of text inside an element.
+        </p>
+
+        <div class="example">
+            <pre>
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+            </pre>
+        </div>
+
+        <p>Common values:</p>
+        <ul>
+            <li>left – Aligns text to the left.</li>
+            <li>right – Aligns text to the right.</li>
+            <li>center – Aligns text to the centre.</li>
+            <li>justify – Adjusts spacing so lines align along both edges.</li>
+        </ul>
+
+        <h3>5. Line Height</h3>
+
+        <p>
+            The line-height property controls the vertical
+            space between lines of text.
+        </p>
+
+        <div class="example">
+            <pre>
+p {
+    line-height: 1.6;
+}
+            </pre>
+        </div>
+
+        <h3>6. Text Decoration</h3>
+
+        <p>
+            The text-decoration property adds or removes
+            decorative lines from text.
+        </p>
+
+        <div class="example">
+            <pre>
+h1 {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+}
+            </pre>
+        </div>
+
+        <p>Common values:</p>
+        <ul>
+            <li>underline – Adds a line below text.</li>
+            <li>overline – Adds a line above text.</li>
+            <li>line-through – Adds a line through text.</li>
+            <li>none – Removes text decoration.</li>
+        </ul>
+
+        <h3>7. Text Transform</h3>
+
+        <p>
+            The text-transform property changes the visual
+            letter case of text without changing the original
+            HTML content.
+        </p>
+
+        <div class="example">
+            <pre>
+h1 {
+    text-transform: uppercase;
+}
+
+p {
+    text-transform: capitalize;
+}
+            </pre>
+        </div>
+
+        <p>Common values:</p>
+        <ul>
+            <li>uppercase – Displays all letters in uppercase.</li>
+            <li>lowercase – Displays all letters in lowercase.</li>
+            <li>capitalize – Displays the first letter of each word in uppercase.</li>
+            <li>none – Uses the original text case.</li>
+        </ul>
+
+        <h3>Common Font and Text Properties</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Property</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>font-family</td>
+                <td>Changes the typeface.</td>
+            </tr>
+            <tr>
+                <td>font-size</td>
+                <td>Changes text size.</td>
+            </tr>
+            <tr>
+                <td>font-weight</td>
+                <td>Changes text thickness.</td>
+            </tr>
+            <tr>
+                <td>text-align</td>
+                <td>Controls horizontal alignment.</td>
+            </tr>
+            <tr>
+                <td>line-height</td>
+                <td>Controls vertical spacing between lines.</td>
+            </tr>
+            <tr>
+                <td>text-decoration</td>
+                <td>Adds or removes text decoration.</td>
+            </tr>
+            <tr>
+                <td>text-transform</td>
+                <td>Changes the displayed letter case.</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- SECTION 8 -->
+
+    <section class="content-section" id="boxmodel">
+        <h2>8. CSS Borders and Box Model</h2>
+
+        <h3>CSS Borders</h3>
+
+        <p>
+            Borders are used to create an outline around
+            HTML elements. They can be used around paragraphs,
+            images, buttons and containers.
+        </p>
+
+        <h3>Border Width</h3>
+
+        <p>
+            The border-width property controls the thickness
+            of a border.
+        </p>
+
+        <div class="example">
+            <pre>
+div {
+    border-width: 3px;
+}
+            </pre>
+        </div>
+
+        <h3>Border Style</h3>
+
+        <p>
+            The border-style property specifies the appearance
+            of a border.
+        </p>
+
+        <ul>
+            <li>solid – A continuous line.</li>
+            <li>dotted – A dotted line.</li>
+            <li>dashed – A dashed line.</li>
+            <li>double – Two parallel lines.</li>
+            <li>none – No border.</li>
+        </ul>
+
+        <div class="example">
+            <pre>
+.box1 {
+    border-style: solid;
+}
+
+.box2 {
+    border-style: dashed;
+}
+
+.box3 {
+    border-style: dotted;
+}
+            </pre>
+        </div>
+
+        <h3>Border Colour</h3>
+
+        <p>
+            The border-color property sets the colour
+            of an element's border.
+        </p>
+
+        <div class="example">
+            <pre>
+div {
+    border-color: blue;
+}
+            </pre>
+        </div>
+
+        <h3>Border Shorthand</h3>
+
+        <p>
+            The border shorthand property can set border
+            width, style and colour together.
+        </p>
+
+        <div class="example">
+            <pre>
+div {
+    border: 3px solid blue;
+}
+            </pre>
+        </div>
+
+        <h3>Border Radius</h3>
+
+        <p>
+            The border-radius property creates rounded
+            corners on an element.
+        </p>
+
+        <div class="example">
+            <pre>
+button {
+    border-radius: 10px;
+}
+            </pre>
+        </div>
+
+        <h3>CSS Box Model</h3>
+
+        <p>
+            The CSS box model describes how every HTML
+            element is represented as a rectangular box.
+            It consists of four main parts: content,
+            padding, border and margin.
+        </p>
+
+        <h3>Parts of the Box Model</h3>
+
+        <ol>
+            <li><b>Content:</b> The actual text, image or other information inside the element.</li>
+            <li><b>Padding:</b> The space between the content and the border.</li>
+            <li><b>Border:</b> The line surrounding the padding and content.</li>
+            <li><b>Margin:</b> The outside space separating the element from neighbouring elements.</li>
+        </ol>
+
+        <div class="example">
+            <b>Box Model Example:</b>
+            <pre>
+div {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+}
+            </pre>
+        </div>
+
+        <h3>Content-box</h3>
+
+        <p>
+            The default value of box-sizing is content-box.
+            With content-box, the declared width applies
+            only to the content. Padding and borders are
+            added to the total rendered width.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>
+div {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+    box-sizing: content-box;
+}
+            </pre>
+
+            <p>
+                Total width = 300 + 40 + 10 = 350px.
+                The horizontal margins are added outside this.
+            </p>
+        </div>
+
+        <h3>Border-box</h3>
+
+        <p>
+            With border-box, the declared width includes
+            the content, padding and border. This makes
+            element sizing easier to calculate.
+        </p>
+
+        <div class="example">
+            <pre>
+div {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+            </pre>
+            <p>
+                The total width remains 300px. The content
+                area becomes smaller to make room for padding
+                and borders.
+            </p>
+        </div>
+
+        <h3>Applying Border-box to All Elements</h3>
+
+        <div class="example">
+            <pre>
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+            </pre>
+        </div>
+
+        <h3>Content-box vs. Border-box</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Content-box</th>
+                <th>Border-box</th>
+            </tr>
+            <tr>
+                <td>Width applies to content only.</td>
+                <td>Width includes content, padding and border.</td>
+            </tr>
+            <tr>
+                <td>Padding and border increase the rendered width.</td>
+                <td>Padding and border fit inside the declared width.</td>
+            </tr>
+            <tr>
+                <td>Default CSS box sizing.</td>
+                <td>Often used for predictable layouts.</td>
+            </tr>
+        </table>
+
+        <h3>Margin Collapsing</h3>
+
+        <p>
+            In normal block layout, vertical margins of
+            neighbouring block elements can sometimes
+            collapse into one margin instead of being added
+            together. This behaviour is called margin collapsing.
+        </p>
+
+        <div class="note">
+            <b>Remember:</b> Padding is inside the border,
+            while margin is outside the border.
+        </div>
+    </section>
+
+    <!-- SECTION 9 -->
+
+    <section class="content-section" id="positioning">
+        <h2>9. CSS Positioning</h2>
+
+        <h3>Introduction to Positioning</h3>
+
+        <p>
+            CSS positioning controls how HTML elements are
+            placed on a webpage. The position property
+            determines how an element is positioned.
+        </p>
+
+        <p>
+            CSS provides five commonly used positioning
+            values: static, relative, absolute, fixed and sticky.
+        </p>
+
+        <h3>1. Static Positioning</h3>
+
+        <p>
+            Static is the default position of HTML elements.
+            The element appears in the normal document flow.
+            Top, right, bottom and left offsets do not move
+            a statically positioned element.
+        </p>
+
+        <div class="example">
+            <pre>
+div {
+    position: static;
+}
+            </pre>
+        </div>
+
+        <h3>2. Relative Positioning</h3>
+
+        <p>
+            Relative positioning moves an element from its
+            original position. Its original space remains
+            reserved in the document flow.
+        </p>
+
+        <div class="example">
+            <pre>
+div {
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+            </pre>
+        </div>
+
+        <h3>3. Absolute Positioning</h3>
+
+        <p>
+            Absolute positioning removes an element from
+            normal document flow. It is positioned relative
+            to its nearest positioned ancestor. If no such
+            ancestor exists, its containing block is usually
+            the initial containing block.
+        </p>
+
+        <div class="example">
+            <pre>
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+            </pre>
+        </div>
+
+        <h3>4. Fixed Positioning</h3>
+
+        <p>
+            Fixed positioning places an element relative
+            to the viewport. It usually stays in the same
+            position even when the page is scrolled.
+        </p>
+
+        <div class="example">
+            <pre>
+button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+            </pre>
+        </div>
+
+        <h3>5. Sticky Positioning</h3>
+
+        <p>
+            Sticky positioning behaves like relative
+            positioning until a specified scrolling
+            threshold is reached. It then sticks within
+            its scrolling container.
+        </p>
+
+        <div class="example">
+            <pre>
+h2 {
+    position: sticky;
+    top: 0;
+}
+            </pre>
+        </div>
+
+        <h3>Positioning Properties</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Property</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>top</td>
+                <td>Sets the distance from the top edge of the containing reference.</td>
+            </tr>
+            <tr>
+                <td>right</td>
+                <td>Sets the distance from the right edge.</td>
+            </tr>
+            <tr>
+                <td>bottom</td>
+                <td>Sets the distance from the bottom edge.</td>
+            </tr>
+            <tr>
+                <td>left</td>
+                <td>Sets the distance from the left edge.</td>
+            </tr>
+            <tr>
+                <td>z-index</td>
+                <td>Controls stacking order within the relevant stacking context.</td>
+            </tr>
+        </table>
+
+        <h3>Difference Between Position Values</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Position</th>
+                <th>Behaviour</th>
+            </tr>
+            <tr>
+                <td>Static</td>
+                <td>Default position in normal flow.</td>
+            </tr>
+            <tr>
+                <td>Relative</td>
+                <td>Moves from its original position and keeps its space.</td>
+            </tr>
+            <tr>
+                <td>Absolute</td>
+                <td>Leaves normal flow and uses a positioned containing block.</td>
+            </tr>
+            <tr>
+                <td>Fixed</td>
+                <td>Usually stays positioned relative to the viewport.</td>
+            </tr>
+            <tr>
+                <td>Sticky</td>
+                <td>Moves normally until a scroll threshold is reached.</td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <b>Important:</b> A common use of relative positioning
+            is to create a reference box for an absolutely
+            positioned child element.
+        </div>
+    </section>
+
+    <!-- SECTION 10 -->
+
+    <section class="content-section" id="modern">
+        <h2>10. CSS3 and Modern CSS Features</h2>
+
+        <h3>What is CSS3?</h3>
+
+        <p>
+            CSS3 is a commonly used classroom term for modern
+            CSS features introduced through different CSS
+            modules. Modern CSS is developed as separate
+            specifications such as Selectors, Grid, Colours
+            and Media Queries.
+        </p>
+
+        <p>
+            CSS helps developers create attractive, flexible,
+            responsive and interactive website layouts.
+        </p>
+
+        <h3>Normal Document Flow</h3>
+
+        <p>
+            Normal document flow is the default arrangement
+            of elements on a webpage. Block elements generally
+            appear one below another, while inline elements
+            appear within the same line when space is available.
+        </p>
+
+        <div class="example">
+            <pre>
+<div>First Box</div>
+<div>Second Box</div>
+<p>Third Element</p>
+            </pre>
+        </div>
+
+        <h3>Flexbox</h3>
+
+        <p>
+            Flexbox, also called Flexible Box Layout, is a
+            CSS layout system used to arrange elements in
+            a row or column. It is useful for navigation
+            menus, buttons and groups of items.
+        </p>
+
+        <p>
+            Flexbox makes it easier to align and distribute
+            space between elements.
+        </p>
+
+        <h3>Important Flexbox Properties</h3>
+
+        <ul>
+            <li><b>display: flex:</b> Creates a flex container.</li>
+            <li><b>flex-direction:</b> Sets the main direction of items.</li>
+            <li><b>justify-content:</b> Controls distribution along the main axis.</li>
+            <li><b>align-items:</b> Aligns items along the cross axis.</li>
+            <li><b>flex-wrap:</b> Allows items to move onto another line.</li>
+            <li><b>gap:</b> Sets spacing between items.</li>
+        </ul>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+            </pre>
+        </div>
+
+        <h3>CSS Grid</h3>
+
+        <p>
+            CSS Grid is a two-dimensional layout system.
+            It allows developers to arrange elements in
+            rows and columns.
+        </p>
+
+        <p>
+            Grid is useful for creating card layouts,
+            galleries and complete website structures.
+        </p>
+
+        <h3>Important Grid Properties</h3>
+
+        <ul>
+            <li><b>display: grid:</b> Creates a grid container.</li>
+            <li><b>grid-template-columns:</b> Defines the columns.</li>
+            <li><b>grid-template-rows:</b> Defines the rows.</li>
+            <li><b>gap:</b> Sets spacing between grid items.</li>
+            <li><b>grid-column:</b> Controls how an item spans columns.</li>
+            <li><b>grid-row:</b> Controls how an item spans rows.</li>
+        </ul>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+            </pre>
+        </div>
+
+        <h3>Flexbox vs. Grid</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Flexbox</th>
+                <th>CSS Grid</th>
+            </tr>
+            <tr>
+                <td>Mainly one-dimensional layout.</td>
+                <td>Two-dimensional layout.</td>
+            </tr>
+            <tr>
+                <td>Arranges items in a row or column.</td>
+                <td>Arranges items in rows and columns.</td>
+            </tr>
+            <tr>
+                <td>Useful for navigation bars and aligned items.</td>
+                <td>Useful for page layouts and card grids.</td>
+            </tr>
+        </table>
+
+        <h3>Rounded Corners</h3>
+
+        <p>
+            The border-radius property is used to create
+            rounded corners on elements.
+        </p>
+
+        <div class="example">
+            <pre>
+.box {
+    border: 2px solid blue;
+    border-radius: 12px;
+}
+            </pre>
+        </div>
+
+        <h3>Box Shadow</h3>
+
+        <p>
+            The box-shadow property adds a shadow effect
+            around an element. It can create depth and
+            visual separation.
+        </p>
+
+        <div class="example">
+            <pre>
+.card {
+    box-shadow: 0 4px 10px gray;
+}
+            </pre>
+        </div>
+
+        <h3>Linear Gradient</h3>
+
+        <p>
+            A linear gradient creates a smooth colour
+            transition along a straight line.
+        </p>
+
+        <div class="example">
+            <pre>
+.box {
+    background: linear-gradient(
+        to right,
+        blue,
+        green
+    );
+}
+            </pre>
+        </div>
+
+        <h3>CSS Transform</h3>
+
+        <p>
+            The transform property changes the position,
+            size, rotation or shape of an element without
+            changing the normal document flow.
+        </p>
+
+        <p>Common transform functions include:</p>
+
+        <ul>
+            <li>translate() – Moves an element.</li>
+            <li>rotate() – Rotates an element.</li>
+            <li>scale() – Changes the size of an element.</li>
+            <li>skew() – Slants an element.</li>
+        </ul>
+
+        <div class="example">
+            <pre>
+.box:hover {
+    transform: scale(1.1);
+}
+            </pre>
+        </div>
+
+        <h3>CSS Transition</h3>
+
+        <p>
+            The transition property creates a smooth change
+            between the old and new values of a CSS property.
+            It is commonly used with hover effects.
+        </p>
+
+        <div class="example">
+            <pre>
+button {
+    background-color: blue;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: green;
+}
+            </pre>
+        </div>
+
+        <h3>CSS Media Queries</h3>
+
+        <p>
+            Media queries allow CSS rules to be applied
+            only when certain conditions are true, such
+            as the width of the browser window.
+        </p>
+
+        <p>
+            They are an important part of responsive
+            web design.
+        </p>
+
+        <div class="example">
+            <b>Example:</b>
+            <pre>
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+            </pre>
+        </div>
+
+        <h3>Responsive Layouts</h3>
+
+        <p>
+            A responsive layout adjusts to different screen
+            sizes such as mobile phones, tablets and desktops.
+            It uses flexible widths, layout systems and
+            media queries.
+        </p>
+
+        <h3>Using CSS Grid for Responsive Layout</h3>
+
+        <div class="example">
+            <pre>
+.feature-list {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+}
+            </pre>
+        </div>
+
+        <p>
+            The auto-fit and minmax() functions help the grid
+            adapt its columns according to the available space.
+        </p>
+
+        <h3>Reduced Motion Preference</h3>
+
+        <p>
+            Some users prefer less animation and movement
+            on websites. CSS provides the prefers-reduced-motion
+            media feature to respect this preference.
+        </p>
+
+        <div class="example">
+            <pre>
+@media (prefers-reduced-motion: reduce) {
+    .box {
+        transition: none;
+        transform: none;
+    }
+}
+            </pre>
+        </div>
+
+        <h3>Choosing the Right Layout Method</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Layout Method</th>
+                <th>Best Use</th>
+            </tr>
+            <tr>
+                <td>Normal Flow</td>
+                <td>Regular paragraphs and block content.</td>
+            </tr>
+            <tr>
+                <td>Flexbox</td>
+                <td>Navigation bars, rows and columns of aligned items.</td>
+            </tr>
+            <tr>
+                <td>Grid</td>
+                <td>Layouts requiring rows and columns together.</td>
+            </tr>
+            <tr>
+                <td>Media Queries</td>
+                <td>Changing layouts for different screen conditions.</td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <b>Important:</b> Flexbox and Grid can be used
+            together. Choose the layout method according
+            to the structure of the content.
+        </div>
+    </section>
+
+    <!-- SECTION 11 -->
+
+    <section class="content-section" id="summary">
+        <h2>11. Unit Summary</h2>
+
+        <p>
+            In this unit, we studied Cascading Style Sheets
+            and how CSS controls the appearance of HTML
+            documents. We learned about different types
+            of CSS, selectors, values, units, colours,
+            backgrounds, text properties, borders, the
+            box model, positioning and modern CSS layouts.
+        </p>
+
+        <h3>Important Points to Remember</h3>
+
+        <ul>
+            <li>CSS stands for Cascading Style Sheets.</li>
+            <li>HTML provides structure, while CSS controls presentation.</li>
+            <li>CSS can be added using inline, internal and external methods.</li>
+            <li>Selectors choose which HTML elements should be styled.</li>
+            <li>CSS properties are assigned values to control appearance.</li>
+            <li>CSS units include px, em, rem, %, vw and vh.</li>
+            <li>The cascade determines which CSS rule takes effect.</li>
+            <li>Some properties are inherited from parent elements.</li>
+            <li>CSS supports named colours, HEX, RGB, RGBA and HSL.</li>
+            <li>The box model consists of content, padding, border and margin.</li>
+            <li>Positioning controls how elements are placed on a page.</li>
+            <li>Flexbox is mainly one-dimensional, while Grid is two-dimensional.</li>
+            <li>Media queries help create responsive layouts.</li>
+            <li>Transitions and transforms create visual effects and movement.</li>
+        </ul>
+
+        <h3>Practice Questions</h3>
+
+        <ol>
+            <li>What is CSS? Explain why CSS is needed.</li>
+            <li>Explain the advantages of CSS.</li>
+            <li>Describe inline, internal and external CSS with examples.</li>
+            <li>Explain CSS syntax with an example.</li>
+            <li>What are CSS selectors? Explain their different types.</li>
+            <li>Differentiate between class and ID selectors.</li>
+            <li>Explain pseudo-classes and pseudo-elements.</li>
+            <li>Explain CSS units with suitable examples.</li>
+            <li>What are CSS custom properties?</li>
+            <li>Explain the CSS cascade and specificity.</li>
+            <li>What is inheritance in CSS?</li>
+            <li>Explain different CSS colour formats.</li>
+            <li>Describe the different background properties.</li>
+            <li>Explain font and text properties in CSS.</li>
+            <li>What is the CSS box model? Explain its four parts.</li>
+            <li>Differentiate between content-box and border-box.</li>
+            <li>Explain the five types of CSS positioning.</li>
+            <li>What is Flexbox? Explain its important properties.</li>
+            <li>What is CSS Grid? How is it different from Flexbox?</li>
+            <li>Explain CSS transforms and transitions with examples.</li>
+            <li>What are media queries? Explain their role in responsive design.</li>
+        </ol>
+
+        <div class="note">
+            <b>Next Unit:</b> Unit 4 – JavaScript and jQuery.
+        </div>
+    </section>
+
+    <div class="unit-footer">
+        <p>Web Technologies | Unit 3 – Cascading Style Sheets</p>
+    </div>
+
+</main>
+
+<footer>
+    <p>Web Technologies Study Material</p>
+</footer>
+
+<footer>
+    <p>Created by <strong>Shrey Savargaonkar</strong></p>
+    <p>Web Technologies Study Material</p>
+</footer>
+
+</body>
+</html>

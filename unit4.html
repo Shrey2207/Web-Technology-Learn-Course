@@ -1,0 +1,2275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4 - JavaScript and jQuery | Web Technologies</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .unit-content {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .unit-heading {
+            color: #173b57;
+            border-bottom: 3px solid #287a78;
+            padding-bottom: 12px;
+        }
+
+        .topic-list {
+            background: #f3f7f7;
+            border-left: 5px solid #287a78;
+            padding: 20px 30px;
+            border-radius: 6px;
+            margin: 25px 0;
+        }
+
+        .topic-list h2 {
+            color: #173b57;
+        }
+
+        .topic-list ol {
+            line-height: 2;
+        }
+
+        .topic-list a {
+            color: #245e68;
+            text-decoration: none;
+        }
+
+        .topic-list a:hover {
+            text-decoration: underline;
+        }
+
+        .content-section {
+            padding: 20px 0;
+            border-bottom: 1px solid #dddddd;
+            scroll-margin-top: 20px;
+        }
+
+        .content-section h2 {
+            color: #173b57;
+        }
+
+        .content-section h3 {
+            color: #287a78;
+            margin-top: 22px;
+        }
+
+        .example {
+            background: #f4f6f8;
+            border-left: 4px solid #287a78;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .example pre {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            margin: 0;
+        }
+
+        .note {
+            background: #fff8e8;
+            border-left: 4px solid #d5a441;
+            padding: 14px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison th,
+        .comparison td {
+            border: 1px solid #d5dddd;
+            padding: 11px;
+            text-align: left;
+        }
+
+        .comparison th {
+            background: #eaf1f2;
+            color: #173b57;
+        }
+
+        .unit-footer {
+            background: #f3f7f7;
+            padding: 20px;
+            border-radius: 7px;
+            margin-top: 25px;
+        }
+
+        .unit-content li {
+            margin-bottom: 7px;
+        }
+
+        .unit-content code {
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 650px) {
+            .unit-content {
+                padding: 15px;
+            }
+
+            .comparison {
+                font-size: 14px;
+            }
+
+            .comparison th,
+            .comparison td {
+                padding: 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Web Technologies</h1>
+    <p>Complete Study Material</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="unit1.html">Unit 1</a>
+    <a href="unit2.html">Unit 2</a>
+    <a href="unit3.html">Unit 3</a>
+    <a href="unit4.html">Unit 4</a>
+    <a href="unit5.html">Unit 5</a>
+    <a href="unit6.html">Unit 6</a>
+</nav>
+
+<main class="unit-content">
+
+    <h1 class="unit-heading">Unit 4: JavaScript and jQuery</h1>
+
+    <p>
+        JavaScript and jQuery are important technologies used to make websites
+        interactive and dynamic. This unit explains JavaScript fundamentals,
+        objects, DOM manipulation, form validation, events, DHTML, AJAX
+        and the basics of jQuery.
+    </p>
+
+    <!-- TOPIC LIST -->
+
+    <div class="topic-list">
+        <h2>Topics Covered in This Unit</h2>
+
+        <ol>
+            <li><a href="#topic1">Introduction to Client-Side Scripting with JavaScript</a></li>
+            <li><a href="#topic2">JavaScript Variables and Data Types</a></li>
+            <li><a href="#topic3">Operators, Conditions and Loops</a></li>
+            <li><a href="#topic4">Functions and Popup Boxes</a></li>
+            <li><a href="#topic5">JavaScript Objects and the DOM</a></li>
+            <li><a href="#topic6">Forms and Form Validation</a></li>
+            <li><a href="#topic7">Dynamic HTML (DHTML)</a></li>
+            <li><a href="#topic8">JavaScript Events and Buttons</a></li>
+            <li><a href="#topic9">AJAX and Asynchronous Web Applications</a></li>
+            <li><a href="#topic10">Introduction to jQuery</a></li>
+            <li><a href="#topic11">JavaScript Debugging and Practical Applications</a></li>
+            <li><a href="#topic12">Unit Summary and Practice Questions</a></li>
+        </ol>
+    </div>
+
+
+    <!-- TOPIC 1 -->
+
+    <section class="content-section" id="topic1">
+
+        <h2>1. Introduction to Client-Side Scripting with JavaScript</h2>
+
+        <h3>What is JavaScript?</h3>
+
+        <p>
+            JavaScript is a high-level, dynamic programming language mainly
+            used to make web pages interactive. It allows developers to
+            respond to user actions, perform calculations, validate forms,
+            change page content and communicate with servers.
+        </p>
+
+        <p>
+            JavaScript runs in modern web browsers and is one of the three
+            main technologies of web development.
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Technology</th>
+                <th>Main Purpose</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>Provides structure and content to a web page.</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Controls the appearance and design of a web page.</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Adds behaviour and interactivity to a web page.</td>
+            </tr>
+        </table>
+
+        <h3>Why is JavaScript Used?</h3>
+
+        <ul>
+            <li>To make web pages interactive.</li>
+            <li>To validate user input in forms.</li>
+            <li>To perform calculations.</li>
+            <li>To display messages and notifications.</li>
+            <li>To change HTML content dynamically.</li>
+            <li>To respond to mouse clicks and keyboard actions.</li>
+            <li>To communicate with servers and retrieve data.</li>
+        </ul>
+
+        <h3>Client-Side Scripting</h3>
+
+        <p>
+            Client-side scripting means that the script runs on the user's
+            device, generally inside the web browser. JavaScript is commonly
+            used for client-side scripting.
+        </p>
+
+        <p>
+            For example, when a student enters details in a registration
+            form, JavaScript can check whether the required fields are
+            filled before the form is submitted.
+        </p>
+
+        <h3>Basic JavaScript Example</h3>
+
+        <div class="example">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;My First JavaScript Program&lt;/h2&gt;
+
+&lt;script&gt;
+    document.write("Welcome to JavaScript!");
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        </div>
+
+        <p>
+            The <code>script</code> element is used to write JavaScript
+            code inside an HTML document. The
+            <code>document.write()</code> method writes content into
+            the document.
+        </p>
+
+        <h3>Ways to Add JavaScript to HTML</h3>
+
+        <ol>
+            <li>
+                <b>Inline JavaScript:</b> JavaScript is written directly
+                inside an HTML element's event attribute.
+            </li>
+            <li>
+                <b>Internal JavaScript:</b> JavaScript is written inside
+                the <code>script</code> element in the HTML file.
+            </li>
+            <li>
+                <b>External JavaScript:</b> JavaScript is written in a
+                separate <code>.js</code> file and connected using
+                the <code>src</code> attribute.
+            </li>
+        </ol>
+
+        <div class="example">
+<pre>
+&lt;!-- Inline JavaScript --&gt;
+&lt;button onclick="alert('Hello!')"&gt;
+    Click Me
+&lt;/button&gt;
+
+&lt;!-- Internal JavaScript --&gt;
+&lt;script&gt;
+    alert("Welcome!");
+&lt;/script&gt;
+
+&lt;!-- External JavaScript --&gt;
+&lt;script src="script.js" defer&gt;&lt;/script&gt;
+</pre>
+        </div>
+
+        <p>
+            The <code>defer</code> attribute makes an external script
+            execute after the HTML document has been parsed.
+        </p>
+
+    </section>
+
+
+    <!-- TOPIC 2 -->
+
+    <section class="content-section" id="topic2">
+
+        <h2>2. JavaScript Variables and Data Types</h2>
+
+        <h3>What are Variables?</h3>
+
+        <p>
+            A variable is a named container used to store data.
+            JavaScript variables can store information such as names,
+            numbers, marks, results and other values.
+        </p>
+
+        <h3>Declaring Variables</h3>
+
+        <p>JavaScript provides three commonly known declaration keywords:</p>
+
+        <table class="comparison">
+            <tr>
+                <th>Keyword</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>var</td>
+                <td>Older way of declaring variables. It has function scope.</td>
+            </tr>
+            <tr>
+                <td>let</td>
+                <td>Used when a variable's value may change.</td>
+            </tr>
+            <tr>
+                <td>const</td>
+                <td>Used when a variable should not be reassigned.</td>
+            </tr>
+        </table>
+
+        <div class="example">
+<pre>
+let name = "Shrey";
+let marks = 85;
+
+const college = "ITM SLS";
+
+console.log(name);
+console.log(marks);
+console.log(college);
+</pre>
+        </div>
+
+        <h3>Rules for Naming Variables</h3>
+
+        <ul>
+            <li>A variable name can contain letters, numbers, underscore and dollar signs.</li>
+            <li>A variable name cannot begin with a number.</li>
+            <li>Spaces are not allowed in variable names.</li>
+            <li>JavaScript variable names are case-sensitive.</li>
+            <li>Reserved keywords cannot be used as variable names.</li>
+        </ul>
+
+        <h3>JavaScript Data Types</h3>
+
+        <p>
+            A data type describes the kind of value stored in a variable.
+            JavaScript is dynamically typed, which means a variable can
+            hold values of different types during program execution.
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Data Type</th>
+                <th>Example</th>
+                <th>Meaning</th>
+            </tr>
+            <tr>
+                <td>String</td>
+                <td>"Hello"</td>
+                <td>Stores text.</td>
+            </tr>
+            <tr>
+                <td>Number</td>
+                <td>25, 10.5</td>
+                <td>Stores numeric values.</td>
+            </tr>
+            <tr>
+                <td>BigInt</td>
+                <td>123456789n</td>
+                <td>Stores very large integers.</td>
+            </tr>
+            <tr>
+                <td>Boolean</td>
+                <td>true, false</td>
+                <td>Stores true or false values.</td>
+            </tr>
+            <tr>
+                <td>Undefined</td>
+                <td>undefined</td>
+                <td>A declared variable without an assigned value.</td>
+            </tr>
+            <tr>
+                <td>Null</td>
+                <td>null</td>
+                <td>Represents an intentional absence of value.</td>
+            </tr>
+            <tr>
+                <td>Symbol</td>
+                <td>Symbol("id")</td>
+                <td>Creates a unique value.</td>
+            </tr>
+            <tr>
+                <td>Object</td>
+                <td>{ name: "Asha" }</td>
+                <td>Stores related properties and values.</td>
+            </tr>
+        </table>
+
+        <h3>Example of Different Data Types</h3>
+
+        <div class="example">
+<pre>
+const studentName = "Asha";
+const marks = 85;
+const isPass = true;
+
+let course;
+
+const result = null;
+
+const subjects = ["HTML", "CSS", "JavaScript"];
+
+const student = {
+    name: "Asha",
+    marks: 85
+};
+
+console.log(typeof studentName);
+console.log(typeof marks);
+console.log(typeof isPass);
+console.log(typeof course);
+</pre>
+        </div>
+
+        <h3>Using typeof Operator</h3>
+
+        <p>
+            The <code>typeof</code> operator is used to find the type of
+            a value or variable.
+        </p>
+
+        <div class="example">
+<pre>
+let age = 20;
+let name = "Asha";
+
+console.log(typeof age);
+console.log(typeof name);
+</pre>
+        </div>
+
+        <p><b>Output:</b></p>
+
+        <div class="example">
+<pre>
+number
+string
+</pre>
+        </div>
+
+        <div class="note">
+            <b>Important:</b> JavaScript returns "object" for
+            <code>typeof null</code> because of a historical behaviour.
+            Arrays also return "object". Use
+            <code>Array.isArray()</code> to identify an array.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 3 -->
+
+    <section class="content-section" id="topic3">
+
+        <h2>3. Operators, Conditions and Loops</h2>
+
+        <h3>JavaScript Operators</h3>
+
+        <p>
+            Operators are symbols used to perform operations on values
+            and variables.
+        </p>
+
+        <h3>A. Arithmetic Operators</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Operator</th>
+                <th>Operation</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Addition</td>
+                <td>10 + 5 = 15</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Subtraction</td>
+                <td>10 - 5 = 5</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Multiplication</td>
+                <td>10 * 5 = 50</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Division</td>
+                <td>10 / 5 = 2</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Modulus (remainder)</td>
+                <td>10 % 3 = 1</td>
+            </tr>
+            <tr>
+                <td>**</td>
+                <td>Exponentiation</td>
+                <td>2 ** 3 = 8</td>
+            </tr>
+        </table>
+
+        <h3>B. Assignment Operators</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Operator</th>
+                <th>Example</th>
+                <th>Meaning</th>
+            </tr>
+            <tr>
+                <td>=</td>
+                <td>x = 10</td>
+                <td>Assigns a value.</td>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>x += 5</td>
+                <td>Adds and assigns.</td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>x -= 5</td>
+                <td>Subtracts and assigns.</td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>x *= 2</td>
+                <td>Multiplies and assigns.</td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>x /= 2</td>
+                <td>Divides and assigns.</td>
+            </tr>
+        </table>
+
+        <h3>C. Comparison Operators</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Operator</th>
+                <th>Meaning</th>
+            </tr>
+            <tr><td>==</td><td>Equal value after type conversion.</td></tr>
+            <tr><td>===</td><td>Equal value and equal type.</td></tr>
+            <tr><td>!=</td><td>Not equal after type conversion.</td></tr>
+            <tr><td>!==</td><td>Not equal value or type.</td></tr>
+            <tr><td>&gt;</td><td>Greater than.</td></tr>
+            <tr><td>&lt;</td><td>Less than.</td></tr>
+            <tr><td>&gt;=</td><td>Greater than or equal to.</td></tr>
+            <tr><td>&lt;=</td><td>Less than or equal to.</td></tr>
+        </table>
+
+        <h3>D. Logical Operators</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Operator</th>
+                <th>Name</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>&amp;&amp;</td>
+                <td>AND</td>
+                <td>True when both conditions are true.</td>
+            </tr>
+            <tr>
+                <td>||</td>
+                <td>OR</td>
+                <td>True when at least one condition is true.</td>
+            </tr>
+            <tr>
+                <td>!</td>
+                <td>NOT</td>
+                <td>Reverses a Boolean value.</td>
+            </tr>
+        </table>
+
+        <h3>Conditional Statements</h3>
+
+        <p>
+            Conditional statements are used to make decisions in a program.
+            They execute different blocks of code depending on whether
+            a condition is true or false.
+        </p>
+
+        <h3>A. if Statement</h3>
+
+        <p>Executes code when a condition is true.</p>
+
+        <div class="example">
+<pre>
+let age = 20;
+
+if (age >= 18) {
+    console.log("Eligible to vote");
+}
+</pre>
+        </div>
+
+        <h3>B. if-else Statement</h3>
+
+        <p>Executes one block if the condition is true and another if it is false.</p>
+
+        <div class="example">
+<pre>
+let marks = 75;
+
+if (marks >= 40) {
+    console.log("Pass");
+} else {
+    console.log("Fail");
+}
+</pre>
+        </div>
+
+        <h3>C. else-if Statement</h3>
+
+        <p>Checks multiple conditions one after another.</p>
+
+        <div class="example">
+<pre>
+let marks = 85;
+
+if (marks >= 90) {
+    console.log("Grade A+");
+} else if (marks >= 75) {
+    console.log("Grade A");
+} else if (marks >= 40) {
+    console.log("Pass");
+} else {
+    console.log("Fail");
+}
+</pre>
+        </div>
+
+        <h3>D. Ternary Operator</h3>
+
+        <p>
+            The ternary operator is a short way to write a simple
+            if-else condition.
+        </p>
+
+        <div class="example">
+<pre>
+let age = 20;
+
+let result = (age >= 18) ? "Adult" : "Minor";
+
+console.log(result);
+</pre>
+        </div>
+
+        <h3>Loops in JavaScript</h3>
+
+        <p>
+            Loops are used to execute a block of code repeatedly
+            until a specified condition is met.
+        </p>
+
+        <h3>A. for Loop</h3>
+
+        <p>
+            A for loop is generally used when the number of repetitions
+            is known.
+        </p>
+
+        <div class="example">
+<pre>
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+</pre>
+        </div>
+
+        <p><b>Output:</b> 1 2 3 4 5</p>
+
+        <h3>B. while Loop</h3>
+
+        <p>
+            A while loop repeats as long as its condition remains true.
+        </p>
+
+        <div class="example">
+<pre>
+let i = 1;
+
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+</pre>
+        </div>
+
+        <h3>C. for...of Loop</h3>
+
+        <p>
+            The for...of loop is used to access values from iterable
+            objects such as arrays.
+        </p>
+
+        <div class="example">
+<pre>
+const subjects = ["HTML", "CSS", "JavaScript"];
+
+for (const subject of subjects) {
+    console.log(subject);
+}
+</pre>
+        </div>
+
+        <h3>Example of Counting Items in an Array</h3>
+
+        <div class="example">
+<pre>
+const subjects = ["HTML", "CSS", "JavaScript", "PHP"];
+
+let total = 0;
+
+for (const subject of subjects) {
+    total++;
+}
+
+console.log("Total subjects = " + total);
+</pre>
+        </div>
+
+        <p><b>Output:</b> Total subjects = 4</p>
+
+    </section>
+
+
+    <!-- TOPIC 4 -->
+
+    <section class="content-section" id="topic4">
+
+        <h2>4. Functions and Popup Boxes</h2>
+
+        <h3>What are Functions?</h3>
+
+        <p>
+            A function is a reusable block of code designed to perform
+            a particular task. Functions help reduce repetition and make
+            programs easier to understand and maintain.
+        </p>
+
+        <h3>Function Syntax</h3>
+
+        <div class="example">
+<pre>
+function functionName() {
+    // Statements
+}
+</pre>
+        </div>
+
+        <h3>Example of a Simple Function</h3>
+
+        <div class="example">
+<pre>
+function greet() {
+    console.log("Welcome to JavaScript!");
+}
+
+greet();
+</pre>
+        </div>
+
+        <p><b>Output:</b> Welcome to JavaScript!</p>
+
+        <h3>Function Parameters and Arguments</h3>
+
+        <p>
+            Parameters are variables written in a function definition.
+            Arguments are the actual values passed when calling the function.
+        </p>
+
+        <div class="example">
+<pre>
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+greet("Shrey");
+</pre>
+        </div>
+
+        <p><b>Output:</b> Hello Shrey</p>
+
+        <h3>Return Statement</h3>
+
+        <p>
+            The return statement sends a result back from a function.
+            The returned value can be stored in a variable or used
+            in another expression.
+        </p>
+
+        <div class="example">
+<pre>
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(10, 20);
+
+console.log(result);
+</pre>
+        </div>
+
+        <p><b>Output:</b> 30</p>
+
+        <h3>Function to Calculate Total Price</h3>
+
+        <div class="example">
+<pre>
+function calculateTotal(price, quantity) {
+    return price * quantity;
+}
+
+let bill = calculateTotal(120, 3);
+
+console.log(bill);
+</pre>
+        </div>
+
+        <p><b>Output:</b> 360</p>
+
+        <h3>JavaScript Popup Boxes</h3>
+
+        <p>
+            JavaScript provides built-in popup methods that allow a
+            website to display messages, ask for confirmation or
+            receive a short text response.
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Method</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>alert()</td>
+                <td>Displays a message with an OK button.</td>
+            </tr>
+            <tr>
+                <td>confirm()</td>
+                <td>Displays OK and Cancel options.</td>
+            </tr>
+            <tr>
+                <td>prompt()</td>
+                <td>Asks the user to enter a value.</td>
+            </tr>
+        </table>
+
+        <h3>A. alert() Method</h3>
+
+        <div class="example">
+<pre>
+alert("Welcome to Web Technologies!");
+</pre>
+        </div>
+
+        <h3>B. confirm() Method</h3>
+
+        <div class="example">
+<pre>
+let answer = confirm("Do you want to continue?");
+
+if (answer) {
+    console.log("You clicked OK");
+} else {
+    console.log("You clicked Cancel");
+}
+</pre>
+        </div>
+
+        <h3>C. prompt() Method</h3>
+
+        <div class="example">
+<pre>
+let name = prompt("Enter your name:");
+
+console.log("Hello " + name);
+</pre>
+        </div>
+
+        <div class="note">
+            <b>Note:</b> Popup boxes are useful for simple examples and
+            demonstrations. Professional websites generally use their
+            own designed messages and forms for a better user experience.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 5 -->
+
+    <section class="content-section" id="topic5">
+
+        <h2>5. JavaScript Objects and the DOM</h2>
+
+        <h3>What are JavaScript Objects?</h3>
+
+        <p>
+            An object is a collection of related data stored in the form
+            of properties and methods. Properties describe an object,
+            while methods define actions that the object can perform.
+        </p>
+
+        <h3>Example of an Object</h3>
+
+        <div class="example">
+<pre>
+const student = {
+    name: "Asha",
+    rollNo: 101,
+    department: "Computer Science",
+
+    displayInfo: function() {
+        return this.name + " - " + this.department;
+    }
+};
+
+console.log(student.name);
+console.log(student.rollNo);
+console.log(student.displayInfo());
+</pre>
+        </div>
+
+        <p>
+            In this example, name, rollNo and department are properties.
+            The displayInfo() function is a method.
+        </p>
+
+        <h3>Accessing Object Properties</h3>
+
+        <p>Object properties can be accessed in two common ways:</p>
+
+        <div class="example">
+<pre>
+const student = {
+    name: "Asha",
+    age: 20
+};
+
+// Dot notation
+console.log(student.name);
+
+// Bracket notation
+console.log(student["age"]);
+</pre>
+        </div>
+
+        <h3>What is DOM?</h3>
+
+        <p>
+            DOM stands for Document Object Model. It is a programming
+            interface that represents an HTML document as a tree of
+            objects called nodes.
+        </p>
+
+        <p>
+            JavaScript uses the DOM to access, change, add or remove
+            HTML elements and their content.
+        </p>
+
+        <h3>How the DOM Works</h3>
+
+        <ol>
+            <li>The browser reads the HTML document.</li>
+            <li>The browser creates a DOM tree from the document.</li>
+            <li>JavaScript selects elements from the DOM.</li>
+            <li>JavaScript can modify content, attributes and styles.</li>
+            <li>The browser displays the updated page.</li>
+        </ol>
+
+        <h3>Common DOM Selection Methods</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Method</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>getElementById()</td>
+                <td>Selects an element using its ID.</td>
+            </tr>
+            <tr>
+                <td>getElementsByClassName()</td>
+                <td>Selects elements using their class name.</td>
+            </tr>
+            <tr>
+                <td>getElementsByTagName()</td>
+                <td>Selects elements using their tag name.</td>
+            </tr>
+            <tr>
+                <td>querySelector()</td>
+                <td>Selects the first element matching a CSS selector.</td>
+            </tr>
+            <tr>
+                <td>querySelectorAll()</td>
+                <td>Selects all elements matching a CSS selector.</td>
+            </tr>
+        </table>
+
+        <h3>Changing HTML Content</h3>
+
+        <div class="example">
+<pre>
+&lt;h2 id="heading"&gt;Old Heading&lt;/h2&gt;
+
+&lt;script&gt;
+    document.getElementById("heading").textContent =
+        "New Heading";
+&lt;/script&gt;
+</pre>
+        </div>
+
+        <h3>Changing CSS Using JavaScript</h3>
+
+        <div class="example">
+<pre>
+&lt;p id="text"&gt;Hello Student&lt;/p&gt;
+
+&lt;script&gt;
+    document.getElementById("text").style.color = "blue";
+&lt;/script&gt;
+</pre>
+        </div>
+
+        <h3>Changing Classes</h3>
+
+        <p>
+            The classList property allows JavaScript to add, remove,
+            toggle or check CSS classes of an HTML element.
+        </p>
+
+        <div class="example">
+<pre>
+document.querySelector(".box").classList.add("active");
+
+document.querySelector(".box").classList.remove("active");
+
+document.querySelector(".box").classList.toggle("active");
+</pre>
+        </div>
+
+        <h3>Creating and Adding New Elements</h3>
+
+        <div class="example">
+<pre>
+const newItem = document.createElement("li");
+
+newItem.textContent = "JavaScript";
+
+document.querySelector("#subjects").append(newItem);
+</pre>
+        </div>
+
+        <p>
+            The createElement() method creates a new HTML element.
+            The append() method adds it to the selected parent element.
+        </p>
+
+        <div class="note">
+            <b>Remember:</b> The DOM connects JavaScript with HTML.
+            It allows web pages to update their content without
+            rebuilding the entire document.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 6 -->
+
+    <section class="content-section" id="topic6">
+
+        <h2>6. Forms and Form Validation</h2>
+
+        <h3>What is Form Validation?</h3>
+
+        <p>
+            Form validation is the process of checking user input before
+            accepting or submitting it. It helps ensure that the entered
+            information is complete and follows the required format.
+        </p>
+
+        <h3>Why is Form Validation Important?</h3>
+
+        <ul>
+            <li>Prevents empty or incomplete form submissions.</li>
+            <li>Checks whether the entered information is in the correct format.</li>
+            <li>Improves the user experience.</li>
+            <li>Reduces incorrect data sent to the server.</li>
+            <li>Helps applications collect accurate information.</li>
+        </ul>
+
+        <h3>HTML Form Validation Attributes</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Attribute</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>required</td>
+                <td>Makes a field compulsory.</td>
+            </tr>
+            <tr>
+                <td>type="email"</td>
+                <td>Checks the basic format of an email address.</td>
+            </tr>
+            <tr>
+                <td>minlength</td>
+                <td>Sets the minimum number of characters.</td>
+            </tr>
+            <tr>
+                <td>maxlength</td>
+                <td>Sets the maximum number of characters.</td>
+            </tr>
+            <tr>
+                <td>min</td>
+                <td>Sets the minimum allowed number or date.</td>
+            </tr>
+            <tr>
+                <td>max</td>
+                <td>Sets the maximum allowed number or date.</td>
+            </tr>
+            <tr>
+                <td>step</td>
+                <td>Sets the permitted interval between values.</td>
+            </tr>
+            <tr>
+                <td>pattern</td>
+                <td>Checks input against a regular expression.</td>
+            </tr>
+        </table>
+
+        <h3>Example of HTML Validation</h3>
+
+        <div class="example">
+<pre>
+&lt;form&gt;
+
+    Name:
+    &lt;input type="text" required minlength="2"&gt;
+
+    Email:
+    &lt;input type="email" required&gt;
+
+    Age:
+    &lt;input type="number" min="18" max="60"&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+        </div>
+
+        <h3>JavaScript Form Validation</h3>
+
+        <p>
+            JavaScript can perform additional checks and display
+            custom messages when a user enters incorrect information.
+        </p>
+
+        <div class="example">
+<pre>
+function validateForm() {
+
+    let name = document.getElementById("name").value;
+
+    if (name == "") {
+        alert("Please enter your name");
+        return false;
+    }
+
+    alert("Form submitted successfully");
+    return true;
+}
+</pre>
+        </div>
+
+        <h3>Useful JavaScript Validation Methods</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Method or Property</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>checkValidity()</td>
+                <td>Checks whether the form or input satisfies its constraints.</td>
+            </tr>
+            <tr>
+                <td>reportValidity()</td>
+                <td>Checks validity and asks the browser to show feedback.</td>
+            </tr>
+            <tr>
+                <td>validity</td>
+                <td>Provides details about the validity state.</td>
+            </tr>
+            <tr>
+                <td>setCustomValidity()</td>
+                <td>Sets a custom validation error message.</td>
+            </tr>
+        </table>
+
+        <h3>Form Validation Flow</h3>
+
+        <ol>
+            <li>The user enters information into the form.</li>
+            <li>The user clicks the submit button.</li>
+            <li>The browser checks basic HTML validation rules.</li>
+            <li>JavaScript performs additional validation if required.</li>
+            <li>Error messages are displayed if the information is incorrect.</li>
+            <li>Valid information can be sent to the server.</li>
+        </ol>
+
+        <div class="note">
+            <b>Important Security Point:</b> Client-side validation is
+            useful for user feedback, but it is not enough for security.
+            A server must validate the submitted data again because
+            browser-side checks can be bypassed.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 7 -->
+
+    <section class="content-section" id="topic7">
+
+        <h2>7. Dynamic HTML (DHTML)</h2>
+
+        <h3>What is DHTML?</h3>
+
+        <p>
+            DHTML stands for Dynamic HTML. It is a combination of HTML,
+            CSS and JavaScript used to create interactive web pages
+            whose content and appearance can change while the page is open.
+        </p>
+
+        <p>
+            DHTML is not a separate programming language. It is a term
+            used to describe how these three technologies work together.
+        </p>
+
+        <h3>Components of DHTML</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Technology</th>
+                <th>Role in DHTML</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>Creates the structure and content of the page.</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Controls colours, layout and appearance.</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Changes content and responds to user actions.</td>
+            </tr>
+            <tr>
+                <td>DOM</td>
+                <td>Allows JavaScript to access and modify page elements.</td>
+            </tr>
+        </table>
+
+        <h3>Features of DHTML</h3>
+
+        <ul>
+            <li>Dynamic changes to page content.</li>
+            <li>Interactive menus and buttons.</li>
+            <li>Changing styles without reloading the page.</li>
+            <li>Showing and hiding elements.</li>
+            <li>Responding to user actions.</li>
+            <li>Creating interactive effects and animations.</li>
+        </ul>
+
+        <h3>How DHTML Works</h3>
+
+        <ol>
+            <li>HTML creates the elements of the web page.</li>
+            <li>CSS applies styles to those elements.</li>
+            <li>JavaScript detects user actions through events.</li>
+            <li>JavaScript updates the DOM.</li>
+            <li>The browser displays the updated content and styles.</li>
+        </ol>
+
+        <h3>Example of DHTML</h3>
+
+        <p><b>HTML:</b></p>
+
+        <div class="example">
+<pre>
+&lt;div id="card" class="card"&gt;
+    &lt;h3&gt;Interactive Course Card&lt;/h3&gt;
+    &lt;p&gt;Click the button to highlight this card.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;button id="changeButton"&gt;Change Style&lt;/button&gt;
+</pre>
+        </div>
+
+        <p><b>CSS:</b></p>
+
+        <div class="example">
+<pre>
+.card {
+    padding: 15px;
+    background-color: lightgray;
+}
+
+.card.active {
+    background-color: teal;
+    color: white;
+}
+</pre>
+        </div>
+
+        <p><b>JavaScript:</b></p>
+
+        <div class="example">
+<pre>
+const card = document.getElementById("card");
+
+const button = document.getElementById("changeButton");
+
+button.addEventListener("click", function() {
+    card.classList.toggle("active");
+});
+</pre>
+        </div>
+
+        <p>
+            In this example, HTML creates the card, CSS defines its
+            appearance and JavaScript changes its class when the
+            button is clicked.
+        </p>
+
+        <div class="note">
+            <b>Good Practice:</b> Keep the content in HTML, visual
+            styling in CSS and interaction logic in JavaScript.
+            This makes the code easier to understand and maintain.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 8 -->
+
+    <section class="content-section" id="topic8">
+
+        <h2>8. JavaScript Events and Buttons</h2>
+
+        <h3>What are Events?</h3>
+
+        <p>
+            An event is an action or occurrence detected by the browser.
+            JavaScript can respond to these events by executing a function.
+        </p>
+
+        <p>
+            For example, clicking a button, typing in a text box or
+            submitting a form can generate events.
+        </p>
+
+        <h3>Common JavaScript Events</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Event</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>click</td>
+                <td>Occurs when an element is clicked or activated.</td>
+            </tr>
+            <tr>
+                <td>dblclick</td>
+                <td>Occurs when an element is double-clicked.</td>
+            </tr>
+            <tr>
+                <td>mouseover</td>
+                <td>Occurs when the pointer moves over an element.</td>
+            </tr>
+            <tr>
+                <td>mouseout</td>
+                <td>Occurs when the pointer leaves an element.</td>
+            </tr>
+            <tr>
+                <td>keydown</td>
+                <td>Occurs when a keyboard key is pressed.</td>
+            </tr>
+            <tr>
+                <td>keyup</td>
+                <td>Occurs when a keyboard key is released.</td>
+            </tr>
+            <tr>
+                <td>input</td>
+                <td>Occurs when the value of an input changes.</td>
+            </tr>
+            <tr>
+                <td>change</td>
+                <td>Occurs when an input value is committed or changed.</td>
+            </tr>
+            <tr>
+                <td>submit</td>
+                <td>Occurs when a form is submitted.</td>
+            </tr>
+            <tr>
+                <td>load</td>
+                <td>Occurs when a resource or page finishes loading.</td>
+            </tr>
+        </table>
+
+        <h3>Event Handling</h3>
+
+        <p>
+            Event handling means writing JavaScript code that runs
+            when a particular event occurs.
+        </p>
+
+        <h3>Using addEventListener()</h3>
+
+        <p>
+            The addEventListener() method is used to attach an event
+            handler to an HTML element.
+        </p>
+
+        <div class="example">
+<pre>
+document.getElementById("myButton")
+    .addEventListener("click", function() {
+
+        alert("Button clicked!");
+
+    });
+</pre>
+        </div>
+
+        <h3>Understanding the Event Object</h3>
+
+        <p>
+            When an event occurs, the browser provides an event object
+            containing information about that event. It can tell us
+            which element received the event and what type of event occurred.
+        </p>
+
+        <div class="example">
+<pre>
+button.addEventListener("click", function(event) {
+
+    console.log("Event type:", event.type);
+
+    console.log("Clicked element:", event.currentTarget);
+
+});
+</pre>
+        </div>
+
+        <h3>Example of a Button Counter</h3>
+
+        <div class="example">
+<pre>
+let count = 0;
+
+function increaseCount() {
+
+    count++;
+
+    document.getElementById("result").textContent = count;
+
+}
+</pre>
+        </div>
+
+        <p>
+            Each time the button's event handler calls
+            <code>increaseCount()</code>, the count increases by one.
+        </p>
+
+        <h3>Why Use addEventListener()?</h3>
+
+        <ul>
+            <li>It separates JavaScript from HTML structure.</li>
+            <li>It allows multiple listeners to be attached to an element.</li>
+            <li>It makes code easier to maintain.</li>
+            <li>It supports different types of browser events.</li>
+        </ul>
+
+    </section>
+
+
+    <!-- TOPIC 9 -->
+
+    <section class="content-section" id="topic9">
+
+        <h2>9. AJAX and Asynchronous Web Applications</h2>
+
+        <h3>What is AJAX?</h3>
+
+        <p>
+            AJAX stands for Asynchronous JavaScript and XML. It is a
+            technique used to exchange data between a browser and a
+            server without reloading the entire web page.
+        </p>
+
+        <p>
+            Although the name includes XML, modern AJAX applications
+            commonly use JSON to exchange data.
+        </p>
+
+        <h3>Why is AJAX Used?</h3>
+
+        <ul>
+            <li>To update part of a web page without refreshing the whole page.</li>
+            <li>To retrieve information from a server.</li>
+            <li>To submit data in the background.</li>
+            <li>To create faster and more interactive websites.</li>
+            <li>To reduce unnecessary page reloads.</li>
+        </ul>
+
+        <h3>Examples of AJAX in Real Websites</h3>
+
+        <ul>
+            <li>Live search suggestions.</li>
+            <li>Refreshing messages in a chat application.</li>
+            <li>Checking whether a username is available.</li>
+            <li>Loading products without refreshing a shopping page.</li>
+            <li>Updating notifications.</li>
+        </ul>
+
+        <h3>How AJAX Works</h3>
+
+        <ol>
+            <li>The user performs an action on a web page.</li>
+            <li>JavaScript sends an HTTP request to a server.</li>
+            <li>The server processes the request.</li>
+            <li>The server sends a response, such as JSON or text.</li>
+            <li>JavaScript reads the response.</li>
+            <li>The required part of the web page is updated.</li>
+        </ol>
+
+        <h3>AJAX Request and Response Cycle</h3>
+
+        <div class="example">
+<pre>
+User Action
+    |
+    v
+JavaScript Sends Request
+    |
+    v
+Server Processes Request
+    |
+    v
+Server Sends Response
+    |
+    v
+JavaScript Reads Response
+    |
+    v
+Web Page Updates Without Full Reload
+</pre>
+        </div>
+
+        <h3>What is Asynchronous Programming?</h3>
+
+        <p>
+            Asynchronous programming allows an operation, such as a
+            network request, to continue without making the entire
+            browser interface wait for it to finish.
+        </p>
+
+        <p>
+            JavaScript uses Promises and async/await to work with
+            asynchronous operations.
+        </p>
+
+        <h3>What is Fetch API?</h3>
+
+        <p>
+            The Fetch API is a modern JavaScript feature used to send
+            HTTP requests and receive responses from a server.
+        </p>
+
+        <h3>Example of Fetch API</h3>
+
+        <div class="example">
+<pre>
+async function loadData() {
+
+    try {
+
+        const response = await fetch("/api/courses");
+
+        if (!response.ok) {
+            throw new Error("Request failed");
+        }
+
+        const data = await response.json();
+
+        console.log(data);
+
+    } catch (error) {
+
+        console.log("Error:", error);
+
+    }
+
+}
+
+loadData();
+</pre>
+        </div>
+
+        <p>
+            Here, fetch() sends a request to the server. The response
+            is checked, converted into JSON and displayed in the console.
+            The example assumes that the server provides the
+            <code>/api/courses</code> endpoint.
+        </p>
+
+        <h3>Important Fetch Concepts</h3>
+
+        <ul>
+            <li><b>fetch():</b> Sends a request to a URL.</li>
+            <li><b>Promise:</b> Represents a result that may become available later.</li>
+            <li><b>async:</b> Declares an asynchronous function.</li>
+            <li><b>await:</b> Waits for a Promise inside an async function.</li>
+            <li><b>response.ok:</b> Checks whether the HTTP response has a successful status.</li>
+            <li><b>response.json():</b> Reads and parses a JSON response body.</li>
+            <li><b>try...catch:</b> Handles errors during the operation.</li>
+        </ul>
+
+        <h3>What is JSON?</h3>
+
+        <p>
+            JSON stands for JavaScript Object Notation. It is a lightweight
+            data format commonly used to exchange information between
+            a client and a server.
+        </p>
+
+        <div class="example">
+<pre>
+{
+    "name": "Asha",
+    "age": 20,
+    "course": "Computer Science"
+}
+</pre>
+        </div>
+
+        <h3>Common HTTP Methods Used with AJAX</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Method</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>Retrieves information from a server.</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>Sends information to a server.</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>Replaces an existing resource.</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>Deletes a resource.</td>
+            </tr>
+        </table>
+
+        <h3>Cross-Origin Resource Sharing (CORS)</h3>
+
+        <p>
+            CORS stands for Cross-Origin Resource Sharing. It is a browser
+            security mechanism that controls whether a web page can
+            access resources from another origin.
+        </p>
+
+        <p>
+            If a website requests data from a different origin, the
+            server must provide the appropriate CORS permission.
+        </p>
+
+        <div class="note">
+            <b>Important:</b> AJAX is a communication technique, not
+            a database or a server. The server must provide an endpoint
+            that can process the request and return data.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 10 -->
+
+    <section class="content-section" id="topic10">
+
+        <h2>10. Introduction to jQuery</h2>
+
+        <h3>What is jQuery?</h3>
+
+        <p>
+            jQuery is a JavaScript library designed to make common
+            JavaScript tasks easier. It provides shorter methods for
+            selecting HTML elements, handling events, changing content,
+            creating effects and performing AJAX requests.
+        </p>
+
+        <p>
+            jQuery was especially useful when different browsers had
+            different levels of JavaScript support. Modern browsers
+            now provide many similar features directly, but jQuery
+            is still found in many existing websites.
+        </p>
+
+        <h3>Features of jQuery</h3>
+
+        <ul>
+            <li>Simple HTML element selection.</li>
+            <li>Easy event handling.</li>
+            <li>DOM manipulation.</li>
+            <li>Animation and visual effects.</li>
+            <li>AJAX support.</li>
+            <li>Method chaining.</li>
+        </ul>
+
+        <h3>Basic jQuery Syntax</h3>
+
+        <div class="example">
+<pre>
+$(selector).action();
+</pre>
+        </div>
+
+        <p>
+            The dollar sign ($) is used as a shortcut for jQuery.
+            The selector identifies the HTML element, and the action
+            specifies what should happen to that element.
+        </p>
+
+        <h3>Including jQuery in an HTML Page</h3>
+
+        <p>
+            jQuery is a library, so it must be included in the project
+            before its methods can be used.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+</pre>
+        </div>
+
+        <p>
+            The file must exist at the specified path. Another option
+            is to include jQuery through an official CDN.
+        </p>
+
+        <h3>Document Ready Function</h3>
+
+        <p>
+            The document ready function makes sure that the HTML
+            document has been parsed before the jQuery code runs.
+        </p>
+
+        <div class="example">
+<pre>
+$(document).ready(function() {
+
+    console.log("Document is ready");
+
+});
+</pre>
+        </div>
+
+        <p>A shorter form is:</p>
+
+        <div class="example">
+<pre>
+$(function() {
+
+    console.log("Document is ready");
+
+});
+</pre>
+        </div>
+
+        <h3>jQuery Selectors</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Selector</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>$("p")</td>
+                <td>Selects all paragraph elements.</td>
+            </tr>
+            <tr>
+                <td>$("#demo")</td>
+                <td>Selects the element with ID demo.</td>
+            </tr>
+            <tr>
+                <td>$(".box")</td>
+                <td>Selects elements with class box.</td>
+            </tr>
+            <tr>
+                <td>$("*")</td>
+                <td>Selects all elements.</td>
+            </tr>
+            <tr>
+                <td>$("h1, p")</td>
+                <td>Selects all h1 and paragraph elements.</td>
+            </tr>
+        </table>
+
+        <h3>jQuery Event Handling</h3>
+
+        <p>
+            The on() method is used to attach an event handler to
+            selected elements.
+        </p>
+
+        <div class="example">
+<pre>
+$(function() {
+
+    $("#myButton").on("click", function() {
+
+        alert("Button clicked!");
+
+    });
+
+});
+</pre>
+        </div>
+
+        <h3>Changing Text Using jQuery</h3>
+
+        <div class="example">
+<pre>
+$("#message").text("Hello Student!");
+</pre>
+        </div>
+
+        <h3>Adding and Removing Classes</h3>
+
+        <div class="example">
+<pre>
+// Add a class
+$("#box").addClass("active");
+
+// Remove a class
+$("#box").removeClass("active");
+
+// Toggle a class
+$("#box").toggleClass("active");
+</pre>
+        </div>
+
+        <h3>jQuery Effects</h3>
+
+        <p>
+            jQuery provides methods for showing, hiding and animating
+            selected elements.
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Method</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>show()</td>
+                <td>Displays a hidden element.</td>
+            </tr>
+            <tr>
+                <td>hide()</td>
+                <td>Hides an element.</td>
+            </tr>
+            <tr>
+                <td>toggle()</td>
+                <td>Switches between showing and hiding.</td>
+            </tr>
+            <tr>
+                <td>fadeIn()</td>
+                <td>Displays an element with a fading effect.</td>
+            </tr>
+            <tr>
+                <td>fadeOut()</td>
+                <td>Hides an element with a fading effect.</td>
+            </tr>
+            <tr>
+                <td>slideUp()</td>
+                <td>Hides an element using a sliding effect.</td>
+            </tr>
+            <tr>
+                <td>slideDown()</td>
+                <td>Displays an element using a sliding effect.</td>
+            </tr>
+            <tr>
+                <td>animate()</td>
+                <td>Creates custom animations for supported CSS properties.</td>
+            </tr>
+        </table>
+
+        <h3>Example of jQuery Hide and Show</h3>
+
+        <div class="example">
+<pre>
+$(function() {
+
+    $("#hideButton").on("click", function() {
+        $("#message").hide();
+    });
+
+    $("#showButton").on("click", function() {
+        $("#message").show();
+    });
+
+});
+</pre>
+        </div>
+
+        <h3>jQuery and Vanilla JavaScript Comparison</h3>
+
+        <p>
+            Vanilla JavaScript means using JavaScript directly without
+            an additional library such as jQuery.
+        </p>
+
+        <table class="comparison">
+            <tr>
+                <th>Task</th>
+                <th>JavaScript</th>
+                <th>jQuery</th>
+            </tr>
+            <tr>
+                <td>Select element</td>
+                <td>document.querySelector("#message")</td>
+                <td>$("#message")</td>
+            </tr>
+            <tr>
+                <td>Click event</td>
+                <td>addEventListener("click", handler)</td>
+                <td>.on("click", handler)</td>
+            </tr>
+            <tr>
+                <td>Change text</td>
+                <td>element.textContent = "Hello"</td>
+                <td>.text("Hello")</td>
+            </tr>
+            <tr>
+                <td>Toggle class</td>
+                <td>classList.toggle("active")</td>
+                <td>.toggleClass("active")</td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <b>Remember:</b> Learn JavaScript and DOM concepts first.
+            jQuery becomes easier to understand once you know how
+            JavaScript selects and modifies HTML elements.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 11 -->
+
+    <section class="content-section" id="topic11">
+
+        <h2>11. JavaScript Debugging and Practical Applications</h2>
+
+        <h3>What is Debugging?</h3>
+
+        <p>
+            Debugging is the process of finding and correcting errors
+            in a program. It helps developers understand why a program
+            is not working as expected.
+        </p>
+
+        <h3>Common Types of Errors</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Error Type</th>
+                <th>Meaning</th>
+            </tr>
+            <tr>
+                <td>Syntax Error</td>
+                <td>Occurs when code does not follow JavaScript syntax rules.</td>
+            </tr>
+            <tr>
+                <td>Reference Error</td>
+                <td>Occurs when code refers to an unavailable variable or identifier.</td>
+            </tr>
+            <tr>
+                <td>Type Error</td>
+                <td>Occurs when an operation is used with an unsuitable value or type.</td>
+            </tr>
+            <tr>
+                <td>Logical Error</td>
+                <td>Program runs but produces an incorrect result.</td>
+            </tr>
+        </table>
+
+        <h3>Using console.log()</h3>
+
+        <p>
+            The console.log() method is used to display messages and
+            variable values in the browser console. It is useful when
+            checking whether a program is working correctly.
+        </p>
+
+        <div class="example">
+<pre>
+let a = 10;
+let b = 20;
+
+let sum = a + b;
+
+console.log("Sum = " + sum);
+</pre>
+        </div>
+
+        <h3>Browser Developer Tools</h3>
+
+        <p>
+            Modern browsers provide Developer Tools that help developers
+            inspect HTML, CSS and JavaScript, view console messages,
+            identify errors and debug programs.
+        </p>
+
+        <p>
+            In most desktop browsers, Developer Tools can be opened
+            using F12 or Ctrl + Shift + I.
+        </p>
+
+        <h3>Practical Applications of JavaScript</h3>
+
+        <ul>
+            <li>Student registration and login forms.</li>
+            <li>Online shopping carts.</li>
+            <li>Interactive menus and navigation.</li>
+            <li>Calculators and result systems.</li>
+            <li>Form validation.</li>
+            <li>Live search and suggestions.</li>
+            <li>Interactive dashboards.</li>
+            <li>Dynamic content loading.</li>
+        </ul>
+
+        <h3>Small Practical Program: Student Result</h3>
+
+        <div class="example">
+<pre>
+let marks = 85;
+
+if (marks >= 40) {
+    console.log("Student Passed");
+} else {
+    console.log("Student Failed");
+}
+</pre>
+        </div>
+
+        <h3>Small Practical Program: Display Array Values</h3>
+
+        <div class="example">
+<pre>
+const subjects = ["HTML", "CSS", "JavaScript"];
+
+for (const subject of subjects) {
+    console.log(subject);
+}
+</pre>
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 12 -->
+
+    <section class="content-section" id="topic12">
+
+        <h2>12. Unit Summary and Practice Questions</h2>
+
+        <h3>Unit Summary</h3>
+
+        <ul>
+            <li>JavaScript makes web pages interactive and dynamic.</li>
+            <li>Variables store data using var, let and const.</li>
+            <li>Data types describe the kind of values stored in variables.</li>
+            <li>Operators perform mathematical and logical operations.</li>
+            <li>Conditions allow programs to make decisions.</li>
+            <li>Loops repeat a block of code.</li>
+            <li>Functions provide reusable blocks of code.</li>
+            <li>Objects group related properties and methods.</li>
+            <li>The DOM allows JavaScript to access and modify HTML elements.</li>
+            <li>Form validation checks user input.</li>
+            <li>DHTML combines HTML, CSS and JavaScript.</li>
+            <li>Events allow a web page to respond to user actions.</li>
+            <li>AJAX exchanges data with a server without reloading the entire page.</li>
+            <li>Fetch API is used to make HTTP requests.</li>
+            <li>jQuery simplifies common JavaScript operations.</li>
+            <li>Debugging helps identify and correct program errors.</li>
+        </ul>
+
+        <h3>Important JavaScript Methods</h3>
+
+        <table class="comparison">
+            <tr>
+                <th>Method</th>
+                <th>Use</th>
+            </tr>
+            <tr><td>console.log()</td><td>Displays information in the console.</td></tr>
+            <tr><td>alert()</td><td>Displays a popup message.</td></tr>
+            <tr><td>confirm()</td><td>Asks the user for confirmation.</td></tr>
+            <tr><td>prompt()</td><td>Accepts a short user input.</td></tr>
+            <tr><td>getElementById()</td><td>Selects an element by ID.</td></tr>
+            <tr><td>querySelector()</td><td>Selects the first matching element.</td></tr>
+            <tr><td>addEventListener()</td><td>Attaches an event handler.</td></tr>
+            <tr><td>createElement()</td><td>Creates a new HTML element.</td></tr>
+            <tr><td>append()</td><td>Adds content to an element.</td></tr>
+            <tr><td>fetch()</td><td>Sends a network request.</td></tr>
+        </table>
+
+        <h3>Practice Questions</h3>
+
+        <h3>Short Answer Questions</h3>
+
+        <ol>
+            <li>What is JavaScript?</li>
+            <li>What is client-side scripting?</li>
+            <li>Explain the role of JavaScript in web development.</li>
+            <li>What is the difference between HTML, CSS and JavaScript?</li>
+            <li>Explain var, let and const.</li>
+            <li>What are JavaScript data types?</li>
+            <li>What is the use of the typeof operator?</li>
+            <li>What are arithmetic and logical operators?</li>
+            <li>Explain if, if-else and else-if statements.</li>
+            <li>What is the difference between for and while loops?</li>
+            <li>What is a function? Explain parameters and return values.</li>
+            <li>Explain alert(), confirm() and prompt().</li>
+            <li>What are JavaScript objects?</li>
+            <li>What is DOM? Explain its importance.</li>
+            <li>What is form validation?</li>
+            <li>Explain the important HTML validation attributes.</li>
+            <li>What is DHTML? Explain its components.</li>
+            <li>What are JavaScript events?</li>
+            <li>Explain addEventListener().</li>
+            <li>What is AJAX?</li>
+            <li>Explain asynchronous programming.</li>
+            <li>What is the Fetch API?</li>
+            <li>What is JSON?</li>
+            <li>What is jQuery?</li>
+            <li>Explain jQuery selectors and event handling.</li>
+            <li>What is debugging? Explain common JavaScript errors.</li>
+        </ol>
+
+        <h3>Programming Questions</h3>
+
+        <ol>
+            <li>Write a JavaScript program to add two numbers.</li>
+            <li>Write a program to check whether a number is even or odd.</li>
+            <li>Write a program to check whether a student has passed or failed.</li>
+            <li>Write a program to print numbers from 1 to 10 using a loop.</li>
+            <li>Write a function to calculate the square of a number.</li>
+            <li>Create an object to store student information.</li>
+            <li>Write JavaScript code to change the text of an HTML heading.</li>
+            <li>Create a button that displays an alert message when clicked.</li>
+            <li>Create a simple form and validate the name field.</li>
+            <li>Write a JavaScript program to display all values of an array.</li>
+            <li>Write a simple Fetch API program to retrieve JSON data.</li>
+            <li>Write a jQuery program to hide and show a paragraph.</li>
+        </ol>
+
+        <div class="unit-footer">
+            <h3>Final Learning Point</h3>
+
+            <p>
+                JavaScript is responsible for the behaviour of a web page.
+                It works with HTML, CSS, browser events and the DOM to create
+                interactive websites. AJAX and Fetch help communicate with
+                servers, while jQuery provides a shorter way to perform
+                common JavaScript tasks.
+            </p>
+
+            <p>
+                Understanding variables, conditions, loops, functions,
+                objects, events and DOM manipulation provides a strong
+                foundation for learning advanced web development.
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Web Technologies | Complete Study Material</p>
+    <p>Unit 4: JavaScript and jQuery</p>
+</footer>
+
+<footer>
+    <p>Created by <strong>Shrey Savargaonkar</strong></p>
+    <p>Web Technologies Study Material</p>
+</footer>
+
+</body>
+</html>

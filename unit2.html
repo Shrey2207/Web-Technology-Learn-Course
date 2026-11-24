@@ -1,0 +1,1104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2 - HTML | Web Technologies</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .unit-content {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        .unit-header {
+            background: #17365d;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .unit-header h1 {
+            color: white;
+        }
+
+        .topic {
+            background: white;
+            padding: 22px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .topic h2 {
+            color: #17365d;
+            border-bottom: 2px solid #dce5f0;
+            padding-bottom: 9px;
+        }
+
+        .topic h3 {
+            color: #28527a;
+            margin-top: 18px;
+        }
+
+        .example {
+            background: #f2f5f9;
+            border-left: 4px solid #28527a;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            background: #f5f5f5;
+            padding: 13px;
+            border-radius: 5px;
+        }
+
+        code {
+            color: #9b2c2c;
+        }
+
+        .info-note {
+            background: #edf4fb;
+            padding: 13px;
+            border-radius: 5px;
+            margin: 12px 0;
+        }
+
+        .unit-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+        }
+
+        .unit-content th,
+        .unit-content td {
+            border: 1px solid #cccccc;
+            padding: 9px;
+            text-align: left;
+        }
+
+        .unit-content th {
+            background: #e7edf5;
+        }
+
+        .unit-content li {
+            margin-bottom: 7px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 18px;
+            color: #174f86;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Web Technologies</h1>
+    <p>Complete Study Material</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="unit1.html">Unit 1</a>
+    <a href="unit2.html">Unit 2</a>
+    <a href="unit3.html">Unit 3</a>
+    <a href="unit4.html">Unit 4</a>
+    <a href="unit5.html">Unit 5</a>
+    <a href="unit6.html">Unit 6</a>
+</nav>
+
+
+<div class="unit-content">
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+
+    <header class="unit-header">
+        <h1>Unit 2: HTML</h1>
+        <p>HyperText Markup Language</p>
+        <p>Learn HTML structure, elements, formatting, links, tables,
+        forms and modern HTML5 features.</p>
+    </header>
+
+    <!-- CONTENTS -->
+    <section class="topic">
+        <h2>Topics Covered</h2>
+        <ol>
+            <li><a href="#intro">Introduction and History of HTML</a></li>
+            <li><a href="#structure">HTML Document Structure and Elements</a></li>
+            <li><a href="#text">Text, Formatting and Quotations</a></li>
+            <li><a href="#attributes">Attributes, Colors and CSS</a></li>
+            <li><a href="#links">HTML Links</a></li>
+            <li><a href="#lists">HTML Lists and Tables</a></li>
+            <li><a href="#images">HTML Images</a></li>
+            <li><a href="#forms">HTML Forms and Input Types</a></li>
+            <li><a href="#semantic">HTML5 Semantic Elements</a></li>
+            <li><a href="#media">HTML5 Multimedia</a></li>
+            <li><a href="#advanced">Drag and Drop and XHTML</a></li>
+            <li><a href="#meta">HTML Meta Tags</a></li>
+        </ol>
+    </section>
+
+
+    <!-- 1. INTRODUCTION -->
+    <section class="topic" id="intro">
+        <h2>1. Introduction and History of HTML</h2>
+
+        <p>HTML stands for HyperText Markup Language. It is the standard
+        markup language used to create and structure web pages.</p>
+
+        <h3>Features of HTML</h3>
+        <ul>
+            <li>Easy to learn and use.</li>
+            <li>Platform independent.</li>
+            <li>Supported by modern web browsers.</li>
+            <li>Works with CSS and JavaScript.</li>
+            <li>Supports text, links, tables, forms, audio and video.</li>
+        </ul>
+
+        <h3>History of HTML</h3>
+        <table>
+            <tr><th>Year</th><th>Development</th></tr>
+            <tr><td>1989</td><td>Tim Berners-Lee proposed the World Wide Web.</td></tr>
+            <tr><td>1991</td><td>HTML was introduced.</td></tr>
+            <tr><td>1995</td><td>HTML 2.0 was developed.</td></tr>
+            <tr><td>1997</td><td>HTML 3.2 became a recommendation.</td></tr>
+            <tr><td>1999</td><td>HTML 4.01 was introduced.</td></tr>
+            <tr><td>2000</td><td>XHTML 1.0 was introduced.</td></tr>
+            <tr><td>2014</td><td>HTML5 became a recommendation.</td></tr>
+        </table>
+    </section>
+
+
+    <!-- 2. STRUCTURE AND ELEMENTS -->
+    <section class="topic" id="structure">
+        <h2>2. HTML Document Structure and Elements</h2>
+
+        <p>Every HTML document follows a basic structure containing
+        a head section and a body section.</p>
+
+        <h3>Basic HTML Structure</h3>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;p&gt;This is my first web page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h3>Explanation of Tags</h3>
+        <table>
+            <tr><th>Tag</th><th>Purpose</th></tr>
+            <tr><td>&lt;!DOCTYPE html&gt;</td><td>Declares HTML5.</td></tr>
+            <tr><td>&lt;html&gt;</td><td>Root element.</td></tr>
+            <tr><td>&lt;head&gt;</td><td>Contains page information.</td></tr>
+            <tr><td>&lt;title&gt;</td><td>Sets the browser tab title.</td></tr>
+            <tr><td>&lt;body&gt;</td><td>Contains visible webpage content.</td></tr>
+        </table>
+
+        <h3>HTML Elements and Tags</h3>
+        <p>An HTML element generally consists of an opening tag,
+        content and a closing tag.</p>
+
+        <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;h1&gt;This is a heading.&lt;/h1&gt;</code></pre>
+
+        <h3>Types of Elements</h3>
+        <ul>
+            <li><b>Paired elements:</b> Have opening and closing tags,
+            such as p and h1.</li>
+            <li><b>Empty elements:</b> Do not contain content,
+            such as br, hr and img.</li>
+        </ul>
+
+        <h3>Nested Elements</h3>
+        <p>Elements placed inside other elements are called nested elements.</p>
+
+        <pre><code>&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;My Heading&lt;/h1&gt;
+    &lt;p&gt;My paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h3>Important HTML Rules</h3>
+        <ul>
+            <li>Elements should be properly nested.</li>
+            <li>Close elements correctly whenever required.</li>
+            <li>HTML tags are not case-sensitive, but lowercase is recommended.</li>
+            <li>Do not skip closing tags where they are required.</li>
+        </ul>
+
+        <div class="info-note">
+            <b>Remember:</b> The DOCTYPE declaration is written at the
+            beginning of an HTML5 document.
+        </div>
+    </section>
+
+
+    <!-- 3. TEXT AND FORMATTING -->
+    <section class="topic" id="text">
+        <h2>3. Text, Formatting and Quotations</h2>
+
+        <h3>Headings</h3>
+        <p>HTML provides six heading levels, from h1 to h6.
+        H1 is the highest-level heading and h6 is the lowest.</p>
+
+        <pre><code>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;</code></pre>
+
+        <h3>Paragraphs and Line Breaks</h3>
+        <p>The p tag creates paragraphs, br creates a line break,
+        and hr creates a horizontal separator.</p>
+
+        <pre><code>&lt;p&gt;First paragraph.&lt;/p&gt;
+&lt;p&gt;Second paragraph.&lt;/p&gt;
+
+Hello&lt;br&gt;Welcome to HTML.
+
+&lt;hr&gt;</code></pre>
+
+        <h3>Preformatted Text</h3>
+        <p>The pre tag preserves spaces and line breaks.</p>
+        <pre><code>&lt;pre&gt;
+Name: Shrey
+Course: B.Tech CSE
+Year: First
+&lt;/pre&gt;</code></pre>
+
+        <h3>Text Formatting Tags</h3>
+        <table>
+            <tr><th>Tag</th><th>Purpose</th></tr>
+            <tr><td>&lt;b&gt;</td><td>Bold text.</td></tr>
+            <tr><td>&lt;strong&gt;</td><td>Important text.</td></tr>
+            <tr><td>&lt;i&gt;</td><td>Italic text.</td></tr>
+            <tr><td>&lt;em&gt;</td><td>Emphasized text.</td></tr>
+            <tr><td>&lt;mark&gt;</td><td>Highlighted text.</td></tr>
+            <tr><td>&lt;small&gt;</td><td>Smaller text.</td></tr>
+            <tr><td>&lt;del&gt;</td><td>Deleted text.</td></tr>
+            <tr><td>&lt;ins&gt;</td><td>Inserted text.</td></tr>
+            <tr><td>&lt;sub&gt;</td><td>Subscript text.</td></tr>
+            <tr><td>&lt;sup&gt;</td><td>Superscript text.</td></tr>
+        </table>
+
+        <h3>Formatting Example</h3>
+        <pre><code>&lt;b&gt;Bold Text&lt;/b&gt;
+&lt;strong&gt;Important Text&lt;/strong&gt;
+&lt;i&gt;Italic Text&lt;/i&gt;
+&lt;em&gt;Emphasized Text&lt;/em&gt;
+&lt;mark&gt;Highlighted Text&lt;/mark&gt;
+&lt;small&gt;Small Text&lt;/small&gt;
+&lt;del&gt;Deleted Text&lt;/del&gt;
+&lt;ins&gt;Inserted Text&lt;/ins&gt;
+H&lt;sub&gt;2&lt;/sub&gt;O
+x&lt;sup&gt;2&lt;/sup&gt;</code></pre>
+
+        <h3>Quotations and Other Text Elements</h3>
+        <table>
+            <tr><th>Tag</th><th>Purpose</th></tr>
+            <tr><td>&lt;blockquote&gt;</td><td>Long quotation.</td></tr>
+            <tr><td>&lt;q&gt;</td><td>Short quotation.</td></tr>
+            <tr><td>&lt;abbr&gt;</td><td>Abbreviation.</td></tr>
+            <tr><td>&lt;address&gt;</td><td>Contact information.</td></tr>
+            <tr><td>&lt;cite&gt;</td><td>Title of a creative work.</td></tr>
+            <tr><td>&lt;bdo&gt;</td><td>Overrides text direction.</td></tr>
+        </table>
+
+        <pre><code>&lt;blockquote&gt;Education is important.&lt;/blockquote&gt;
+
+&lt;p&gt;He said, &lt;q&gt;HTML is easy.&lt;/q&gt;&lt;/p&gt;
+
+&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
+
+&lt;address&gt;student@example.com&lt;/address&gt;
+
+&lt;cite&gt;The Jungle Book&lt;/cite&gt;
+
+&lt;bdo dir="rtl"&gt;Hello World&lt;/bdo&gt;</code></pre>
+
+        <h3>HTML Comments</h3>
+        <p>Comments are notes in the source code and are not displayed
+        on the webpage.</p>
+        <pre><code>&lt;!-- This is a comment --&gt;</code></pre>
+    </section>
+
+
+    <!-- 4. ATTRIBUTES AND CSS -->
+    <section class="topic" id="attributes">
+        <h2>4. Attributes, Colors and CSS</h2>
+
+        <h3>HTML Attributes</h3>
+        <p>Attributes provide additional information about an element.
+        They are written inside the opening tag.</p>
+
+        <pre><code>&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;
+
+&lt;p style="color:blue;"&gt;Blue Text&lt;/p&gt;
+
+&lt;img src="photo.jpg" alt="My Photo"&gt;</code></pre>
+
+        <h3>Common Attributes</h3>
+        <table>
+            <tr><th>Attribute</th><th>Purpose</th></tr>
+            <tr><td>href</td><td>Link destination.</td></tr>
+            <tr><td>src</td><td>File source.</td></tr>
+            <tr><td>alt</td><td>Alternative text.</td></tr>
+            <tr><td>width / height</td><td>Element dimensions.</td></tr>
+            <tr><td>id</td><td>Unique identifier.</td></tr>
+            <tr><td>class</td><td>Groups elements for styling.</td></tr>
+            <tr><td>style</td><td>Inline CSS.</td></tr>
+            <tr><td>title</td><td>Additional information.</td></tr>
+        </table>
+
+        <p>Global attributes include id, class, style, title, lang,
+        hidden and contenteditable. Boolean attributes such as required
+        and disabled are enabled by their presence.</p>
+
+        <pre><code>&lt;input type="text" required&gt;
+&lt;input type="text" disabled&gt;</code></pre>
+
+        <h3>HTML Colors</h3>
+        <p>Colors can be applied using CSS color properties.</p>
+
+        <pre><code>&lt;p style="color:red;"&gt;Red Text&lt;/p&gt;
+
+&lt;p style="color:#0000FF;"&gt;Blue Text&lt;/p&gt;
+
+&lt;p style="color:rgb(255,0,0);"&gt;Red Text&lt;/p&gt;
+
+&lt;p style="color:rgba(0,0,255,0.5);"&gt;Blue Text&lt;/p&gt;
+
+&lt;p style="color:hsl(240,100%,50%);"&gt;Blue Text&lt;/p&gt;</code></pre>
+
+        <h3>HTML and CSS</h3>
+        <p>CSS stands for Cascading Style Sheets. It controls the
+        appearance and layout of HTML elements.</p>
+
+        <h3>Three Ways to Apply CSS</h3>
+
+        <p><b>1. Inline CSS:</b> Written inside an element's style attribute.</p>
+        <pre><code>&lt;p style="color:blue;"&gt;Hello World&lt;/p&gt;</code></pre>
+
+        <p><b>2. Internal CSS:</b> Written inside the style tag in the head.</p>
+        <pre><code>&lt;style&gt;
+p {
+    color: blue;
+    font-size: 20px;
+}
+&lt;/style&gt;</code></pre>
+
+        <p><b>3. External CSS:</b> Written in a separate CSS file.</p>
+        <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+
+        <p>Example of the external CSS file:</p>
+        <pre><code>body {
+    background-color: white;
+}
+
+h1 {
+    color: blue;
+}
+
+p {
+    font-size: 18px;
+}</code></pre>
+    </section>
+
+
+    <!-- 5. LINKS -->
+    <section class="topic" id="links">
+        <h2>5. HTML Links</h2>
+
+        <p>Links connect one webpage to another. They are created
+        using the anchor tag.</p>
+
+        <h3>Basic Syntax and Example</h3>
+        <pre><code>&lt;a href="https://www.google.com"&gt;
+Visit Google
+&lt;/a&gt;</code></pre>
+
+        <h3>Target Attribute</h3>
+        <table>
+            <tr><th>Value</th><th>Purpose</th></tr>
+            <tr><td>_self</td><td>Opens in the same tab.</td></tr>
+            <tr><td>_blank</td><td>Opens in a new tab.</td></tr>
+            <tr><td>_parent</td><td>Opens in the parent frame.</td></tr>
+            <tr><td>_top</td><td>Opens in the full window.</td></tr>
+        </table>
+
+        <pre><code>&lt;a href="https://www.google.com"
+   target="_blank"&gt;
+Open Google in New Tab
+&lt;/a&gt;</code></pre>
+
+        <h3>Types of Links</h3>
+
+        <p><b>Absolute URL:</b> Contains the complete web address.</p>
+        <pre><code>&lt;a href="https://www.wikipedia.org"&gt;
+Wikipedia
+&lt;/a&gt;</code></pre>
+
+        <p><b>Relative URL:</b> Points to a file relative to the current page.</p>
+        <pre><code>&lt;a href="about.html"&gt;About Us&lt;/a&gt;</code></pre>
+
+        <p><b>Email Link:</b> Opens the user's email application.</p>
+        <pre><code>&lt;a href="mailto:student@example.com"&gt;
+Send Email
+&lt;/a&gt;</code></pre>
+
+        <p><b>Bookmark Link:</b> Takes the user to a section on the same page.</p>
+        <pre><code>&lt;a href="#contact"&gt;Go to Contact&lt;/a&gt;
+
+&lt;h2 id="contact"&gt;Contact Us&lt;/h2&gt;</code></pre>
+    </section>
+
+
+    <!-- 6. LISTS AND TABLES -->
+    <section class="topic" id="lists">
+        <h2>6. HTML Lists and Tables</h2>
+
+        <h3>HTML Lists</h3>
+        <p>Lists are used to organize related information.</p>
+
+        <h3>Unordered List</h3>
+        <p>Displays items using bullet points.</p>
+        <pre><code>&lt;ul&gt;
+    &lt;li&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Tea&lt;/li&gt;
+    &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <h3>Ordered List</h3>
+        <p>Displays items using numbers or letters.</p>
+        <pre><code>&lt;ol&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+        <p>Different ordered list types can be selected using the type attribute.</p>
+        <pre><code>&lt;ol type="A"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol type="i"&gt;
+    &lt;li&gt;First&lt;/li&gt;
+    &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+        <h3>Description List</h3>
+        <p>Displays terms along with their descriptions.</p>
+        <pre><code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Markup language for web pages.&lt;/dd&gt;
+
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Stylesheet language for web pages.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+        <h3>Nested List</h3>
+        <p>A list placed inside another list.</p>
+        <pre><code>&lt;ul&gt;
+    &lt;li&gt;Programming
+        &lt;ul&gt;
+            &lt;li&gt;Python&lt;/li&gt;
+            &lt;li&gt;C&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <h3>List Tags</h3>
+        <table>
+            <tr><th>Tag</th><th>Purpose</th></tr>
+            <tr><td>ul</td><td>Unordered list.</td></tr>
+            <tr><td>ol</td><td>Ordered list.</td></tr>
+            <tr><td>li</td><td>List item.</td></tr>
+            <tr><td>dl</td><td>Description list.</td></tr>
+            <tr><td>dt</td><td>Description term.</td></tr>
+            <tr><td>dd</td><td>Description details.</td></tr>
+        </table>
+
+        <h3>HTML Tables</h3>
+        <p>Tables organize data in rows and columns.</p>
+
+        <table>
+            <tr><th>Tag</th><th>Purpose</th></tr>
+            <tr><td>table</td><td>Creates a table.</td></tr>
+            <tr><td>tr</td><td>Creates a row.</td></tr>
+            <tr><td>th</td><td>Creates a heading cell.</td></tr>
+            <tr><td>td</td><td>Creates a data cell.</td></tr>
+            <tr><td>caption</td><td>Adds a table caption.</td></tr>
+            <tr><td>thead</td><td>Groups header rows.</td></tr>
+            <tr><td>tbody</td><td>Groups main content rows.</td></tr>
+            <tr><td>tfoot</td><td>Groups footer rows.</td></tr>
+        </table>
+
+        <h3>Simple Table Example</h3>
+        <pre><code>&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Course&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Shrey&lt;/td&gt;
+        &lt;td&gt;B.Tech CSE&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Aarav&lt;/td&gt;
+        &lt;td&gt;BCA&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+        <h3>Colspan and Rowspan</h3>
+        <p><b>Colspan</b> makes a cell occupy multiple columns.</p>
+        <pre><code>&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th colspan="2"&gt;Student Details&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Name&lt;/td&gt;
+        &lt;td&gt;Shrey&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+        <p><b>Rowspan</b> makes a cell occupy multiple rows.</p>
+        <pre><code>&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;CSE&lt;/td&gt;
+        &lt;td&gt;HTML&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;CSS&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+        <h3>Cell Padding and Spacing</h3>
+        <p>Padding controls space inside cells, while border spacing
+        controls the space between cells.</p>
+        <pre><code>&lt;table style="border-spacing:10px;"&gt;
+    &lt;tr&gt;
+        &lt;td style="padding:10px;"&gt;HTML&lt;/td&gt;
+        &lt;td style="padding:10px;"&gt;CSS&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    </section>
+
+
+    <!-- 7. IMAGES -->
+    <section class="topic" id="images">
+        <h2>7. HTML Images</h2>
+
+        <p>The img tag is used to add images to a webpage.
+        This topic explains the HTML code only; no actual image
+        is displayed in this section.</p>
+
+        <h3>Basic Syntax</h3>
+        <pre><code>&lt;img src="photo.jpg" alt="My Photo"&gt;</code></pre>
+
+        <h3>Image Attributes</h3>
+        <table>
+            <tr><th>Attribute</th><th>Purpose</th></tr>
+            <tr><td>src</td><td>Specifies the image location.</td></tr>
+            <tr><td>alt</td><td>Provides alternative text.</td></tr>
+            <tr><td>width</td><td>Sets image width.</td></tr>
+            <tr><td>height</td><td>Sets image height.</td></tr>
+        </table>
+
+        <h3>Image Example</h3>
+        <pre><code>&lt;img src="flower.jpg"
+     alt="A flower"
+     width="300"
+     height="200"&gt;</code></pre>
+
+        <h3>Common Image Formats</h3>
+        <table>
+            <tr><th>Format</th><th>Use</th></tr>
+            <tr><td>JPG / JPEG</td><td>Photographs.</td></tr>
+            <tr><td>PNG</td><td>Images with transparency.</td></tr>
+            <tr><td>GIF</td><td>Simple animations.</td></tr>
+            <tr><td>SVG</td><td>Scalable vector graphics.</td></tr>
+            <tr><td>WebP</td><td>Compressed web images.</td></tr>
+            <tr><td>ICO</td><td>Website icons.</td></tr>
+        </table>
+
+        <h3>Image Map</h3>
+        <p>An image map creates clickable areas within an image.</p>
+        <pre><code>&lt;img src="map.jpg" usemap="#mymap" alt="Map"&gt;
+
+&lt;map name="mymap"&gt;
+    &lt;area shape="rect"
+          coords="0,0,100,100"
+          href="page.html"
+          alt="Open page"&gt;
+&lt;/map&gt;</code></pre>
+
+        <h3>Picture Element</h3>
+        <p>The picture element allows different image sources to be
+        selected based on conditions such as screen size.</p>
+        <pre><code>&lt;picture&gt;
+    &lt;source media="(max-width:600px)"
+            srcset="small.jpg"&gt;
+    &lt;img src="large.jpg" alt="Example"&gt;
+&lt;/picture&gt;</code></pre>
+    </section>
+
+
+    <!-- 8. FORMS AND INPUT TYPES -->
+    <section class="topic" id="forms">
+        <h2>8. HTML Forms and Input Types</h2>
+
+        <p>HTML forms collect information from users and can send
+        that information to a server.</p>
+
+        <h3>Form Syntax</h3>
+        <pre><code>&lt;form action="submit.php" method="post"&gt;
+    Form elements go here.
+&lt;/form&gt;</code></pre>
+
+        <h3>Common Form Elements</h3>
+        <table>
+            <tr><th>Element</th><th>Purpose</th></tr>
+            <tr><td>input</td><td>Accepts user input.</td></tr>
+            <tr><td>label</td><td>Provides a name for a field.</td></tr>
+            <tr><td>textarea</td><td>Accepts multiple lines of text.</td></tr>
+            <tr><td>select</td><td>Creates a dropdown list.</td></tr>
+            <tr><td>option</td><td>Defines a dropdown option.</td></tr>
+            <tr><td>button</td><td>Creates a clickable button.</td></tr>
+        </table>
+
+        <h3>Text Field and Label</h3>
+        <pre><code>&lt;label for="name"&gt;Name:&lt;/label&gt;
+&lt;input type="text" id="name" name="name"&gt;</code></pre>
+
+        <h3>Radio Buttons</h3>
+        <p>Radio buttons allow selection of one option from a group.</p>
+        <pre><code>&lt;input type="radio" id="male"
+       name="gender" value="Male"&gt;
+&lt;label for="male"&gt;Male&lt;/label&gt;
+
+&lt;input type="radio" id="female"
+       name="gender" value="Female"&gt;
+&lt;label for="female"&gt;Female&lt;/label&gt;</code></pre>
+
+        <h3>Checkboxes</h3>
+        <p>Checkboxes allow selection of multiple options.</p>
+        <pre><code>&lt;input type="checkbox" name="subject"
+       value="HTML"&gt; HTML
+
+&lt;input type="checkbox" name="subject"
+       value="CSS"&gt; CSS</code></pre>
+
+        <h3>Textarea and Dropdown</h3>
+        <pre><code>&lt;textarea name="message" rows="4" cols="30"&gt;
+Enter your message
+&lt;/textarea&gt;
+
+&lt;select name="course"&gt;
+    &lt;option value="cse"&gt;CSE&lt;/option&gt;
+    &lt;option value="bca"&gt;BCA&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+        <h3>HTML5 Input Types</h3>
+        <table>
+            <tr><th>Type</th><th>Purpose</th></tr>
+            <tr><td>text</td><td>Single-line text.</td></tr>
+            <tr><td>password</td><td>Masked password.</td></tr>
+            <tr><td>email</td><td>Email address.</td></tr>
+            <tr><td>number</td><td>Numeric input.</td></tr>
+            <tr><td>date</td><td>Date selection.</td></tr>
+            <tr><td>color</td><td>Color selection.</td></tr>
+            <tr><td>range</td><td>Value slider.</td></tr>
+            <tr><td>tel</td><td>Telephone number.</td></tr>
+            <tr><td>url</td><td>Website address.</td></tr>
+            <tr><td>time</td><td>Time selection.</td></tr>
+            <tr><td>file</td><td>File selection.</td></tr>
+            <tr><td>search</td><td>Search field.</td></tr>
+        </table>
+
+        <h3>Input Type Examples</h3>
+        <pre><code>&lt;input type="email" placeholder="Enter Email"&gt;
+&lt;input type="date"&gt;
+&lt;input type="color"&gt;
+&lt;input type="range" min="0" max="100"&gt;
+&lt;input type="number" min="1" max="10"&gt;
+&lt;input type="password" placeholder="Password"&gt;
+&lt;input type="url" placeholder="Website"&gt;
+&lt;input type="file"&gt;</code></pre>
+
+        <h3>Form Validation Attributes</h3>
+        <table>
+            <tr><th>Attribute</th><th>Purpose</th></tr>
+            <tr><td>required</td><td>Makes a field compulsory.</td></tr>
+            <tr><td>min / max</td><td>Sets minimum and maximum values.</td></tr>
+            <tr><td>maxlength</td><td>Sets maximum characters.</td></tr>
+            <tr><td>minlength</td><td>Sets minimum characters.</td></tr>
+            <tr><td>pattern</td><td>Specifies an input pattern.</td></tr>
+            <tr><td>placeholder</td><td>Displays a hint.</td></tr>
+        </table>
+
+        <h3>Validation Example</h3>
+        <pre><code>&lt;form&gt;
+    &lt;input type="email"
+           placeholder="Enter Email"
+           required&gt;
+
+    &lt;input type="number"
+           min="1" max="100"
+           required&gt;
+
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+
+        <h3>Complete Student Registration Form</h3>
+        <pre><code>&lt;form action="submit.php" method="post"&gt;
+
+    &lt;label for="sname"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="sname" name="name"&gt;
+
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+
+    &lt;br&gt;&lt;br&gt;
+
+    Gender:
+    &lt;input type="radio" name="gender" value="Male"&gt; Male
+    &lt;input type="radio" name="gender" value="Female"&gt; Female
+
+    &lt;br&gt;&lt;br&gt;
+
+    Course:
+    &lt;select name="course"&gt;
+        &lt;option&gt;B.Tech&lt;/option&gt;
+        &lt;option&gt;BCA&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;br&gt;&lt;br&gt;
+
+    &lt;input type="submit" value="Register"&gt;
+
+&lt;/form&gt;</code></pre>
+    </section>
+
+
+    <!-- 9. SEMANTIC HTML -->
+    <section class="topic" id="semantic">
+        <h2>9. HTML5 Semantic Elements</h2>
+
+        <p>Semantic elements clearly describe the meaning and purpose
+        of the content they contain.</p>
+
+        <h3>Advantages</h3>
+        <ul>
+            <li>Improve code readability.</li>
+            <li>Help search engines understand webpage content.</li>
+            <li>Improve accessibility.</li>
+            <li>Make websites easier to maintain.</li>
+        </ul>
+
+        <h3>Important Semantic Tags</h3>
+        <table>
+            <tr><th>Tag</th><th>Purpose</th></tr>
+            <tr><td>header</td><td>Introductory content or page header.</td></tr>
+            <tr><td>nav</td><td>Navigation links.</td></tr>
+            <tr><td>main</td><td>Main webpage content.</td></tr>
+            <tr><td>section</td><td>Groups related content.</td></tr>
+            <tr><td>article</td><td>Independent content.</td></tr>
+            <tr><td>aside</td><td>Related side content.</td></tr>
+            <tr><td>footer</td><td>Footer information.</td></tr>
+        </table>
+
+        <h3>Semantic HTML Example</h3>
+        <pre><code>&lt;header&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    &lt;a href="index.html"&gt;Home&lt;/a&gt;
+    &lt;a href="about.html"&gt;About&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;About HTML&lt;/h2&gt;
+        &lt;p&gt;HTML creates web pages.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;article&gt;
+        &lt;h2&gt;HTML Tutorial&lt;/h2&gt;
+        &lt;p&gt;Learn HTML step by step.&lt;/p&gt;
+    &lt;/article&gt;
+
+    &lt;aside&gt;Related information&lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;Copyright 2026&lt;/footer&gt;</code></pre>
+    </section>
+
+
+    <!-- 10. MULTIMEDIA -->
+    <section class="topic" id="media">
+        <h2>10. HTML5 Audio and Video</h2>
+
+        <p>HTML5 provides audio and video elements that allow media
+        to play directly in a browser without external plugins.</p>
+
+        <h3>Video Element</h3>
+        <pre><code>&lt;video width="400" controls&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    Your browser does not support video.
+&lt;/video&gt;</code></pre>
+
+        <h3>Video Attributes</h3>
+        <table>
+            <tr><th>Attribute</th><th>Purpose</th></tr>
+            <tr><td>controls</td><td>Displays playback controls.</td></tr>
+            <tr><td>autoplay</td><td>Requests automatic playback.</td></tr>
+            <tr><td>loop</td><td>Repeats the video.</td></tr>
+            <tr><td>muted</td><td>Mutes the audio.</td></tr>
+            <tr><td>width / height</td><td>Sets video dimensions.</td></tr>
+            <tr><td>poster</td><td>Specifies a preview image.</td></tr>
+        </table>
+
+        <h3>Audio Element</h3>
+        <pre><code>&lt;audio controls&gt;
+    &lt;source src="song.mp3" type="audio/mpeg"&gt;
+    Your browser does not support audio.
+&lt;/audio&gt;</code></pre>
+
+        <p>Audio also supports controls, autoplay, loop and muted.
+        Multiple source elements can provide alternative file formats.</p>
+
+        <pre><code>&lt;audio controls&gt;
+    &lt;source src="song.mp3" type="audio/mpeg"&gt;
+    &lt;source src="song.ogg" type="audio/ogg"&gt;
+&lt;/audio&gt;</code></pre>
+    </section>
+
+
+    <!-- 11. ADVANCED -->
+    <section class="topic" id="advanced">
+        <h2>11. Drag and Drop and XHTML</h2>
+
+        <h3>HTML5 Drag and Drop API</h3>
+        <p>Drag and Drop allows users to move elements from one
+        location to another using a supported input device.</p>
+
+        <h3>Draggable Attribute</h3>
+        <pre><code>&lt;div draggable="true"&gt;
+    Drag Me
+&lt;/div&gt;</code></pre>
+
+        <h3>Important Events</h3>
+        <table>
+            <tr><th>Event</th><th>Purpose</th></tr>
+            <tr><td>ondragstart</td><td>Runs when dragging begins.</td></tr>
+            <tr><td>ondragover</td><td>Runs when an element is dragged over a target.</td></tr>
+            <tr><td>ondrop</td><td>Runs when an element is dropped.</td></tr>
+            <tr><td>ondragend</td><td>Runs when dragging ends.</td></tr>
+        </table>
+
+        <h3>Drag and Drop Example</h3>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;div id="box" draggable="true"
+     ondragstart="drag(event)"&gt;
+    Drag Me
+&lt;/div&gt;
+
+&lt;div id="drop"
+     ondragover="allowDrop(event)"
+     ondrop="drop(event)"&gt;
+    Drop Here
+&lt;/div&gt;
+
+&lt;script&gt;
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drag(event) {
+    event.dataTransfer.setData("text", event.target.id);
+}
+
+function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    event.target.appendChild(document.getElementById(data));
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h3>XHTML</h3>
+        <p>XHTML stands for Extensible HyperText Markup Language.
+        It is an XML-based version of HTML with stricter syntax rules.</p>
+
+        <h3>Features of XHTML</h3>
+        <ul>
+            <li>Tags must be written in lowercase.</li>
+            <li>All elements must be properly closed.</li>
+            <li>Elements must be correctly nested.</li>
+            <li>Attribute values must be quoted.</li>
+            <li>Documents must follow XML syntax rules.</li>
+        </ul>
+
+        <h3>HTML vs XHTML</h3>
+        <table>
+            <tr><th>HTML</th><th>XHTML</th></tr>
+            <tr><td>Flexible syntax.</td><td>Strict XML-based syntax.</td></tr>
+            <tr><td>Some end tags may be optional.</td><td>Elements must be closed.</td></tr>
+            <tr><td>Uppercase tags are allowed.</td><td>Lowercase tags are required.</td></tr>
+            <tr><td>Some attribute values may be unquoted.</td><td>Attribute values must be quoted.</td></tr>
+        </table>
+
+        <h3>XHTML Example</h3>
+        <pre><code>&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+    &lt;title&gt;XHTML Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Hello World&lt;/p&gt;
+    &lt;br /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+
+
+    <!-- 12. META TAGS -->
+    <section class="topic" id="meta">
+        <h2>12. HTML Meta Tags</h2>
+
+        <p>Meta tags provide information about an HTML document.
+        They are placed inside the head element and are not normally
+        displayed on the webpage.</p>
+
+        <h3>Common Meta Tags</h3>
+        <table>
+            <tr><th>Meta Tag</th><th>Purpose</th></tr>
+            <tr><td>charset</td><td>Defines character encoding.</td></tr>
+            <tr><td>viewport</td><td>Helps pages adjust to screen sizes.</td></tr>
+            <tr><td>description</td><td>Provides a page summary.</td></tr>
+            <tr><td>author</td><td>Specifies the page author.</td></tr>
+            <tr><td>refresh</td><td>Can request automatic page refresh.</td></tr>
+        </table>
+
+        <h3>Meta Tag Example</h3>
+        <pre><code>&lt;head&gt;
+
+    &lt;meta charset="UTF-8"&gt;
+
+    &lt;meta name="viewport"
+          content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;meta name="description"
+          content="HTML Learning Website"&gt;
+
+    &lt;meta name="author"
+          content="Student"&gt;
+
+    &lt;title&gt;My Website&lt;/title&gt;
+
+&lt;/head&gt;</code></pre>
+
+        <h3>Important Meta Tags Explained</h3>
+        <p><b>Charset:</b> UTF-8 supports a wide range of characters.</p>
+        <p><b>Viewport:</b> Helps webpages display correctly on mobile devices.</p>
+        <p><b>Description:</b> Provides a short description of the webpage.</p>
+    </section>
+
+
+    <!-- SUMMARY -->
+    <section class="topic">
+        <h2>Unit 2 Summary</h2>
+
+        <ul>
+            <li>HTML creates the structure of webpages.</li>
+            <li>Elements and attributes define webpage content and properties.</li>
+            <li>Formatting tags change the appearance or meaning of text.</li>
+            <li>CSS controls the design and layout of webpages.</li>
+            <li>Links connect webpages.</li>
+            <li>Lists and tables organize information.</li>
+            <li>Forms collect information from users.</li>
+            <li>Semantic elements describe webpage sections.</li>
+            <li>HTML5 supports audio, video and new input types.</li>
+            <li>XHTML follows stricter XML syntax rules.</li>
+            <li>Meta tags provide information about a webpage.</li>
+        </ul>
+    </section>
+
+
+    <!-- QUESTIONS -->
+    <section class="topic">
+        <h2>Practice and Revision Questions</h2>
+
+        <h3>Short Answer Questions</h3>
+        <ol>
+            <li>What is HTML?</li>
+            <li>Explain the basic structure of an HTML document.</li>
+            <li>What is the difference between a tag and an element?</li>
+            <li>What are HTML attributes?</li>
+            <li>Explain the different text formatting tags.</li>
+            <li>Differentiate between ordered and unordered lists.</li>
+            <li>What is the purpose of the anchor tag?</li>
+            <li>Explain colspan and rowspan.</li>
+            <li>What are semantic HTML5 elements?</li>
+            <li>What is the difference between HTML and XHTML?</li>
+        </ol>
+
+        <h3>Practical Questions</h3>
+        <ol>
+            <li>Create a webpage using all six heading tags.</li>
+            <li>Create a webpage with ordered and unordered lists.</li>
+            <li>Create a student marksheet using an HTML table.</li>
+            <li>Create a student registration form.</li>
+            <li>Create a webpage containing internal and external links.</li>
+            <li>Create a webpage using audio and video elements.</li>
+            <li>Create a webpage using semantic HTML5 elements.</li>
+            <li>Demonstrate different HTML5 input types.</li>
+        </ol>
+    </section>
+
+
+    <footer class="topic">
+        <h2>End of Unit 2</h2>
+        <p>You have completed HTML fundamentals.</p>
+        <a href="index.html">← Return to Home</a>
+        <br><br>
+        <a href="unit3.html">Continue to Unit 3: CSS →</a>
+    </footer>
+
+</div>
+
+<footer>
+    <p>Created by <strong>Shrey Savargaonkar</strong></p>
+    <p>Web Technologies Study Material</p>
+</footer>
+
+</body>
+</html>

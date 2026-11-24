@@ -1,0 +1,2647 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5 - XML | Web Technologies</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .unit-content {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .unit-heading {
+            color: #173b57;
+            border-bottom: 3px solid #287a78;
+            padding-bottom: 12px;
+        }
+
+        .topic-list {
+            background: #f3f7f7;
+            border-left: 5px solid #287a78;
+            padding: 20px 30px;
+            border-radius: 6px;
+            margin: 25px 0;
+        }
+
+        .topic-list h2 {
+            color: #173b57;
+        }
+
+        .topic-list ol {
+            line-height: 2;
+        }
+
+        .topic-list a {
+            color: #245e68;
+            text-decoration: none;
+        }
+
+        .topic-list a:hover {
+            text-decoration: underline;
+        }
+
+        .content-section {
+            padding: 20px 0;
+            border-bottom: 1px solid #dddddd;
+            scroll-margin-top: 20px;
+        }
+
+        .content-section h2 {
+            color: #173b57;
+        }
+
+        .content-section h3 {
+            color: #287a78;
+            margin-top: 22px;
+        }
+
+        .example {
+            background: #f4f6f8;
+            border-left: 4px solid #287a78;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .example pre {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            margin: 0;
+        }
+
+        .note {
+            background: #fff8e8;
+            border-left: 4px solid #d5a441;
+            padding: 14px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison th,
+        .comparison td {
+            border: 1px solid #d5dddd;
+            padding: 11px;
+            text-align: left;
+        }
+
+        .comparison th {
+            background: #eaf1f2;
+            color: #173b57;
+        }
+
+        .unit-footer {
+            background: #f3f7f7;
+            padding: 20px;
+            border-radius: 7px;
+            margin-top: 25px;
+        }
+
+        .unit-content li {
+            margin-bottom: 7px;
+        }
+
+        .unit-content code {
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 650px) {
+            .unit-content {
+                padding: 15px;
+            }
+
+            .comparison {
+                font-size: 14px;
+            }
+
+            .comparison th,
+            .comparison td {
+                padding: 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Web Technologies</h1>
+    <p>Complete Study Material</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="unit1.html">Unit 1</a>
+    <a href="unit2.html">Unit 2</a>
+    <a href="unit3.html">Unit 3</a>
+    <a href="unit4.html">Unit 4</a>
+    <a href="unit5.html">Unit 5</a>
+    <a href="unit6.html">Unit 6</a>
+</nav>
+
+<main class="unit-content">
+
+    <h1 class="unit-heading">Unit 5: XML – Structure, Validation and Transformation</h1>
+
+    <p>
+        XML stands for Extensible Markup Language. It is used to represent,
+        store and transport structured data. This unit explains XML
+        document structure, syntax rules, namespaces, validation using
+        DTD and XML Schema, and transformation using XPath and XSLT.
+    </p>
+
+
+    <!-- TOPIC LIST -->
+
+    <div class="topic-list">
+
+        <h2>Topics Covered in This Unit</h2>
+
+        <ol>
+            <li><a href="#topic1">Introduction to XML</a></li>
+            <li><a href="#topic2">XML Key Components and Document Structure</a></li>
+            <li><a href="#topic3">XML Syntax Rules and Well-Formed Documents</a></li>
+            <li><a href="#topic4">XML Namespaces and Reserved Characters</a></li>
+            <li><a href="#topic5">DTD – Document Type Definition</a></li>
+            <li><a href="#topic6">XML Schema (XSD) and Validation</a></li>
+            <li><a href="#topic7">XPath – XML Path Language</a></li>
+            <li><a href="#topic8">XSL and XSLT – XML Transformation</a></li>
+            <li><a href="#topic9">Connecting XML with XSLT and Running Transformations</a></li>
+            <li><a href="#topic10">Unit Summary and Practice Questions</a></li>
+        </ol>
+
+    </div>
+
+
+    <!-- TOPIC 1 -->
+
+    <section class="content-section" id="topic1">
+
+        <h2>1. Introduction to XML</h2>
+
+        <h3>What is XML?</h3>
+
+        <p>
+            XML stands for Extensible Markup Language. It is a text-based
+            markup language used to represent, store and transport
+            structured information.
+        </p>
+
+        <p>
+            XML allows users to create their own tags according to
+            the type of information they want to store. It describes
+            the meaning and structure of data rather than how the data
+            should look on a web page.
+        </p>
+
+        <h3>Example of XML</h3>
+
+        <div class="example">
+<pre>
+&lt;course code="WT205"&gt;
+
+    &lt;title&gt;Web Technologies&lt;/title&gt;
+
+    &lt;credits&gt;4&lt;/credits&gt;
+
+    &lt;instructor&gt;Dr. Mehta&lt;/instructor&gt;
+
+&lt;/course&gt;
+</pre>
+        </div>
+
+        <p>
+            In this example, course, title, credits and instructor
+            are XML elements. The information is stored in a structured
+            format using meaningful tags.
+        </p>
+
+        <h3>Why is XML Used?</h3>
+
+        <ul>
+            <li>To store structured information.</li>
+            <li>To exchange data between different applications.</li>
+            <li>To transport information between systems.</li>
+            <li>To create configuration files.</li>
+            <li>To represent information in a readable format.</li>
+            <li>To organise data using meaningful tags.</li>
+        </ul>
+
+        <h3>Features of XML</h3>
+
+        <h3>A. Extensible</h3>
+
+        <p>
+            XML allows users to create their own tags. It does not
+            have a fixed set of tags like HTML.
+        </p>
+
+        <h3>B. Structured</h3>
+
+        <p>
+            XML stores information in a tree structure. Elements can
+            contain other elements, creating parent-child relationships.
+        </p>
+
+        <h3>C. Portable</h3>
+
+        <p>
+            XML is plain text and can be read by people and processed
+            by software on different operating systems and platforms.
+        </p>
+
+        <h3>D. Platform Independent</h3>
+
+        <p>
+            XML can be exchanged between different systems without
+            depending on a particular operating system or programming
+            language.
+        </p>
+
+        <h3>E. Self-Descriptive</h3>
+
+        <p>
+            XML uses meaningful tag names that describe the information
+            being stored.
+        </p>
+
+        <h3>F. Data-Oriented</h3>
+
+        <p>
+            XML focuses on representing and carrying data. It does not
+            automatically provide a visual design or user interface.
+        </p>
+
+        <h3>Difference Between HTML and XML</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>HTML</th>
+                <th>XML</th>
+            </tr>
+
+            <tr>
+                <td>HTML stands for HyperText Markup Language.</td>
+                <td>XML stands for Extensible Markup Language.</td>
+            </tr>
+
+            <tr>
+                <td>HTML is used to display and structure web pages.</td>
+                <td>XML is used to store and transport structured data.</td>
+            </tr>
+
+            <tr>
+                <td>HTML has predefined tags.</td>
+                <td>XML allows users to create their own tags.</td>
+            </tr>
+
+            <tr>
+                <td>HTML tags have predefined meanings.</td>
+                <td>XML tags describe the meaning of data.</td>
+            </tr>
+
+            <tr>
+                <td>HTML is generally more forgiving about syntax.</td>
+                <td>XML follows strict syntax rules.</td>
+            </tr>
+
+            <tr>
+                <td>HTML focuses on presentation and document structure.</td>
+                <td>XML focuses on data representation and structure.</td>
+            </tr>
+
+        </table>
+
+        <h3>Where is XML Used?</h3>
+
+        <ul>
+            <li><b>Data Exchange:</b> Sharing information between different applications.</li>
+            <li><b>Configuration Files:</b> Storing application settings.</li>
+            <li><b>RSS Feeds:</b> Sharing updates and news articles.</li>
+            <li><b>Document Formats:</b> Representing structured documents.</li>
+            <li><b>Web Services:</b> Exchanging information between systems.</li>
+            <li><b>Data Storage:</b> Organising information in a structured format.</li>
+        </ul>
+
+        <div class="note">
+            <b>Remember:</b> XML is a data format, not a programming
+            language. It describes what information means, while
+            another application or stylesheet decides how to use
+            or display that information.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 2 -->
+
+    <section class="content-section" id="topic2">
+
+        <h2>2. XML Key Components and Document Structure</h2>
+
+        <h3>XML Document Structure</h3>
+
+        <p>
+            An XML document is organised as a tree of nodes. It contains
+            a single root element and may include nested elements,
+            attributes, text and comments.
+        </p>
+
+        <h3>Example of an XML Document</h3>
+
+        <div class="example">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;student id="s204" status="active"&gt;
+
+    &lt;name&gt;Mira Shah&lt;/name&gt;
+
+    &lt;programme&gt;B.Tech CSE&lt;/programme&gt;
+
+    &lt;marks subject="XML"&gt;88&lt;/marks&gt;
+
+    &lt;!-- A student record --&gt;
+
+&lt;/student&gt;
+</pre>
+        </div>
+
+        <p>
+            This example contains an XML declaration, a root element,
+            child elements, attributes, text nodes and a comment.
+        </p>
+
+        <h3>A. XML Declaration</h3>
+
+        <p>
+            The XML declaration is an optional statement written
+            at the beginning of an XML document. It specifies the
+            XML version and character encoding.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</pre>
+        </div>
+
+        <p>Important parts:</p>
+
+        <ul>
+            <li><b>version:</b> Specifies the XML version, commonly 1.0.</li>
+            <li><b>encoding:</b> Specifies the character encoding, commonly UTF-8.</li>
+        </ul>
+
+        <h3>B. Elements</h3>
+
+        <p>
+            Elements are the basic building blocks of XML. An element
+            usually consists of a start tag, content and an end tag.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;name&gt;Mira Shah&lt;/name&gt;
+</pre>
+        </div>
+
+        <p>
+            Here, name is the element name and Mira Shah is its content.
+        </p>
+
+        <h3>C. Root Element</h3>
+
+        <p>
+            The root element is the single outermost element of an
+            XML document. All other elements must be contained inside it.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;student&gt;
+
+    &lt;name&gt;Mira&lt;/name&gt;
+
+    &lt;age&gt;20&lt;/age&gt;
+
+&lt;/student&gt;
+</pre>
+        </div>
+
+        <p>
+            In this example, student is the root element.
+        </p>
+
+        <h3>D. Attributes</h3>
+
+        <p>
+            Attributes provide additional information about an element.
+            They are written inside the start tag in name-value pairs.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;student id="101" status="active"&gt;
+
+    &lt;name&gt;Mira&lt;/name&gt;
+
+&lt;/student&gt;
+</pre>
+        </div>
+
+        <p>
+            Here, id and status are attributes of the student element.
+        </p>
+
+        <h3>E. Text Nodes</h3>
+
+        <p>
+            Text nodes contain the actual character data written
+            between an element's opening and closing tags.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;marks&gt;88&lt;/marks&gt;
+</pre>
+        </div>
+
+        <p>
+            Here, 88 is the text content of the marks element.
+        </p>
+
+        <h3>F. Comments</h3>
+
+        <p>
+            Comments are used to add notes or explanations to an XML
+            document. They are ignored as data by the XML application.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;!-- This is a student record --&gt;
+</pre>
+        </div>
+
+        <h3>G. Empty Elements</h3>
+
+        <p>
+            An empty element does not contain any text or child elements.
+            It can be written using self-closing syntax.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;image/&gt;
+
+&lt;address/&gt;
+</pre>
+        </div>
+
+        <h3>Summary of XML Components</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Component</th>
+                <th>Example</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>XML Declaration</td>
+                <td>version="1.0"</td>
+                <td>Identifies XML version and encoding.</td>
+            </tr>
+
+            <tr>
+                <td>Element</td>
+                <td>&lt;name&gt;Mira&lt;/name&gt;</td>
+                <td>Stores a unit of information.</td>
+            </tr>
+
+            <tr>
+                <td>Root Element</td>
+                <td>&lt;student&gt;</td>
+                <td>Contains the entire document structure.</td>
+            </tr>
+
+            <tr>
+                <td>Attribute</td>
+                <td>id="101"</td>
+                <td>Provides additional information.</td>
+            </tr>
+
+            <tr>
+                <td>Text Node</td>
+                <td>88</td>
+                <td>Stores character data.</td>
+            </tr>
+
+            <tr>
+                <td>Comment</td>
+                <td>&lt;!-- Note --&gt;</td>
+                <td>Provides explanations in the document.</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- TOPIC 3 -->
+
+    <section class="content-section" id="topic3">
+
+        <h2>3. XML Syntax Rules and Well-Formed Documents</h2>
+
+        <h3>What are XML Syntax Rules?</h3>
+
+        <p>
+            XML follows strict syntax rules. Every XML document must
+            follow these rules to be considered well-formed.
+        </p>
+
+        <h3>Important XML Syntax Rules</h3>
+
+        <h3>A. Every Opening Tag Must Have a Closing Tag</h3>
+
+        <p>
+            Each element must be properly closed, or written using
+            self-closing syntax if it is empty.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;name&gt;Mira&lt;/name&gt;
+
+&lt;image/&gt;
+</pre>
+        </div>
+
+        <h3>B. XML Tags are Case-Sensitive</h3>
+
+        <p>
+            XML distinguishes between uppercase and lowercase letters.
+            Therefore, the opening and closing tag names must match exactly.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;Name&gt;Mira&lt;/Name&gt;
+</pre>
+        </div>
+
+        <p>
+            The tags Name and name are considered different names.
+        </p>
+
+        <h3>C. Proper Nesting of Elements</h3>
+
+        <p>
+            XML elements must be nested correctly. The inner element
+            must close before the outer element closes.
+        </p>
+
+        <p><b>Correct Example:</b></p>
+
+        <div class="example">
+<pre>
+&lt;student&gt;
+
+    &lt;name&gt;Mira&lt;/name&gt;
+
+&lt;/student&gt;
+</pre>
+        </div>
+
+        <p><b>Incorrect Example:</b></p>
+
+        <div class="example">
+<pre>
+&lt;student&gt;
+
+    &lt;name&gt;Mira&lt;/student&gt;
+
+&lt;/name&gt;
+</pre>
+        </div>
+
+        <h3>D. Attribute Values Must Be Quoted</h3>
+
+        <p>
+            Every attribute value must be enclosed in single or
+            double quotation marks.
+        </p>
+
+        <p><b>Correct:</b></p>
+
+        <div class="example">
+<pre>
+&lt;student id="101"&gt;
+</pre>
+        </div>
+
+        <p><b>Incorrect:</b></p>
+
+        <div class="example">
+<pre>
+&lt;student id=101&gt;
+</pre>
+        </div>
+
+        <h3>E. Only One Root Element</h3>
+
+        <p>
+            An XML document must have exactly one document element
+            or root element. Other elements must be placed inside it.
+        </p>
+
+        <p><b>Correct:</b></p>
+
+        <div class="example">
+<pre>
+&lt;students&gt;
+
+    &lt;student&gt;Mira&lt;/student&gt;
+
+    &lt;student&gt;Asha&lt;/student&gt;
+
+&lt;/students&gt;
+</pre>
+        </div>
+
+        <h3>F. Reserved Characters Must Be Escaped</h3>
+
+        <p>
+            Certain characters have special meanings in XML.
+            When they are needed as ordinary text, predefined
+            entity references must be used.
+        </p>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Character</th>
+                <th>Entity Reference</th>
+                <th>Meaning</th>
+            </tr>
+
+            <tr>
+                <td>&amp;</td>
+                <td>&amp;amp;</td>
+                <td>Ampersand</td>
+            </tr>
+
+            <tr>
+                <td>&lt;</td>
+                <td>&amp;lt;</td>
+                <td>Less than</td>
+            </tr>
+
+            <tr>
+                <td>&gt;</td>
+                <td>&amp;gt;</td>
+                <td>Greater than</td>
+            </tr>
+
+            <tr>
+                <td>"</td>
+                <td>&amp;quot;</td>
+                <td>Double quotation mark</td>
+            </tr>
+
+            <tr>
+                <td>'</td>
+                <td>&amp;apos;</td>
+                <td>Single quotation mark</td>
+            </tr>
+
+        </table>
+
+        <h3>Example of Escaping Characters</h3>
+
+        <div class="example">
+<pre>
+&lt;message&gt;
+
+    Tom &amp;amp; Jerry
+
+    5 &amp;lt; 10
+
+    10 &amp;gt; 5
+
+&lt;/message&gt;
+</pre>
+        </div>
+
+        <p>
+            The XML parser interprets these entity references as
+            their corresponding characters.
+        </p>
+
+        <h3>What is a Well-Formed XML Document?</h3>
+
+        <p>
+            A well-formed XML document is one that follows all
+            the basic XML syntax rules.
+        </p>
+
+        <p>It must have:</p>
+
+        <ul>
+            <li>Exactly one root element.</li>
+            <li>Properly opened and closed elements.</li>
+            <li>Correct nesting of elements.</li>
+            <li>Quoted attribute values.</li>
+            <li>Correct use of XML syntax and special characters.</li>
+        </ul>
+
+        <h3>Well-Formed XML Example</h3>
+
+        <div class="example">
+<pre>
+&lt;student&gt;
+
+    &lt;name&gt;Asha&lt;/name&gt;
+
+    &lt;course&gt;B.Tech CSE&lt;/course&gt;
+
+    &lt;marks&gt;90&lt;/marks&gt;
+
+&lt;/student&gt;
+</pre>
+        </div>
+
+        <h3>Well-Formed vs Valid XML</h3>
+
+        <p>
+            Well-formedness checks whether an XML document follows
+            basic syntax rules. Validity checks whether the document
+            also follows a declared grammar, such as a DTD or XSD.
+        </p>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Well-Formed XML</th>
+                <th>Valid XML</th>
+            </tr>
+
+            <tr>
+                <td>Follows basic XML syntax rules.</td>
+                <td>Follows basic syntax rules and a declared grammar.</td>
+            </tr>
+
+            <tr>
+                <td>Requires one root element.</td>
+                <td>Also checks the expected document structure.</td>
+            </tr>
+
+            <tr>
+                <td>Checks correct nesting and closing tags.</td>
+                <td>Can check element order, occurrence and data constraints.</td>
+            </tr>
+
+            <tr>
+                <td>Does not require a DTD or XSD.</td>
+                <td>Requires conformance to a DTD or XSD grammar.</td>
+            </tr>
+
+        </table>
+
+        <div class="note">
+            <b>Important:</b> Every valid XML document must be
+            well-formed, but every well-formed XML document is not
+            necessarily valid.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 4 -->
+
+    <section class="content-section" id="topic4">
+
+        <h2>4. XML Namespaces and Reserved Characters</h2>
+
+        <h3>What are XML Namespaces?</h3>
+
+        <p>
+            XML namespaces are used to avoid naming conflicts when
+            elements from different XML vocabularies are used together.
+        </p>
+
+        <p>
+            Two different applications may use the same element name
+            for different purposes. Namespaces help identify which
+            vocabulary an element belongs to.
+        </p>
+
+        <h3>Why are Namespaces Needed?</h3>
+
+        <p>
+            Suppose two systems use an element called title.
+            One system uses title for a book title, while another
+            uses it for a course title. If both are combined,
+            the same name may create confusion.
+        </p>
+
+        <p>
+            Namespaces solve this problem by associating names
+            with a unique namespace URI.
+        </p>
+
+        <h3>Namespace Declaration</h3>
+
+        <p>
+            The xmlns attribute is used to declare a namespace.
+            A prefix can then be used to identify elements belonging
+            to that namespace.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;course xmlns:lib="https://example.edu/library"&gt;
+
+    &lt;title&gt;Web Technologies&lt;/title&gt;
+
+    &lt;lib:title&gt;XML for Libraries&lt;/lib:title&gt;
+
+&lt;/course&gt;
+</pre>
+        </div>
+
+        <p>In this example:</p>
+
+        <ul>
+            <li><b>xmlns:lib:</b> Declares a namespace with the prefix lib.</li>
+            <li><b>lib:</b> Is the namespace prefix.</li>
+            <li><b>title:</b> Is the local element name.</li>
+            <li><b>Namespace URI:</b> Identifies the vocabulary.</li>
+        </ul>
+
+        <h3>Default Namespace</h3>
+
+        <p>
+            A default namespace can be declared without using a prefix.
+            Unprefixed elements within its scope belong to that namespace.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;library xmlns="https://example.edu/library"&gt;
+
+    &lt;book&gt;
+
+        &lt;title&gt;Learning XML&lt;/title&gt;
+
+        &lt;author&gt;Asha Rao&lt;/author&gt;
+
+    &lt;/book&gt;
+
+&lt;/library&gt;
+</pre>
+        </div>
+
+        <h3>Important Points About Namespaces</h3>
+
+        <ul>
+            <li>Namespaces prevent naming conflicts.</li>
+            <li>The xmlns attribute declares a namespace.</li>
+            <li>A prefix identifies elements belonging to a namespace.</li>
+            <li>The namespace URI identifies the vocabulary.</li>
+            <li>The URI does not have to be an active web page.</li>
+        </ul>
+
+        <div class="note">
+            <b>Remember:</b> Namespaces are particularly useful when
+            combining XML documents from different sources or
+            applications.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 5 -->
+
+    <section class="content-section" id="topic5">
+
+        <h2>5. DTD – Document Type Definition</h2>
+
+        <h3>What is DTD?</h3>
+
+        <p>
+            DTD stands for Document Type Definition. It defines the
+            legal structure of an XML document. It specifies which
+            elements and attributes are allowed and how elements
+            can be arranged.
+        </p>
+
+        <p>
+            DTD is used to check whether an XML document follows
+            a predefined structure.
+        </p>
+
+        <h3>Why is DTD Used?</h3>
+
+        <ul>
+            <li>To define allowed XML elements.</li>
+            <li>To specify the order of child elements.</li>
+            <li>To define how many times an element can appear.</li>
+            <li>To declare attributes.</li>
+            <li>To help validate XML documents.</li>
+        </ul>
+
+        <h3>Types of DTD</h3>
+
+        <h3>A. Internal DTD</h3>
+
+        <p>
+            An internal DTD is written directly inside the XML
+            document using a DOCTYPE declaration.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?xml version="1.0"?&gt;
+
+&lt;!DOCTYPE student [
+
+    &lt;!ELEMENT student (name, course)&gt;
+
+    &lt;!ELEMENT name (#PCDATA)&gt;
+
+    &lt;!ELEMENT course (#PCDATA)&gt;
+
+]&gt;
+
+&lt;student&gt;
+
+    &lt;name&gt;Asha&lt;/name&gt;
+
+    &lt;course&gt;B.Tech CSE&lt;/course&gt;
+
+&lt;/student&gt;
+</pre>
+        </div>
+
+        <p>
+            The declarations between square brackets define the
+            allowed structure of the student document.
+        </p>
+
+        <h3>B. External DTD</h3>
+
+        <p>
+            An external DTD is stored in a separate file with
+            the .dtd extension. The XML document connects to
+            this file using a DOCTYPE declaration.
+        </p>
+
+        <p><b>Step 1: Create catalog.dtd</b></p>
+
+        <div class="example">
+<pre>
+&lt;!ELEMENT catalog (product+)&gt;
+
+&lt;!ELEMENT product (name, price)&gt;
+
+&lt;!ATTLIST product id ID #REQUIRED&gt;
+
+&lt;!ELEMENT name (#PCDATA)&gt;
+
+&lt;!ELEMENT price (#PCDATA)&gt;
+</pre>
+        </div>
+
+        <p><b>Step 2: Create catalog.xml</b></p>
+
+        <div class="example">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!DOCTYPE catalog SYSTEM "catalog.dtd"&gt;
+
+&lt;catalog&gt;
+
+    &lt;product id="p101"&gt;
+
+        &lt;name&gt;Notebook&lt;/name&gt;
+
+        &lt;price&gt;45.50&lt;/price&gt;
+
+    &lt;/product&gt;
+
+    &lt;product id="p102"&gt;
+
+        &lt;name&gt;Pen Set&lt;/name&gt;
+
+        &lt;price&gt;30.00&lt;/price&gt;
+
+    &lt;/product&gt;
+
+&lt;/catalog&gt;
+</pre>
+        </div>
+
+        <p>
+            The XML document refers to catalog.dtd. The DTD
+            specifies that the catalog contains one or more
+            product elements, each with a name followed by a price.
+        </p>
+
+        <h3>Understanding DTD Declarations</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Declaration</th>
+                <th>Meaning</th>
+            </tr>
+
+            <tr>
+                <td>&lt;!ELEMENT&gt;</td>
+                <td>Declares an XML element.</td>
+            </tr>
+
+            <tr>
+                <td>&lt;!ATTLIST&gt;</td>
+                <td>Declares attributes for an element.</td>
+            </tr>
+
+            <tr>
+                <td>&lt;!DOCTYPE&gt;</td>
+                <td>Declares the document type and connects its grammar.</td>
+            </tr>
+
+            <tr>
+                <td>#PCDATA</td>
+                <td>Parsed character data, usually text content.</td>
+            </tr>
+
+            <tr>
+                <td>#REQUIRED</td>
+                <td>Makes an attribute compulsory.</td>
+            </tr>
+
+        </table>
+
+        <h3>DTD Occurrence Indicators</h3>
+
+        <p>
+            DTD uses special symbols to specify how often an element
+            can occur.
+        </p>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Symbol</th>
+                <th>Meaning</th>
+            </tr>
+
+            <tr>
+                <td>?</td>
+                <td>Zero or one occurrence.</td>
+            </tr>
+
+            <tr>
+                <td>*</td>
+                <td>Zero or more occurrences.</td>
+            </tr>
+
+            <tr>
+                <td>+</td>
+                <td>One or more occurrences.</td>
+            </tr>
+
+            <tr>
+                <td>,</td>
+                <td>Elements must appear in the specified sequence.</td>
+            </tr>
+
+            <tr>
+                <td>|</td>
+                <td>Allows a choice between alternatives.</td>
+            </tr>
+
+        </table>
+
+        <h3>Example of DTD Content Models</h3>
+
+        <div class="example">
+<pre>
+&lt;!ELEMENT student (name, course)&gt;
+
+&lt;!ELEMENT students (student+)&gt;
+
+&lt;!ELEMENT nickname (#PCDATA)?&gt;
+</pre>
+        </div>
+
+        <p>These declarations mean:</p>
+
+        <ul>
+            <li>student must contain name followed by course.</li>
+            <li>students must contain one or more student elements.</li>
+            <li>nickname may appear zero or one time and contains text.</li>
+        </ul>
+
+        <h3>Advantages of DTD</h3>
+
+        <ul>
+            <li>Simple way to define XML document structure.</li>
+            <li>Helps maintain consistency between XML documents.</li>
+            <li>Supports element and attribute declarations.</li>
+            <li>Can be stored internally or externally.</li>
+        </ul>
+
+        <h3>Limitations of DTD</h3>
+
+        <ul>
+            <li>DTD is not written using XML syntax.</li>
+            <li>It provides limited data types.</li>
+            <li>It has limited support for XML namespaces.</li>
+            <li>It does not provide the same detailed constraints as XSD.</li>
+        </ul>
+
+    </section>
+
+
+    <!-- TOPIC 6 -->
+
+    <section class="content-section" id="topic6">
+
+        <h2>6. XML Schema (XSD) and Validation</h2>
+
+        <h3>What is XML Schema?</h3>
+
+        <p>
+            XML Schema Definition, commonly called XSD, is used to
+            define the structure and rules of an XML document.
+            It specifies which elements and attributes are allowed,
+            their data types and other restrictions.
+        </p>
+
+        <p>
+            XSD is written using XML syntax and provides more detailed
+            validation features than DTD.
+        </p>
+
+        <h3>Why is XSD Used?</h3>
+
+        <ul>
+            <li>To define the structure of an XML document.</li>
+            <li>To specify data types for elements and attributes.</li>
+            <li>To control the order of elements.</li>
+            <li>To set minimum and maximum occurrences.</li>
+            <li>To apply restrictions to data values.</li>
+            <li>To validate XML documents more precisely.</li>
+        </ul>
+
+        <h3>Basic Structure of an XSD Document</h3>
+
+        <div class="example">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+
+    &lt;!-- Schema declarations go here --&gt;
+
+&lt;/xs:schema&gt;
+</pre>
+        </div>
+
+        <p>
+            The xs:schema element is the root element of an XML
+            Schema document. The xs prefix refers to the XML Schema
+            namespace.
+        </p>
+
+        <h3>Common XSD Data Types</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Data Type</th>
+                <th>Purpose</th>
+                <th>Example</th>
+            </tr>
+
+            <tr>
+                <td>xs:string</td>
+                <td>Stores text.</td>
+                <td>Web Technologies</td>
+            </tr>
+
+            <tr>
+                <td>xs:integer</td>
+                <td>Stores whole numbers.</td>
+                <td>25</td>
+            </tr>
+
+            <tr>
+                <td>xs:decimal</td>
+                <td>Stores decimal numbers.</td>
+                <td>45.50</td>
+            </tr>
+
+            <tr>
+                <td>xs:boolean</td>
+                <td>Stores true or false values.</td>
+                <td>true</td>
+            </tr>
+
+            <tr>
+                <td>xs:date</td>
+                <td>Stores a date.</td>
+                <td>2026-11-24</td>
+            </tr>
+
+            <tr>
+                <td>xs:time</td>
+                <td>Stores a time.</td>
+                <td>10:30:00</td>
+            </tr>
+
+            <tr>
+                <td>xs:ID</td>
+                <td>Stores an XML identifier.</td>
+                <td>p101</td>
+            </tr>
+
+        </table>
+
+        <h3>Simple Types and Complex Types</h3>
+
+        <h3>A. Simple Type</h3>
+
+        <p>
+            A simple type contains only text data and does not
+            contain child elements or attributes.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;xs:element name="price" type="xs:decimal"/&gt;
+</pre>
+        </div>
+
+        <p>
+            This declaration specifies that the price element
+            must contain a decimal value.
+        </p>
+
+        <h3>B. Complex Type</h3>
+
+        <p>
+            A complex type can contain child elements and attributes.
+            It is useful for representing structured records.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;xs:element name="student"&gt;
+
+    &lt;xs:complexType&gt;
+
+        &lt;xs:sequence&gt;
+
+            &lt;xs:element name="name" type="xs:string"/&gt;
+
+            &lt;xs:element name="age" type="xs:integer"/&gt;
+
+        &lt;/xs:sequence&gt;
+
+    &lt;/xs:complexType&gt;
+
+&lt;/xs:element&gt;
+</pre>
+        </div>
+
+        <p>
+            Here, student contains two child elements: name and age.
+        </p>
+
+        <h3>Important XSD Elements</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>XSD Element</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>xs:schema</td>
+                <td>Root element of the schema.</td>
+            </tr>
+
+            <tr>
+                <td>xs:element</td>
+                <td>Declares an XML element.</td>
+            </tr>
+
+            <tr>
+                <td>xs:attribute</td>
+                <td>Declares an attribute.</td>
+            </tr>
+
+            <tr>
+                <td>xs:complexType</td>
+                <td>Defines a complex structure.</td>
+            </tr>
+
+            <tr>
+                <td>xs:simpleType</td>
+                <td>Defines a simple data type.</td>
+            </tr>
+
+            <tr>
+                <td>xs:sequence</td>
+                <td>Requires child elements in a particular order.</td>
+            </tr>
+
+            <tr>
+                <td>xs:choice</td>
+                <td>Allows one choice from a group of elements.</td>
+            </tr>
+
+            <tr>
+                <td>xs:all</td>
+                <td>Allows child elements in any order, subject to its occurrence rules.</td>
+            </tr>
+
+        </table>
+
+        <h3>Occurrence Constraints</h3>
+
+        <p>
+            XSD uses minOccurs and maxOccurs to control how many
+            times an element can appear.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;xs:element
+    name="product"
+    type="xs:string"
+    minOccurs="1"
+    maxOccurs="5"/&gt;
+</pre>
+        </div>
+
+        <p>
+            This declaration allows the product element to appear
+            at least once and at most five times.
+        </p>
+
+        <h3>Value Restrictions</h3>
+
+        <p>
+            XSD can restrict the values accepted by an element.
+            Some common restriction elements include:
+        </p>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Restriction</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>xs:minInclusive</td>
+                <td>Sets the minimum allowed value, including the boundary.</td>
+            </tr>
+
+            <tr>
+                <td>xs:maxInclusive</td>
+                <td>Sets the maximum allowed value, including the boundary.</td>
+            </tr>
+
+            <tr>
+                <td>xs:minLength</td>
+                <td>Sets the minimum length of a value.</td>
+            </tr>
+
+            <tr>
+                <td>xs:maxLength</td>
+                <td>Sets the maximum length of a value.</td>
+            </tr>
+
+            <tr>
+                <td>xs:enumeration</td>
+                <td>Allows only specified values.</td>
+            </tr>
+
+            <tr>
+                <td>xs:pattern</td>
+                <td>Checks a value against a pattern.</td>
+            </tr>
+
+        </table>
+
+        <h3>Complete Example: Catalog XSD</h3>
+
+        <p>
+            The following schema defines a catalog containing products.
+            Each product has a name, a decimal price and a required ID.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+
+    &lt;xs:element name="catalog"&gt;
+
+        &lt;xs:complexType&gt;
+
+            &lt;xs:sequence&gt;
+
+                &lt;xs:element name="product"
+                    maxOccurs="unbounded"&gt;
+
+                    &lt;xs:complexType&gt;
+
+                        &lt;xs:sequence&gt;
+
+                            &lt;xs:element
+                                name="name"
+                                type="xs:string"/&gt;
+
+                            &lt;xs:element
+                                name="price"
+                                type="xs:decimal"/&gt;
+
+                        &lt;/xs:sequence&gt;
+
+                        &lt;xs:attribute
+                            name="id"
+                            type="xs:ID"
+                            use="required"/&gt;
+
+                    &lt;/xs:complexType&gt;
+
+                &lt;/xs:element&gt;
+
+            &lt;/xs:sequence&gt;
+
+        &lt;/xs:complexType&gt;
+
+    &lt;/xs:element&gt;
+
+&lt;/xs:schema&gt;
+</pre>
+        </div>
+
+        <h3>XML Document Connected to XSD</h3>
+
+        <p>
+            An XML document can refer to an external schema using
+            xsi:noNamespaceSchemaLocation when the schema does not
+            use a target namespace.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;catalog
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="catalog.xsd"&gt;
+
+    &lt;product id="p101"&gt;
+
+        &lt;name&gt;Notebook&lt;/name&gt;
+
+        &lt;price&gt;45.50&lt;/price&gt;
+
+    &lt;/product&gt;
+
+&lt;/catalog&gt;
+</pre>
+        </div>
+
+        <h3>Difference Between DTD and XSD</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>DTD</th>
+                <th>XSD</th>
+            </tr>
+
+            <tr>
+                <td>Document Type Definition.</td>
+                <td>XML Schema Definition.</td>
+            </tr>
+
+            <tr>
+                <td>Uses specialised DTD syntax.</td>
+                <td>Uses XML syntax.</td>
+            </tr>
+
+            <tr>
+                <td>Provides limited data types.</td>
+                <td>Provides many built-in and custom data types.</td>
+            </tr>
+
+            <tr>
+                <td>Has limited namespace support.</td>
+                <td>Designed to support XML namespaces.</td>
+            </tr>
+
+            <tr>
+                <td>Provides basic structural validation.</td>
+                <td>Provides more detailed structural and value constraints.</td>
+            </tr>
+
+            <tr>
+                <td>Suitable for simple or legacy document formats.</td>
+                <td>Useful when detailed validation and typed values are needed.</td>
+            </tr>
+
+        </table>
+
+        <h3>What is XML Validation?</h3>
+
+        <p>
+            XML validation is the process of checking whether an XML
+            document follows the rules defined in a DTD or XSD.
+        </p>
+
+        <p>Validation helps ensure that:</p>
+
+        <ul>
+            <li>Only permitted elements are used.</li>
+            <li>Elements appear in the correct order.</li>
+            <li>Required attributes are present.</li>
+            <li>Data values follow the expected types and restrictions.</li>
+        </ul>
+
+        <h3>Using xmllint for Validation</h3>
+
+        <p>
+            The xmllint utility, provided by libxml2, can be used
+            to validate XML documents from the command line.
+        </p>
+
+        <p><b>DTD Validation:</b></p>
+
+        <div class="example">
+<pre>
+xmllint --noout --valid catalog.xml
+</pre>
+        </div>
+
+        <p><b>XSD Validation:</b></p>
+
+        <div class="example">
+<pre>
+xmllint --noout --schema catalog.xsd catalog.xml
+</pre>
+        </div>
+
+        <p>
+            A successful validation indicates that the XML document
+            conforms to the specified grammar.
+        </p>
+
+        <div class="note">
+            <b>Important:</b> A normal XML parser checks whether a
+            document is well-formed. Validation against a DTD or XSD
+            requires a validating processor or suitable validation tool.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 7 -->
+
+    <section class="content-section" id="topic7">
+
+        <h2>7. XPath – XML Path Language</h2>
+
+        <h3>What is XPath?</h3>
+
+        <p>
+            XPath stands for XML Path Language. It is used to navigate
+            through an XML document and select specific elements,
+            attributes and values.
+        </p>
+
+        <p>
+            XPath expressions are commonly used in XSLT to select
+            the XML nodes that need to be processed.
+        </p>
+
+        <h3>Why is XPath Used?</h3>
+
+        <ul>
+            <li>To select specific XML elements.</li>
+            <li>To access attribute values.</li>
+            <li>To navigate through the XML document tree.</li>
+            <li>To select nodes based on conditions.</li>
+            <li>To find specific information in XML documents.</li>
+            <li>To select data during XSLT transformations.</li>
+        </ul>
+
+        <h3>Example XML Document</h3>
+
+        <div class="example">
+<pre>
+&lt;catalog&gt;
+
+    &lt;book id="b101"&gt;
+
+        &lt;title&gt;Learning XML&lt;/title&gt;
+
+        &lt;author&gt;Asha Rao&lt;/author&gt;
+
+        &lt;price&gt;450&lt;/price&gt;
+
+    &lt;/book&gt;
+
+    &lt;book id="b102"&gt;
+
+        &lt;title&gt;Data on the Web&lt;/title&gt;
+
+        &lt;author&gt;Neil Patel&lt;/author&gt;
+
+        &lt;price&gt;525&lt;/price&gt;
+
+    &lt;/book&gt;
+
+&lt;/catalog&gt;
+</pre>
+        </div>
+
+        <h3>Basic XPath Expressions</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>XPath Expression</th>
+                <th>Meaning</th>
+            </tr>
+
+            <tr>
+                <td>/</td>
+                <td>Selects from the document root.</td>
+            </tr>
+
+            <tr>
+                <td>/catalog</td>
+                <td>Selects the catalog root element.</td>
+            </tr>
+
+            <tr>
+                <td>/catalog/book</td>
+                <td>Selects book elements directly inside catalog.</td>
+            </tr>
+
+            <tr>
+                <td>//book</td>
+                <td>Selects book elements anywhere in the document.</td>
+            </tr>
+
+            <tr>
+                <td>/catalog/book/title</td>
+                <td>Selects title elements inside book elements.</td>
+            </tr>
+
+            <tr>
+                <td>//title</td>
+                <td>Selects all title elements.</td>
+            </tr>
+
+            <tr>
+                <td>//book/@id</td>
+                <td>Selects id attributes of book elements.</td>
+            </tr>
+
+            <tr>
+                <td>//book[1]</td>
+                <td>Selects the first book child of its parent.</td>
+            </tr>
+
+            <tr>
+                <td>//book/title/text()</td>
+                <td>Selects the text inside book titles.</td>
+            </tr>
+
+        </table>
+
+        <h3>XPath Axes and Navigation</h3>
+
+        <p>
+            XPath provides axes that help navigate relationships
+            between nodes in an XML document.
+        </p>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Axis</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>child</td>
+                <td>Selects child nodes.</td>
+            </tr>
+
+            <tr>
+                <td>parent</td>
+                <td>Selects the parent node.</td>
+            </tr>
+
+            <tr>
+                <td>self</td>
+                <td>Selects the current node.</td>
+            </tr>
+
+            <tr>
+                <td>ancestor</td>
+                <td>Selects ancestor nodes.</td>
+            </tr>
+
+            <tr>
+                <td>descendant</td>
+                <td>Selects descendant nodes.</td>
+            </tr>
+
+            <tr>
+                <td>following-sibling</td>
+                <td>Selects sibling nodes that appear after the current node.</td>
+            </tr>
+
+            <tr>
+                <td>preceding-sibling</td>
+                <td>Selects sibling nodes that appear before the current node.</td>
+            </tr>
+
+        </table>
+
+        <h3>XPath Predicates</h3>
+
+        <p>
+            Predicates are conditions written inside square brackets.
+            They are used to filter selected nodes.
+        </p>
+
+        <div class="example">
+<pre>
+/catalog/book[1]
+
+/catalog/book[price > 500]
+
+//book[@id="b101"]
+
+//book[title="Learning XML"]
+</pre>
+        </div>
+
+        <p>These expressions select:</p>
+
+        <ul>
+            <li>The first book element.</li>
+            <li>Books whose price is greater than 500.</li>
+            <li>The book with ID b101.</li>
+            <li>The book with the title Learning XML.</li>
+        </ul>
+
+        <h3>XPath Functions</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Function</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>text()</td>
+                <td>Selects text nodes.</td>
+            </tr>
+
+            <tr>
+                <td>position()</td>
+                <td>Returns the position of the current node.</td>
+            </tr>
+
+            <tr>
+                <td>last()</td>
+                <td>Returns the number of nodes in the current selection.</td>
+            </tr>
+
+            <tr>
+                <td>count()</td>
+                <td>Counts selected nodes.</td>
+            </tr>
+
+            <tr>
+                <td>contains()</td>
+                <td>Checks whether a string contains another string.</td>
+            </tr>
+
+            <tr>
+                <td>starts-with()</td>
+                <td>Checks whether a string starts with a specified value.</td>
+            </tr>
+
+        </table>
+
+        <h3>Example Using XPath Functions</h3>
+
+        <div class="example">
+<pre>
+count(//book)
+
+last()
+
+//book[position()=1]
+
+//book[contains(title, 'XML')]
+</pre>
+        </div>
+
+        <div class="note">
+            <b>Remember:</b> XPath is used to select and navigate
+            XML nodes. XSLT uses XPath expressions to decide which
+            elements and values should be processed.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 8 -->
+
+    <section class="content-section" id="topic8">
+
+        <h2>8. XSL and XSLT – XML Transformation</h2>
+
+        <h3>What is XSL?</h3>
+
+        <p>
+            XSL stands for Extensible Stylesheet Language. It is a
+            family of technologies used to work with and transform
+            XML documents.
+        </p>
+
+        <p>
+            XSL provides ways to select, transform and format
+            information stored in XML.
+        </p>
+
+        <h3>Main Components of XSL</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Component</th>
+                <th>Full Form</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>XSLT</td>
+                <td>Extensible Stylesheet Language Transformations</td>
+                <td>Transforms XML into another format.</td>
+            </tr>
+
+            <tr>
+                <td>XPath</td>
+                <td>XML Path Language</td>
+                <td>Selects elements and values from XML.</td>
+            </tr>
+
+            <tr>
+                <td>XSL-FO</td>
+                <td>XSL Formatting Objects</td>
+                <td>Describes formatting for paginated output, such as print documents.</td>
+            </tr>
+
+        </table>
+
+        <h3>What is XSLT?</h3>
+
+        <p>
+            XSLT stands for Extensible Stylesheet Language Transformations.
+            It is used to transform an XML document into another format,
+            such as HTML, XML or plain text.
+        </p>
+
+        <p>
+            XSLT reads the source XML document, selects information
+            using XPath and applies template rules to create the output.
+        </p>
+
+        <h3>Why is XSLT Used?</h3>
+
+        <ul>
+            <li>To convert XML data into HTML pages.</li>
+            <li>To transform one XML structure into another.</li>
+            <li>To display XML information in a readable format.</li>
+            <li>To select and arrange specific data.</li>
+            <li>To create reports and tables from XML data.</li>
+        </ul>
+
+        <h3>How XSLT Works</h3>
+
+        <ol>
+            <li>An XML document is provided as the source.</li>
+            <li>An XSLT stylesheet contains transformation rules.</li>
+            <li>XPath selects the required XML elements and attributes.</li>
+            <li>XSLT applies templates to the selected information.</li>
+            <li>A new output document is generated.</li>
+        </ol>
+
+        <h3>Important XSLT Elements</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>XSLT Element</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>xsl:stylesheet</td>
+                <td>Root element of an XSLT stylesheet.</td>
+            </tr>
+
+            <tr>
+                <td>xsl:template</td>
+                <td>Defines a rule for matching nodes.</td>
+            </tr>
+
+            <tr>
+                <td>xsl:value-of</td>
+                <td>Extracts a selected value.</td>
+            </tr>
+
+            <tr>
+                <td>xsl:for-each</td>
+                <td>Repeats instructions for selected nodes.</td>
+            </tr>
+
+            <tr>
+                <td>xsl:if</td>
+                <td>Applies instructions when a condition is true.</td>
+            </tr>
+
+            <tr>
+                <td>xsl:choose</td>
+                <td>Provides conditional choices.</td>
+            </tr>
+
+            <tr>
+                <td>xsl:sort</td>
+                <td>Sorts selected nodes.</td>
+            </tr>
+
+            <tr>
+                <td>xsl:output</td>
+                <td>Specifies the output format.</td>
+            </tr>
+
+        </table>
+
+        <h3>Understanding xsl:template</h3>
+
+        <p>
+            The xsl:template element defines a set of instructions
+            that should be applied when a selected node matches
+            the specified pattern.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;xsl:template match="/"&gt;
+
+    &lt;h2&gt;My XML Data&lt;/h2&gt;
+
+&lt;/xsl:template&gt;
+</pre>
+        </div>
+
+        <p>
+            The match="/" expression selects the document root.
+        </p>
+
+        <h3>Understanding xsl:value-of</h3>
+
+        <p>
+            The xsl:value-of element extracts the value of a selected
+            XML node and places it in the transformation output.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;xsl:value-of select="catalog/book/title"/&gt;
+</pre>
+        </div>
+
+        <p>
+            This selects the text value of the title element
+            in the specified path.
+        </p>
+
+        <h3>Understanding xsl:for-each</h3>
+
+        <p>
+            The xsl:for-each element repeats a block of instructions
+            for every node selected by its XPath expression.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;xsl:for-each select="catalog/book"&gt;
+
+    &lt;p&gt;
+
+        &lt;xsl:value-of select="title"/&gt;
+
+    &lt;/p&gt;
+
+&lt;/xsl:for-each&gt;
+</pre>
+        </div>
+
+        <p>
+            This example creates a paragraph for every book element
+            and displays its title.
+        </p>
+
+        <h3>Using xsl:if</h3>
+
+        <p>
+            The xsl:if element is used to display output only when
+            a specified condition is true.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;xsl:if test="price &gt; 500"&gt;
+
+    &lt;p&gt;Expensive Book&lt;/p&gt;
+
+&lt;/xsl:if&gt;
+</pre>
+        </div>
+
+        <h3>Using xsl:choose</h3>
+
+        <p>
+            The xsl:choose element is used when different output
+            is required depending on multiple conditions.
+        </p>
+
+        <div class="example">
+<pre>
+&lt;xsl:choose&gt;
+
+    &lt;xsl:when test="price &gt; 500"&gt;
+        &lt;p&gt;High Price&lt;/p&gt;
+    &lt;/xsl:when&gt;
+
+    &lt;xsl:otherwise&gt;
+        &lt;p&gt;Normal Price&lt;/p&gt;
+    &lt;/xsl:otherwise&gt;
+
+&lt;/xsl:choose&gt;
+</pre>
+        </div>
+
+        <h3>Complete Example: XML to HTML Table</h3>
+
+        <p>
+            The following example converts an XML catalog into
+            an HTML table using XSLT.
+        </p>
+
+        <h3>Step 1: Create catalog.xml</h3>
+
+        <div class="example">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;catalog&gt;
+
+    &lt;book id="b101"&gt;
+
+        &lt;title&gt;Learning XML&lt;/title&gt;
+
+        &lt;author&gt;Asha Rao&lt;/author&gt;
+
+        &lt;price&gt;450&lt;/price&gt;
+
+    &lt;/book&gt;
+
+    &lt;book id="b102"&gt;
+
+        &lt;title&gt;Data on the Web&lt;/title&gt;
+
+        &lt;author&gt;Neil Patel&lt;/author&gt;
+
+        &lt;price&gt;525&lt;/price&gt;
+
+    &lt;/book&gt;
+
+&lt;/catalog&gt;
+</pre>
+        </div>
+
+        <h3>Step 2: Create catalog.xsl</h3>
+
+        <div class="example">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xsl:stylesheet version="1.0"
+
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+    &lt;xsl:output method="html" indent="yes"/&gt;
+
+    &lt;xsl:template match="/"&gt;
+
+        &lt;html&gt;
+
+        &lt;body&gt;
+
+            &lt;h2&gt;Book Details&lt;/h2&gt;
+
+            &lt;table border="1"&gt;
+
+                &lt;tr&gt;
+                    &lt;th&gt;ID&lt;/th&gt;
+                    &lt;th&gt;Title&lt;/th&gt;
+                    &lt;th&gt;Author&lt;/th&gt;
+                    &lt;th&gt;Price&lt;/th&gt;
+                &lt;/tr&gt;
+
+                &lt;xsl:for-each select="catalog/book"&gt;
+
+                    &lt;tr&gt;
+
+                        &lt;td&gt;
+                            &lt;xsl:value-of select="@id"/&gt;
+                        &lt;/td&gt;
+
+                        &lt;td&gt;
+                            &lt;xsl:value-of select="title"/&gt;
+                        &lt;/td&gt;
+
+                        &lt;td&gt;
+                            &lt;xsl:value-of select="author"/&gt;
+                        &lt;/td&gt;
+
+                        &lt;td&gt;
+                            &lt;xsl:value-of select="price"/&gt;
+                        &lt;/td&gt;
+
+                    &lt;/tr&gt;
+
+                &lt;/xsl:for-each&gt;
+
+            &lt;/table&gt;
+
+        &lt;/body&gt;
+
+        &lt;/html&gt;
+
+    &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</pre>
+        </div>
+
+        <h3>Expected HTML Output</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+            </tr>
+
+            <tr>
+                <td>b101</td>
+                <td>Learning XML</td>
+                <td>Asha Rao</td>
+                <td>450</td>
+            </tr>
+
+            <tr>
+                <td>b102</td>
+                <td>Data on the Web</td>
+                <td>Neil Patel</td>
+                <td>525</td>
+            </tr>
+
+        </table>
+
+        <h3>Explanation of the Example</h3>
+
+        <ul>
+            <li><b>xsl:stylesheet:</b> Declares the XSLT stylesheet.</li>
+            <li><b>xsl:output:</b> Specifies HTML as the output format.</li>
+            <li><b>xsl:template match="/":</b> Starts transformation at the document root.</li>
+            <li><b>xsl:for-each:</b> Processes each book element.</li>
+            <li><b>xsl:value-of:</b> Extracts the ID, title, author and price.</li>
+            <li><b>@id:</b> Selects the id attribute of the book element.</li>
+        </ul>
+
+        <div class="note">
+            <b>Important:</b> XSLT creates a transformed result.
+            It does not change the original XML source document.
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 9 -->
+
+    <section class="content-section" id="topic9">
+
+        <h2>9. Connecting XML with XSLT and Running Transformations</h2>
+
+        <h3>Connecting an XML File to an XSLT Stylesheet</h3>
+
+        <p>
+            An XML document can be connected to an external XSLT
+            stylesheet using an XML stylesheet processing instruction.
+        </p>
+
+        <p>
+            This instruction is written after the XML declaration
+            and before the root element.
+        </p>
+
+        <h3>Example of XML with an XSLT Processing Instruction</h3>
+
+        <div class="example">
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;?xml-stylesheet
+    type="text/xsl"
+    href="catalog.xsl"?&gt;
+
+&lt;catalog&gt;
+
+    &lt;book id="b101"&gt;
+
+        &lt;title&gt;Learning XML&lt;/title&gt;
+
+        &lt;author&gt;Asha Rao&lt;/author&gt;
+
+        &lt;price&gt;450&lt;/price&gt;
+
+    &lt;/book&gt;
+
+&lt;/catalog&gt;
+</pre>
+        </div>
+
+        <p>Here:</p>
+
+        <ul>
+            <li><b>xml-stylesheet:</b> Connects the XML document to a stylesheet.</li>
+            <li><b>type:</b> Identifies the stylesheet media type.</li>
+            <li><b>href:</b> Specifies the location of the XSLT file.</li>
+        </ul>
+
+        <h3>Files Required for the Example</h3>
+
+        <p>
+            Save the XML and XSLT files in the same folder:
+        </p>
+
+        <div class="example">
+<pre>
+XML-Example/
+|
+|-- catalog.xml
+|
+|-- catalog.xsl
+</pre>
+        </div>
+
+        <p>
+            Open catalog.xml in a browser that supports the
+            XML stylesheet processing instruction and the
+            corresponding XSLT functionality.
+        </p>
+
+        <h3>Using xsltproc</h3>
+
+        <p>
+            xsltproc is a command-line tool provided by libxslt.
+            It can be used to transform XML documents using
+            XSLT stylesheets.
+        </p>
+
+        <div class="example">
+<pre>
+xsltproc catalog.xsl catalog.xml
+</pre>
+        </div>
+
+        <p>
+            The command reads catalog.xml, applies catalog.xsl
+            and writes the transformed output to the terminal.
+        </p>
+
+        <h3>Saving the Transformed Output</h3>
+
+        <p>
+            The output can also be redirected into a separate
+            HTML file.
+        </p>
+
+        <div class="example">
+<pre>
+xsltproc catalog.xsl catalog.xml > output.html
+</pre>
+        </div>
+
+        <p>
+            The transformed HTML can then be opened in a browser.
+        </p>
+
+        <h3>Browser-Based XML Transformation</h3>
+
+        <p>
+            Some browsers provide an XSLTProcessor API that can
+            parse XML and XSLT documents and perform transformations.
+        </p>
+
+        <p>
+            A browser-based process generally involves:
+        </p>
+
+        <ol>
+            <li>Reading the XML document.</li>
+            <li>Reading the XSLT stylesheet.</li>
+            <li>Parsing both documents.</li>
+            <li>Creating an XSLT processor.</li>
+            <li>Applying the transformation.</li>
+            <li>Displaying the transformed result.</li>
+        </ol>
+
+        <div class="note">
+            <b>Compatibility Note:</b> Browser support for XSLT is
+            changing. Chromium currently warns that its browser
+            XSLT support is deprecated and may be removed.
+            For a reliable local demonstration, use an appropriate
+            XSLT processor such as xsltproc. Browser transformation
+            is not a replacement for XML validation.
+        </div>
+
+        <h3>Difference Between XML Parsing, Validation and Transformation</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Process</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>Parsing</td>
+                <td>Reads XML and checks basic well-formedness.</td>
+            </tr>
+
+            <tr>
+                <td>Validation</td>
+                <td>Checks XML against a DTD or XSD grammar.</td>
+            </tr>
+
+            <tr>
+                <td>Transformation</td>
+                <td>Converts XML into HTML, XML or another output format using XSLT.</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- TOPIC 10 -->
+
+    <section class="content-section" id="topic10">
+
+        <h2>10. Unit Summary and Practice Questions</h2>
+
+        <h3>Unit Summary</h3>
+
+        <ul>
+            <li>XML stands for Extensible Markup Language.</li>
+            <li>XML is used to store and transport structured data.</li>
+            <li>XML allows users to create their own meaningful tags.</li>
+            <li>An XML document contains exactly one root element.</li>
+            <li>Elements, attributes and text are the basic XML components.</li>
+            <li>XML comments are written using comment syntax.</li>
+            <li>XML tags are case-sensitive.</li>
+            <li>Every XML element must be properly closed and nested.</li>
+            <li>Attribute values must be enclosed in quotation marks.</li>
+            <li>Reserved characters must be escaped using entity references.</li>
+            <li>Namespaces prevent naming conflicts.</li>
+            <li>DTD defines the legal structure of an XML document.</li>
+            <li>XSD provides detailed data types and validation constraints.</li>
+            <li>A valid XML document must also be well-formed.</li>
+            <li>XPath is used to select and navigate XML nodes.</li>
+            <li>XSL is a family of XML transformation and formatting technologies.</li>
+            <li>XSLT transforms XML into HTML, XML or text.</li>
+            <li>XML can be connected to an XSLT stylesheet using a processing instruction.</li>
+        </ul>
+
+        <h3>Important XML Terms</h3>
+
+        <table class="comparison">
+
+            <tr>
+                <th>Term</th>
+                <th>Full Form / Meaning</th>
+            </tr>
+
+            <tr>
+                <td>XML</td>
+                <td>Extensible Markup Language</td>
+            </tr>
+
+            <tr>
+                <td>DTD</td>
+                <td>Document Type Definition</td>
+            </tr>
+
+            <tr>
+                <td>XSD</td>
+                <td>XML Schema Definition</td>
+            </tr>
+
+            <tr>
+                <td>XPath</td>
+                <td>XML Path Language</td>
+            </tr>
+
+            <tr>
+                <td>XSL</td>
+                <td>Extensible Stylesheet Language</td>
+            </tr>
+
+            <tr>
+                <td>XSLT</td>
+                <td>Extensible Stylesheet Language Transformations</td>
+            </tr>
+
+            <tr>
+                <td>XSL-FO</td>
+                <td>XSL Formatting Objects</td>
+            </tr>
+
+            <tr>
+                <td>URI</td>
+                <td>Uniform Resource Identifier</td>
+            </tr>
+
+            <tr>
+                <td>UTF-8</td>
+                <td>Unicode Transformation Format – 8-bit</td>
+            </tr>
+
+        </table>
+
+        <h3>Important XML Syntax Checklist</h3>
+
+        <ul>
+            <li>XML declaration is written correctly when included.</li>
+            <li>There is exactly one root element.</li>
+            <li>Every element is closed correctly.</li>
+            <li>Elements are properly nested.</li>
+            <li>Element names use consistent letter case.</li>
+            <li>Attribute values are quoted.</li>
+            <li>Special characters are escaped where required.</li>
+            <li>Namespace declarations are correct when used.</li>
+            <li>The document follows its DTD or XSD if validity is required.</li>
+        </ul>
+
+        <h3>Short Answer Questions</h3>
+
+        <ol>
+            <li>What is XML? Explain its purpose.</li>
+            <li>Write the important features of XML.</li>
+            <li>Differentiate between HTML and XML.</li>
+            <li>Where is XML used?</li>
+            <li>Explain the structure of an XML document.</li>
+            <li>What is an XML declaration?</li>
+            <li>Explain elements and attributes with examples.</li>
+            <li>What is a root element?</li>
+            <li>What are text nodes and comments?</li>
+            <li>What is an empty element?</li>
+            <li>Explain the important XML syntax rules.</li>
+            <li>What is a well-formed XML document?</li>
+            <li>Differentiate between well-formed and valid XML.</li>
+            <li>What are reserved characters in XML?</li>
+            <li>Explain XML namespaces and their importance.</li>
+            <li>What is DTD?</li>
+            <li>Differentiate between internal and external DTD.</li>
+            <li>Explain the important DTD declarations.</li>
+            <li>What are DTD occurrence indicators?</li>
+            <li>What is XML Schema (XSD)?</li>
+            <li>Explain simple types and complex types in XSD.</li>
+            <li>Differentiate between DTD and XSD.</li>
+            <li>What is XML validation?</li>
+            <li>What is XPath? Explain its uses.</li>
+            <li>Explain XPath expressions and predicates.</li>
+            <li>What is XSL?</li>
+            <li>Explain the components of XSL.</li>
+            <li>What is XSLT and why is it used?</li>
+            <li>Explain xsl:template and xsl:value-of.</li>
+            <li>What is the use of xsl:for-each?</li>
+            <li>How can an XML document be connected to an XSLT stylesheet?</li>
+            <li>What is xsltproc?</li>
+        </ol>
+
+        <h3>Programming and Practical Questions</h3>
+
+        <ol>
+            <li>Create an XML document to store student information.</li>
+            <li>Create an XML document containing details of three books.</li>
+            <li>Write an XML document using elements and attributes.</li>
+            <li>Create an XML document with an internal DTD.</li>
+            <li>Create an external DTD for a product catalog.</li>
+            <li>Write an XSD for a student record containing name and age.</li>
+            <li>Connect an XML document to an external XSD file.</li>
+            <li>Write XPath expressions to select book titles and authors.</li>
+            <li>Write an XPath expression to select a book using its ID attribute.</li>
+            <li>Create an XSLT stylesheet to display XML data as an HTML table.</li>
+            <li>Use xsl:for-each to display multiple book records.</li>
+            <li>Use xsl:if to display books whose price is greater than 500.</li>
+            <li>Connect an XML document with an XSLT stylesheet.</li>
+            <li>Explain how to validate an XML document using xmllint.</li>
+        </ol>
+
+        <div class="unit-footer">
+
+            <h3>Final Learning Point</h3>
+
+            <p>
+                XML provides a standard way to represent and exchange
+                structured information. DTD and XSD define the rules
+                that XML documents must follow, while XPath selects
+                the required information and XSLT transforms it into
+                another format.
+            </p>
+
+            <p>
+                Understanding XML structure, syntax, validation and
+                transformation provides a strong foundation for
+                working with structured data and web technologies.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Web Technologies | Complete Study Material</p>
+    <p>Unit 5: XML</p>
+</footer>
+
+<footer>
+    <p>Created by <strong>Shrey Savargaonkar</strong></p>
+    <p>Web Technologies Study Material</p>
+</footer>
+
+</body>
+</html>
